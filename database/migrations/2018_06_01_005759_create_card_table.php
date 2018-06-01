@@ -26,6 +26,8 @@ class CreateCardTable extends Migration
             $table->binary('PRPhoto_5blob');
             $table->float('latitude');
             $table->float('longitude');
+
+            $table->foreign('PrefecturesID')->references('PrefecturesID')->on('prefectures');
         });
     }
 
