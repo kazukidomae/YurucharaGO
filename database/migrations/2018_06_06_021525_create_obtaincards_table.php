@@ -30,6 +30,11 @@ class CreateObtaincardsTable extends Migration
      */
     public function down()
     {
+        Schema::table('obtaincards', function (Blueprint $table) {
+            $table->dropForeign('obtaincards_CardID_foreign');
+            $table->dropForeign('obtaincards_UserID_foreign');
+        });
+
         Schema::dropIfExists('obtaincards');
     }
 }

@@ -30,6 +30,10 @@ class CreatePrefecturesTable extends Migration
      */
     public function down()
     {
+        Schema::table('prefectures', function (Blueprint $table) {
+            $table->dropForeign('prefectures_RegionID_foreign');
+        });
+
         Schema::dropIfExists('prefectures');
     }
 }
