@@ -38,6 +38,10 @@ class CreateCardsTable extends Migration
      */
     public function down()
     {
+        Schema::table('cards', function (Blueprint $table) {
+            $table->dropForeign('cards_PrefecturesID_foreign');
+        });
+
         Schema::dropIfExists('cards');
     }
 }

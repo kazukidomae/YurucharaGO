@@ -32,6 +32,10 @@ class CreateEventsTable extends Migration
      */
     public function down()
     {
+        Schema::table('events', function (Blueprint $table) {
+            $table->dropForeign('events_CardID_foreign');
+        });
+
         Schema::dropIfExists('events');
     }
 }
