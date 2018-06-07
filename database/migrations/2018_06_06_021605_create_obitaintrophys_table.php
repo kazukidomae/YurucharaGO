@@ -30,6 +30,8 @@ class CreateObitaintrophysTable extends Migration
      */
     public function down()
     {
+        $table->dropForeign('TrophyID');
+        $table->dropForeign('UserID');
         Schema::dropIfExists('obitaintrophys');
     }
 }
