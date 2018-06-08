@@ -18,9 +18,9 @@ class CreateUsersTable extends Migration
             $table->string('name');
             $table->string('email')->unique();
             $table->string('password');
-            $table->dateTime('LastLoginDate');
-            $table->integer('ContinuousLoginDays');
-            $table->integer('TotalLoginDate');
+            $table->dateTime('LastLoginDate')->nullable()->change();
+            $table->integer('ContinuousLoginDays')->default(1);
+            $table->integer('TotalLoginDate')->default(1);
             $table->rememberToken();
             $table->timestamps();
         });
