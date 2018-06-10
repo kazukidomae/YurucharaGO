@@ -17,6 +17,7 @@ class DatabaseSeeder extends Seeder
             PrefecturesTableSeeder::class,
             CardsTableSeeder::class,
             EventsTableSeeder::class,
+            TrophysTableSeeder::class,
         ]);
     }
 }
