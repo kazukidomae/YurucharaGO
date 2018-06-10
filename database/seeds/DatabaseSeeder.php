@@ -15,6 +15,8 @@ class DatabaseSeeder extends Seeder
         $this->call([
             RegionsTableSeeder::class,
             PrefecturesTableSeeder::class,
+            CardsTableSeeder::class,
+            EventsTableSeeder::class,
         ]);
     }
 }
