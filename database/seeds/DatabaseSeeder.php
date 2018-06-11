@@ -18,6 +18,7 @@ class DatabaseSeeder extends Seeder
             CardsTableSeeder::class,
             EventsTableSeeder::class,
             TrophysTableSeeder::class,
+            UsersTableSeeder::class,
         ]);
     }
 }
