@@ -19,6 +19,7 @@ class DatabaseSeeder extends Seeder
             EventsTableSeeder::class,
             TrophysTableSeeder::class,
             UsersTableSeeder::class,
+            ObtainTrophysTableSeeder::class,
         ]);
     }
 }
