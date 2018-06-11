@@ -14,3 +14,7 @@ Route::get('/','PagesController@index');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/search', 'MapViewController@search');
+
+
+
