@@ -15,7 +15,7 @@ class CreateTrophysTable extends Migration
     {
         Schema::create('trophys', function (Blueprint $table) {
             $table->increments('TrophyID');
-            $table->string('TrophyName',20)->unique();
+            $table->string('TrophyName',50)->unique();
             $table->binary('TrophyIcon');
             $table->string('TrophyType',20);
             $table->text('TrophyDescription');
