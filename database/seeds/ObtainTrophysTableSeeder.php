@@ -11,7 +11,7 @@ class ObtainTrophysTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('obitaintrophys')->insert([
+        DB::table('obtaintrophys')->insert([
             [
                 'UserID' => 1,
                 'TrophyID' => 2,
