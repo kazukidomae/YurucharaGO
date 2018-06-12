@@ -14,7 +14,7 @@ Route::get('/','PagesController@index');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+// 現在地検索
 Route::get('/search', 'MapViewController@search');
-
-
-
+// カードリスト表示
+Route::get('/data', 'GetDataController@carddata');
