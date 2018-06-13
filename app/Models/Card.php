@@ -7,19 +7,26 @@ use Illuminate\Support\Facades\DB;
 
 class Card extends Model
 {
-    // テーブル名
-    protected $table = 'cards';
-
-    // 主キーのセット
-    //protected $guarded = array('CardID');
-
     // 自動タイムスタンプ無し
     public $timestamps = false;
 
-    public function getData()
+    // 都道府県ごとのカード一覧
+    public function prefecturesCardList($prefectures)
     {
-        $data = DB::table($this->table)->where('PrefecturesID',25)->get();
+        $data = DB::table('cards')
+            ->join('prefectures', 'cards.PrefecturesID', '=', 'prefectures.PrefecturesID')
+            ->where('prefectures.PrefecturesName',$prefectures)
+            ->get();
+        return $data;
+    }
 
+    // カード詳細
+    public function cardDetail($cardID){
+        $data = DB::table('cards')
+            ->join('prefectures', 'cards.PrefecturesID', '=', 'prefectures.PrefecturesID')
+            ->join('regions','prefectures.RegionID', '=','regions.RegionsID')
+            ->where('cards.CardID',$cardID)
+            ->get();
         return $data;
     }
 }

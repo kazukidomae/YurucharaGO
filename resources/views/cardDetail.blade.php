@@ -5,12 +5,9 @@
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
-                    <div class="card-header">Dashboard</div>
+                    <div class="card-header">カード一覧</div>
                     <ul>
-                        @foreach($data as $d)
-                            <li>{{$d->CardName}}</li>
-                            <li><img src="{{$d->CardIllustration}}"></li>
-                        @endforeach
+                        <li></li>
                     </ul>
                 </div>
             </div>
