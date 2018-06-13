@@ -24,11 +24,10 @@ class CreateCardsTable extends Migration
             $table->binary('PRPhoto_3blob')->nullable();
             $table->binary('PRPhoto_4blob')->nullable();
             $table->binary('PRPhoto_5blob')->nullable();
-            $table->float('latitude');
-            $table->float('longitude');
 
             $table->foreign('PrefecturesID')->references('PrefecturesID')->on('prefectures');
         });
+        DB::statement('alter table cards add location geometry' );
     }
 
     /**
