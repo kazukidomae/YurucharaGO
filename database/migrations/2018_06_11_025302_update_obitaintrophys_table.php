@@ -25,5 +25,6 @@ class UpdateObitaintrophysTable extends Migration
     public function down()
     {
         //
+        Schema::rename('obtaintrophys','obitaintrophys');
     }
 }
