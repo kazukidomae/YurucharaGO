@@ -1,5 +1,5 @@
 @extends('layouts.app')
 
 @section('content')
-<p>Cardlist View</p>
+<p>ObtainCardList View</p>
 @endsection
