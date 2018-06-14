@@ -1,15 +1,36 @@
+// グローバル変数　ここから
+// グーグルマップの描画領域オブジェクトを格納する変数。
+var mapArea;
+// マップ動作管理オブジェクト。
+var map;
+// 現在地のマーカーオブジェクト。・
+var hereMarker;
+// 現在地の円オブジェクト。
+var hereCircle;
+// ゆるキャラの緯度の仮データ。
+var testdata_lat = [35.693683,39.703488,32.789389,35.689367];
+// ゆるキャラの経度の仮データ。
+var testdata_lon = [139.701447,141.142839,130.689780,139.688537];
+// ゆるキャラのアイコン画像の仮データ。
+var testdata_icon = ["ticon.png","ticon.png","ticon.png","ticon.png"];
+// ゆるキャラの地図上に表示させるアイコンオブジェクト。
+var testdata_gicon = new Array();
+// グローバル変数　ここまで
+
 function getIdoKeido()
 {
+  // 現在地の緯度経度情報を格納するオブジェクト。
+  var llobj;
 
 	if(navigator.geolocation)
 	{
 		// GeolocationAPIに対応
-		alert("この端末はGeolocationAPIに対応しています。");
+		// alert("この端末はGeolocationAPIに対応しています。");
 	}
 	else
 	{
 		// GeolocationAPIに非対応
-		alert("この端末はGeolocationAPIに対応していません。");	
+		// alert("この端末はGeolocationAPIに対応していません。");	
 	}
 
 	// 現在地を取得
@@ -20,6 +41,40 @@ function getIdoKeido()
         	$("#ido").val( "" + position.coords.latitude);
         	$("#keido").val( "" + position.coords.longitude);
         	getAddress(position.coords.latitude,position.coords.longitude);
+
+          // 取得した現在地座標へ地図を自動的に移動。
+          llobj = new google.maps.LatLng(parseFloat(position.coords.latitude), parseFloat(position.coords.longitude));
+          map.panTo( llobj );
+
+          // 現在地にマーカーをセットする。
+          hereMarker = new google.maps.Marker({
+            position:llobj,
+            map:map,
+            title:"現在地",
+            draggable:false,
+            icon:"./img/human.png"
+
+          });
+          // 現在地から半径1kmで円を描画する。
+          hereCircle = new google.maps.Circle({
+            radius:1000,
+            strokeColor:'#f93f00',
+            strokeWeight:1,
+            strokeOpacity:0.8,
+            fillColor:'#ffcf3e',
+            fillOpacity:0.4,
+            clickable:false,
+            draggable:false,
+            editable:false,
+            map:map,
+            center:llobj
+
+          });
+
+          // ゆるキャラの取得。
+          showYuruchara(llobj);
+
+
         },
         // 取得失敗した場合
         function(error) {
@@ -58,7 +113,7 @@ function getAddress(lat,lng)
         var address = results[0].formatted_address;
 
         // 正規表現を用いて
-        alert("address = " + address);
+        // alert("address = " + address);
         $('#address').val(address);
       } else {
         alert('No results found');
@@ -73,5 +128,93 @@ function getAddress(lat,lng)
 
 }
 
+// ブラウザの領域上にマップを表示させる関数。
+function initMap()
+{
+  // Map座標
+    var mapPosition = {lat: parseFloat(35.906119), lng: parseFloat(139.623327)};
+    // Map描画要素
+    mapArea = document.getElementById('map');
+    var mapOptions = {
+        // 中央位置
+        center: mapPosition,
+        // ズーム値
+        zoom: 15,
+        // 航空写真は無効
+        mapTypeControl:false
+    
+    // Mapの色変更
+    //styles: [{
+      //featureType: 'all',
+      //elementType: 'all',
+          //stylers: [{
+        // 色相
+              //hue: '#5FB404'
+          //}, {
+        // 彩度
+              //saturation: -50
+          //}, {
+        // 明度
+              //lightness: 10
+          //}, {
+              //gamma: 1
+          //}]
+      //}]
+    
+    };
+    // Mapを生成
+    map = new google.maps.Map(mapArea, mapOptions);
 
+}
+
+// ドキュメントの読み込みが完全に完了したら、initMap関数を実行する。
+$(document).ready(function(){
+  initMap();
+
+  // 現在地の緯度経度取得処理を実行する。
+  getIdoKeido();
+});
+
+// 引数に渡された緯度・経度を基に、半径1km以内のゆるキャラを検索し、必要に応じて表示させる関数。
+function showYuruchara(ll)
+{
+  // 2点間の直線距離。
+  var between = 0;
+  // グーグルマップに表示させるアイコンデータ。
+  var gmap;
+
+  for(i=0;i<testdata_lat.length;i++)
+  {
+    // 2点間の直線距離を計算。
+    between = google.maps.geometry.spherical.computeDistanceBetween(ll,new google.maps.LatLng(parseFloat(testdata_lat[i]), parseFloat(testdata_lon[i])) );
+    // 直線距離が1km以内なら、ゆるキャラを表示する。
+    if(between < 1000)
+    {
+      gmap = new google.maps.Marker({
+          position:new google.maps.LatLng(parseFloat(testdata_lat[i]), parseFloat(testdata_lon[i])),
+          map:map,
+          title:"ゆるキャラ" + i + "",
+          draggable:false,
+          icon:"./testimg/" + testdata_icon[i]
+      });
+      (function(j){
+        gmap.addListener('click', function(e) {
+        
+          // ゆるキャラがクリックされたら、別のページを開く。
+          alert(j);
+
+        });
+      })(gmap.getTitle());
+      
+      testdata_gicon.push(gmap);
+
+    }
+  }
+
+}
+
+function pageReload()
+{
+  window.location.reload(true);
+}
 
