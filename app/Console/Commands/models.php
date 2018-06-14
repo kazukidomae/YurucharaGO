@@ -12,14 +12,14 @@ class models extends Command
      *
      * @var string
      */
-    protected $signature = 'command:models';
+    protected $signature = 'models:card {prefectures}';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = 'Command description';
+    protected $description = 'cardsデータベースの指定された都道府県のデータを取得';
 
     /**
      * Create a new command instance.
@@ -38,9 +38,10 @@ class models extends Command
      */
     public function handle()
     {
-        //
+        //cardsデータベースの指定された都道府県のデータを取得
         $card = new Card();
-        $test = $card->prefecturesCardList("kumamoto");
-        echo $test;
+        $prefectures = $this->argument("prefectures");
+        $data = $card->prefecturesCardList($prefectures);
+        echo $data;
     }
 }
