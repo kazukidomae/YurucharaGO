@@ -9,8 +9,6 @@
                     <div class="card-body">
                         <p>{{Auth::id()}}</p>
                         <ul>
-                            <li><a href="{{action('GetDataController@refinePrefectures')}}?Prefectures=Shiga">滋賀県</a></li>
-                            <li><a href="{{action('GetDataController@refinePrefectures')}}?Prefectures=Kumamoto">熊本県</a></li>
                         </ul>
                     </div>
                 </div>
@@ -18,4 +16,3 @@
         </div>
     </div>
 @endsection
-
