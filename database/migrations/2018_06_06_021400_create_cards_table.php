@@ -19,6 +19,7 @@ class CreateCardsTable extends Migration
             $table->integer('PrefecturesID')->unsigned();
             $table->binary('CardIllustration');
             $table->text('Introduction');
+            $table->string('CardColor',7);
             $table->binary('PRPhoto_1blob')->nullable();
             $table->binary('PRPhoto_2blob')->nullable();
             $table->binary('PRPhoto_3blob')->nullable();
