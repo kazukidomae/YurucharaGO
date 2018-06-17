@@ -13,24 +13,24 @@ class RegionsTableSeeder extends Seeder
     {
         DB::table('regions')->insert([
             [
-                'RegionName' => 'Hokkaido/Tohoku',
-                'PrefectureNumber' => 7,
+                'RegionName' => 'Hokkaido',
+                'PrefectureNumber' => 1,
+            ],
+            [
+                'RegionName' => 'Tohoku',
+                'PrefectureNumber' => 6,
             ],
             [
                 'RegionName' => 'Kanto',
                 'PrefectureNumber' => 7,
             ],
             [
-                'RegionName' => 'Koshinetsu/Hokuriku',
-                'PrefectureNumber' => 6,
+                'RegionName' => 'Chubu',
+                'PrefectureNumber' => 9,
             ],
             [
-                'RegionName' => 'Tokai',
-                'PrefectureNumber' => 4,
-            ],
-            [
-                'RegionName' => 'Kinki',
-                'PrefectureNumber' => 6,
+                'RegionName' => 'Kansai',
+                'PrefectureNumber' => 7,
             ],
             [
                 'RegionName' => 'Chugoku',
@@ -41,7 +41,7 @@ class RegionsTableSeeder extends Seeder
                 'PrefectureNumber' => 4,
             ],
             [
-                'RegionName' => 'Kyushu/Okinawa',
+                'RegionName' => 'Kyushu',
                 'PrefectureNumber' => 8,
             ],
         ]);
