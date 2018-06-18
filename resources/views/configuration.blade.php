@@ -1,5 +1,5 @@
 @extends('layouts.app')
 
 @section('content')
-<p>Cnfiguration View</p>
+<p>Configuration View</p>
 @endsection

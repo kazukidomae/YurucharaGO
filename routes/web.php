@@ -23,9 +23,9 @@ Route::get('/search', 'MapViewController@search');
 //Route::get('/data', 'GetDataController@carddata');
 
 //仮でルーティング
-Route::view('/cardlist', 'cardlist');   //検索カード一覧
-Route::view('/obtaincardlist', 'obtaincardlist');   //入手カード一覧
-Route::view('/carddetail', 'carddetail');   //カード詳細
-Route::view('/trophylist', 'trophylist');   //トロフィー一覧
-Route::view('/trophydetail', 'trophydetail');   //トロフィー詳細
-Route::view('/configuration', 'configuration');   //設定
+Route::get('/cardlist', 'PagesController@cardlist');   //検索カード一覧
+Route::get('/obtaincardlist', 'PagesController@obtaincardlist');   //入手カード一覧
+Route::get('/carddetail', 'PagesController@carddetail');   //カード詳細
+Route::get('/trophylist', 'PagesController@trophylist');   //トロフィー一覧
+Route::get('/trophydetail', 'PagesController@trophydetail');   //トロフィー詳細
+Route::get('/configuration', 'PagesController@configuration');   //設定
