@@ -1,154 +1,16 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="card">
-  <a href="{{ action('PagesController@carddetail') }}" class="card__link">
-    <img src="{{ asset('images/card_layout.png') }}" class="card__img">
-    <img src="{{ asset('images/Oita.png') }}" class="card__mark">
-    <img src="{{ asset('images/img_profile.png') }}" class="card__chara">
-    <div class="textbox">
-      <div class="textbox__name">みやちゃん</div>
-    </div>
-  </a>
-</div>
-<div class="card">
-  <a href="{{ action('PagesController@carddetail') }}" class="card__link">
-    <img src="{{ asset('images/card_layout.png') }}" class="card__img">
-    <img src="{{ asset('images/Oita.png') }}" class="card__mark">
-    <img src="{{ asset('images/img_profile.png') }}" class="card__chara">
-    <div class="textbox">
-      <div class="textbox__name">みやちゃん</div>
-    </div>
-  </a>
-</div>
-<div class="card">
-  <a href="{{ action('PagesController@carddetail') }}" class="card__link">
-    <img src="{{ asset('images/card_layout.png') }}" class="card__img">
-    <img src="{{ asset('images/Oita.png') }}" class="card__mark">
-    <img src="{{ asset('images/img_profile.png') }}" class="card__chara">
-    <div class="textbox">
-      <div class="textbox__name">みやちゃん</div>
-    </div>
-  </a>
-</div>
-<div class="card">
-  <a href="{{ action('PagesController@carddetail') }}" class="card__link">
-    <img src="{{ asset('images/card_layout.png') }}" class="card__img">
-    <img src="{{ asset('images/Oita.png') }}" class="card__mark">
-    <img src="{{ asset('images/img_profile.png') }}" class="card__chara">
-    <div class="textbox">
-      <div class="textbox__name">みやちゃん</div>
-    </div>
-  </a>
-</div>
-<div class="card">
-  <a href="{{ action('PagesController@carddetail') }}" class="card__link">
-    <img src="{{ asset('images/card_layout.png') }}" class="card__img">
-    <img src="{{ asset('images/Oita.png') }}" class="card__mark">
-    <img src="{{ asset('images/img_profile.png') }}" class="card__chara">
-    <div class="textbox">
-      <div class="textbox__name">みやちゃん</div>
-    </div>
-  </a>
-</div>
-<div class="card">
-  <a href="{{ action('PagesController@carddetail') }}" class="card__link">
-    <img src="{{ asset('images/card_layout.png') }}" class="card__img">
-    <img src="{{ asset('images/Oita.png') }}" class="card__mark">
-    <img src="{{ asset('images/img_profile.png') }}" class="card__chara">
-    <div class="textbox">
-      <div class="textbox__name">みやちゃん</div>
-    </div>
-  </a>
-</div>
-<div class="card">
-  <a href="{{ action('PagesController@carddetail') }}" class="card__link">
-    <img src="{{ asset('images/card_layout.png') }}" class="card__img">
-    <img src="{{ asset('images/Oita.png') }}" class="card__mark">
-    <img src="{{ asset('images/img_profile.png') }}" class="card__chara">
-    <div class="textbox">
-      <div class="textbox__name">みやちゃん</div>
-    </div>
-  </a>
-</div>
-<div class="card">
-  <a href="{{ action('PagesController@carddetail') }}" class="card__link">
-    <img src="{{ asset('images/card_layout.png') }}" class="card__img">
-    <img src="{{ asset('images/Oita.png') }}" class="card__mark">
-    <img src="{{ asset('images/img_profile.png') }}" class="card__chara">
-    <div class="textbox">
-      <div class="textbox__name">みやちゃん</div>
-    </div>
-  </a>
-</div>
-<div class="card">
-  <a href="{{ action('PagesController@carddetail') }}" class="card__link">
-    <img src="{{ asset('images/card_layout.png') }}" class="card__img">
-    <img src="{{ asset('images/Oita.png') }}" class="card__mark">
-    <img src="{{ asset('images/img_profile.png') }}" class="card__chara">
-    <div class="textbox">
-      <div class="textbox__name">みやちゃん</div>
-    </div>
-  </a>
-</div>
-<div class="card">
-  <a href="{{ action('PagesController@carddetail') }}" class="card__link">
-    <img src="{{ asset('images/card_layout.png') }}" class="card__img">
-    <img src="{{ asset('images/Oita.png') }}" class="card__mark">
-    <img src="{{ asset('images/img_profile.png') }}" class="card__chara">
-    <div class="textbox">
-      <div class="textbox__name">みやちゃん</div>
-    </div>
-  </a>
-</div>
-<div class="card">
-  <a href="{{ action('PagesController@carddetail') }}" class="card__link">
-    <img src="{{ asset('images/card_layout.png') }}" class="card__img">
-    <img src="{{ asset('images/Oita.png') }}" class="card__mark">
-    <img src="{{ asset('images/img_profile.png') }}" class="card__chara">
-    <div class="textbox">
-      <div class="textbox__name">みやちゃん</div>
-    </div>
-  </a>
-</div>
-<div class="card">
-  <a href="{{ action('PagesController@carddetail') }}" class="card__link">
-    <img src="{{ asset('images/card_layout.png') }}" class="card__img">
-    <img src="{{ asset('images/Oita.png') }}" class="card__mark">
-    <img src="{{ asset('images/img_profile.png') }}" class="card__chara">
-    <div class="textbox">
-      <div class="textbox__name">みやちゃん</div>
-    </div>
-  </a>
-</div>
-<div class="card">
-  <a href="{{ action('PagesController@carddetail') }}" class="card__link">
-    <img src="{{ asset('images/card_layout.png') }}" class="card__img">
-    <img src="{{ asset('images/Oita.png') }}" class="card__mark">
-    <img src="{{ asset('images/img_profile.png') }}" class="card__chara">
-    <div class="textbox">
-      <div class="textbox__name">みやちゃん</div>
-    </div>
-  </a>
-</div>
-<div class="card">
-  <a href="{{ action('PagesController@carddetail') }}" class="card__link">
-    <img src="{{ asset('images/card_layout.png') }}" class="card__img">
-    <img src="{{ asset('images/Oita.png') }}" class="card__mark">
-    <img src="{{ asset('images/img_profile.png') }}" class="card__chara">
-    <div class="textbox">
-      <div class="textbox__name">みやちゃん</div>
-    </div>
-  </a>
-</div>
-<div class="card">
-  <a href="{{ action('PagesController@carddetail') }}" class="card__link">
-    <img src="{{ asset('images/card_layout.png') }}" class="card__img">
-    <img src="{{ asset('images/Oita.png') }}" class="card__mark">
-    <img src="{{ asset('images/img_profile.png') }}" class="card__chara">
-    <div class="textbox">
-      <div class="textbox__name">みやちゃん</div>
-    </div>
-  </a>
-</div>
+    @foreach($data as $cardData)
+        <div class="card">
+            <a href="{{ action('MapViewController@navigation') }}" class="card__link">
+                <img src="{{ asset('images/card_layout.png') }}" class="card__img">
+                <img src="{{$cardData->	PrefecturesIcon}}" class="card__mark">
+                <img src="{{$cardData->CardIllustration}}" class="card__chara">
+                <div class="textbox">
+                    <div class="textbox__name">{{$cardData->CardName}}</div>
+                </div>
+            </a>
+        </div>
+    @endforeach
 @endsection
