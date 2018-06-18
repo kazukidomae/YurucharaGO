@@ -10,19 +10,19 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+// トップ
 Route::get('/','PagesController@index');
+// 新規登録・ログイン
 Auth::routes();
-
 Route::get('/home', 'HomeController@index')->name('home');
-
 // 現在地検索
 Route::get('/search', 'MapViewController@search');
-
+// ナビゲーション
+Route::get('/navigation', 'MapViewController@navigation');
 // カードリスト表示
+Route::get('/data', 'GetDataController@refinePrefectures');
 
-//Route::get('/data', 'GetDataController@carddata');
-
-//仮でルーティング
 Route::get('/cardlist', 'PagesController@cardlist');   //検索カード一覧
 Route::get('/obtaincardlist', 'PagesController@obtaincardlist');   //入手カード一覧
 Route::get('/carddetail', 'PagesController@carddetail');   //カード詳細
