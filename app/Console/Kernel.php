@@ -14,7 +14,8 @@ class Kernel extends ConsoleKernel
      */
     protected $commands = [
         //
-        Commands\models::class
+        Commands\Cardprefecture::class,
+        Commands\Carddetail::class
     ];
 
     /**

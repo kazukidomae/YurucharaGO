@@ -5,21 +5,21 @@ namespace App\Console\Commands;
 use Illuminate\Console\Command;
 use App\Models\Card;
 
-class models extends Command
+class Carddetail extends Command
 {
     /**
      * The name and signature of the console command.
      *
      * @var string
      */
-    protected $signature = 'models:card {prefectures}';
+    protected $signature = 'card:detail {cardID}';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = 'cardsデータベースの指定された都道府県のデータを取得';
+    protected $description = 'cardsデータベースのカード詳細を取得';
 
     /**
      * Create a new command instance.
@@ -40,8 +40,8 @@ class models extends Command
     {
         //cardsデータベースの指定された都道府県のデータを取得
         $card = new Card();
-        $prefectures = $this->argument("prefectures");
-        $data = $card->prefecturesCardList($prefectures);
+        $cardID = $this->argument("cardID");
+        $data = $card->cardDetail($cardID);
         echo $data;
     }
 }
