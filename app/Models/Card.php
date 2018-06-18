@@ -24,7 +24,7 @@ class Card extends Model
     public function cardDetail($cardID){
         $data = DB::table('cards')
             ->join('prefectures', 'cards.PrefecturesID', '=', 'prefectures.PrefecturesID')
-            ->join('regions','prefectures.RegionID', '=','regions.RegionsID')
+            ->join('regions','prefectures.RegionID', '=','regions.RegionID')
             ->where('cards.CardID',$cardID)
             ->get();
         return $data;
