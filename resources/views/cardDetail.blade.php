@@ -1,16 +1,14 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-8">
-                <div class="card">
-                    <div class="card-header">カード一覧</div>
-                    <ul>
-                        <li></li>
-                    </ul>
-                </div>
+    <div class="card">
+        <a href="{{ action('MapViewController@navigation') }}" class="card__link">
+            <img src="{{ asset('images/card_layout.png') }}" class="card__img">
+            <img src="{{$data[0]->	PrefecturesIcon}}" class="card__mark">
+            <img src="{{$data[0]->CardIllustration}}" class="card__chara">
+            <div class="textbox">
+                <div class="textbox__name">{{$data[0]->CardName}}</div>
             </div>
-        </div>
+        </a>
     </div>
 @endsection
