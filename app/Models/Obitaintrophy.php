@@ -9,9 +9,9 @@ class Obitaintrophy extends Model
 {
     public $timestamps = false;
     
-    public function userTrophyList($obtainTrophys){
-        $data = DB::table('obtainTrophys')
-            ->where('obtainTrophys.userid',Auth::id())
+    public function userTrophyList(){
+        $data = DB::table('obtaintrophys')
+            ->where('obtaintrophys.userid',Auth::id())
             ->get();
         
         return $data;
