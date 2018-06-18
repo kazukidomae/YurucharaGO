@@ -15,6 +15,12 @@ var testdata_lon = [139.701447,141.142839,130.689780,139.688537];
 var testdata_icon = ["ticon.png","ticon.png","ticon.png","ticon.png"];
 // ゆるキャラの地図上に表示させるアイコンオブジェクト。
 var testdata_gicon = new Array();
+
+// 高尾山の緯度・経度テストデータ。
+var takaoLatLng;
+// 高尾山のマーカーオブジェクト。
+var takaoMarker;
+
 // グローバル変数　ここまで
 
 function getIdoKeido()
@@ -44,6 +50,8 @@ function getIdoKeido()
 
           // 取得した現在地座標へ地図を自動的に移動。
           llobj = new google.maps.LatLng(parseFloat(position.coords.latitude), parseFloat(position.coords.longitude));
+
+          // window.alert(position.coords.latitude + "," + position.coords.longitude);
           map.panTo( llobj );
 
           // 現在地にマーカーをセットする。
@@ -52,9 +60,51 @@ function getIdoKeido()
             map:map,
             title:"現在地",
             draggable:false,
-            icon:"./img/human.png"
+            icon:"./testimg/human.png"
 
           });
+          // 高尾山テストマーカー
+          takaoMarker = new google.maps.Marker({
+            position:takaoLatLng,
+            map:map,
+            title:"高尾山",
+            draggable:false,
+            icon:"./testimg/mountain.png"
+
+          });
+          // 高尾山マーカーがクリックされたら、現在地から高尾山まで電車＋徒歩でのルート検索。
+          takaoMarker.addListener('click', function(e) {
+        
+            // ルート検索の条件を指定。
+            var routeOptions = 
+            {
+              origin: llobj, // 出発地
+              destination: takaoLatLng, // 目的地
+              travelMode: google.maps.DirectionsTravelMode.WALKING //交通手段は徒歩。
+            };
+
+            var d = new google.maps.DirectionsService(); // ルート検索
+            var r = new google.maps.DirectionsRenderer({ // ルート描画
+                map:map,
+                preserveViewport: true,
+                suppressMarkers: true,
+                polylineOptions: {
+                  strokeColor: '#ff5c0f',
+                  strokeOpacity: 0.7,
+                  strokeWeight: 4
+                }
+            });
+            // ルート検索
+            d.route(routeOptions, function(result, status){
+                // OKの場合ルート描画
+                if (status == google.maps.DirectionsStatus.OK) {
+                    r.setDirections(result);
+                }
+                window.alert(status);
+            });
+
+          });
+
           // 現在地から半径1kmで円を描画する。
           hereCircle = new google.maps.Circle({
             radius:1000,
@@ -171,6 +221,9 @@ function initMap()
 $(document).ready(function(){
   initMap();
 
+  takaoLatLng = new google.maps.LatLng(parseFloat(35.631196), parseFloat(139.256493));
+  // takaoLatLng = new google.maps.LatLng(parseFloat(35.688790), parseFloat(139.781267));
+
   // 現在地の緯度経度取得処理を実行する。
   getIdoKeido();
 });
@@ -197,14 +250,34 @@ function showYuruchara(ll)
           draggable:false,
           icon:"./testimg/" + testdata_icon[i]
       });
-      (function(j){
+      (function(j,k){
         gmap.addListener('click', function(e) {
         
-          // ゆるキャラがクリックされたら、別のページを開く。
-          alert(j);
+          // ゆるキャラがクリックされたら、現在地からそのゆるキャラまでの徒歩ルートを検索する。
+          // ルート検索の条件を指定。
+          var routeOptions = 
+          {
+            origin: ll, // 出発地
+            destination: k, // 目的地
+            travelMode: google.maps.DirectionsTravelMode.WALKING //交通手段は徒歩。
+          };
+
+          var d = new google.maps.DirectionsService(); // ルート検索
+          var r = new google.maps.DirectionsRenderer({ // ルート描画
+              map:map,
+              preserveViewport: true,
+              suppressMarkers: true //デフォルトのマーカー削除。
+          });
+          // ルート検索
+          d.route(routeOptions, function(result, status){
+              // OKの場合ルート描画
+              if (status == google.maps.DirectionsStatus.OK) {
+                  r.setDirections(result);
+              }
+          });
 
         });
-      })(gmap.getTitle());
+      })(gmap.getTitle(),gmap.getPosition());
       
       testdata_gicon.push(gmap);
 
