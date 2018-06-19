@@ -7,25 +7,26 @@ var map;
 var hereMarker;
 // 現在地の円オブジェクト。
 var hereCircle;
-
 // ゆるキャラの緯度の仮データ。
-var testdata_lat = new Array();
+var testdata_lat = [35.693683,39.703488,32.789389,35.689367];
 // ゆるキャラの経度の仮データ。
-var testdata_lon = new Array();
+var testdata_lon = [139.701447,141.142839,130.689780,139.688537];
 // ゆるキャラのアイコン画像の仮データ。
-var testdata_icon = new Array();
-// ゆるキャラ名の仮データ。
-var testdata_charaname = new Array();
-// ゆるキャラIDの仮データ。
-var testdata_id = new Array();
-
+var testdata_icon = ["ticon.png","ticon.png","ticon.png","ticon.png"];
 // ゆるキャラの地図上に表示させるアイコンオブジェクト。
 var testdata_gicon = new Array();
 
 // 高尾山の緯度・経度テストデータ。
 var takaoLatLng;
 // 高尾山のマーカーオブジェクト。
-var takaoMarker;
+var charaMarker;
+
+// ページ遷移で送られたゆるキャラの緯度。
+var ido = 0;
+// ページ遷移で送られたゆるキャラのの経度。
+var keido = 0;
+// ページ遷移で送られたゆるキャラの名前。
+var yurucharaName = "";
 
 // グローバル変数　ここまで
 
@@ -35,12 +36,9 @@ function getIdoKeido()
   var llobj;
 
 	// 現在地を取得
-    navigator.geolocation.getCurrentPosition(
+  navigator.geolocation.getCurrentPosition(
         // 取得成功した場合
         function(position) {
-        	// 緯度・経度をHTML上にセット。
-        	// $("#ido").val( "" + position.coords.latitude);
-        	// $("#keido").val( "" + position.coords.longitude);
 
           // 取得した現在地座標へ地図を自動的に移動。
           llobj = new google.maps.LatLng(parseFloat(position.coords.latitude), parseFloat(position.coords.longitude));
@@ -58,26 +56,20 @@ function getIdoKeido()
 
           });
 
-          // 現在地から半径1kmで円を描画する。
-          hereCircle = new google.maps.Circle({
-            radius:1000,
-            strokeColor:'#f93f00',
-            strokeWeight:1,
-            strokeOpacity:0.8,
-            fillColor:'#ffcf3e',
-            fillOpacity:0.4,
-            clickable:false,
-            draggable:false,
-            editable:false,
+          // ページ遷移で受信したゆるキャラの緯度経度を基に、マーカーを作成する。
+          charaMarker = new google.maps.Marker({
+            position:new google.maps.LatLng(ido,keido),
             map:map,
-            center:llobj
+            title:yurucharaName,
+            draggable:false,
+            icon:"./testimg/ticon.png"
 
           });
 
-          // ゆるキャラの取得。
-          showYuruchara(llobj);
+          // 現在地からゆるキャラまでの徒歩ルート探索。
+          createRoute(llobj,charaMarker.getPosition());
 
-
+          
         },
         // 取得失敗した場合
         function(error) {
@@ -114,11 +106,66 @@ function initMap()
         // 航空写真は無効
         mapTypeControl:false
     
+    // Mapの色変更
+    //styles: [{
+      //featureType: 'all',
+      //elementType: 'all',
+          //stylers: [{
+        // 色相
+              //hue: '#5FB404'
+          //}, {
+        // 彩度
+              //saturation: -50
+          //}, {
+        // 明度
+              //lightness: 10
+          //}, {
+              //gamma: 1
+          //}]
+      //}]
+    
     };
     // Mapを生成
     map = new google.maps.Map(mapArea, mapOptions);
 
 }
+
+// 指定座標の出発地から指定座標の目的地までのルート検索を行う関数。
+// 引数:
+// llStart 出発地の緯度経度。
+// llFinish 目的地の緯度経度。
+function createRoute(llStart,llFinish)
+{
+
+  // ルート検索の条件を指定。
+  var routeOptions = 
+  {
+    origin: llStart, // 出発地
+    destination: llFinish, // 目的地
+    travelMode: google.maps.DirectionsTravelMode.WALKING //交通手段は徒歩。
+  };
+
+  var d = new google.maps.DirectionsService(); // ルート検索
+  var r = new google.maps.DirectionsRenderer({ // ルート描画
+      map:map,
+      // preserveViewport: true,
+      suppressMarkers: true //デフォルトのマーカー削除。
+  });
+  // ルート検索
+  d.route(routeOptions, function(result, status){
+      // OKの場合ルート描画
+      if (status == google.maps.DirectionsStatus.OK) {
+          r.setDirections(result);
+      }
+  });
+
+}
+
+function pageReload()
+{
+  window.location.reload(true);
+}
+
 
 // ドキュメントの読み込みが完全に完了したら、initMap関数を実行する。
 $(document).ready(function(){
@@ -127,50 +174,10 @@ $(document).ready(function(){
   // takaoLatLng = new google.maps.LatLng(parseFloat(35.631196), parseFloat(139.256493));
   // takaoLatLng = new google.maps.LatLng(parseFloat(35.688790), parseFloat(139.781267));
 
+  testdata_lat[1] = parseFloat(ido);
+  testdata_lon[1] = parseFloat(keido);
+
   // 現在地の緯度経度取得処理を実行する。
   getIdoKeido();
 });
-
-// 引数に渡された緯度・経度を基に、半径1km以内のゆるキャラを検索し、必要に応じて表示させる関数。
-function showYuruchara(ll)
-{
-  // 2点間の直線距離。
-  var between = 0;
-  // グーグルマップに表示させるアイコンデータ。
-  var gmap;
-
-  for(i=0;i<testdata_lat.length;i++)
-  {
-    // 2点間の直線距離を計算。
-    between = google.maps.geometry.spherical.computeDistanceBetween(ll,new google.maps.LatLng(parseFloat(testdata_lat[i]), parseFloat(testdata_lon[i])) );
-    // 直線距離が1km以内なら、ゆるキャラを表示する。
-    if(between < 1000)
-    {
-      gmap = new google.maps.Marker({
-          position:new google.maps.LatLng(parseFloat(testdata_lat[i]), parseFloat(testdata_lon[i])),
-          map:map,
-          title:testdata_charaname[i],
-          draggable:false,
-          icon:"./testimg/" + testdata_icon[i]
-      });
-
-      // アイコンが押されたら、idを表示。
-      (function(iVal) {
-        gmap.addListener('click', function() {
-          window.alert("id:" + iVal);
-        });
-      })( testdata_id[i] );
-
-      
-      testdata_gicon.push(gmap);
-
-    }
-  }
-
-}
-
-function pageReload()
-{
-  window.location.reload(true);
-}
 
