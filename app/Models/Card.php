@@ -29,4 +29,21 @@ class Card extends Model
             ->get();
         return $data;
     }
+    // ナビゲーションデータ
+    public function navigationData($cardID){
+        $data = DB::table('cards')
+            ->where('cards.CardID',$cardID)
+            ->get();
+        return $data;
+    }
+
+
+
+//    // 範囲検索
+//    public function range($lat,$lng){
+//        $data = DB::table('cards')
+//            ->whereBetween('latitude', [0.0089831601679492,0.0089831601679492])
+//            ->get();
+//        return $data;
+//    }
 }
