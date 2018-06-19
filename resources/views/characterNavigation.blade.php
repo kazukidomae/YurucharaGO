@@ -1,9 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
-    {{ $param = 32.806256}}
-    {{ $param2 = 130.705838}}
-    {{ $name = "くまモン" }}
+    {{ $param = $data[0]->latitude}}
+    {{ $param2 = $data[0]->longitude}}
+    {{ $name = $data[0]->CardName }}
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-8">
