@@ -21,8 +21,8 @@ class CardsTableSeeder extends Seeder
                 'PRPhoto_1blob' => '',
                 'PRPhoto_2blob' => '',
                 'PRPhoto_3blob' => '',
-                'PRPhoto_4blob' => '',
-                'PRPhoto_5blob' => '',
+                'latitude' => 32.806186,
+                'longitude' => 130.705834,
             ],
             [
                 'CardName' => 'ひこにゃん',
@@ -33,8 +33,8 @@ class CardsTableSeeder extends Seeder
                 'PRPhoto_1blob' => '',
                 'PRPhoto_2blob' => '',
                 'PRPhoto_3blob' => '',
-                'PRPhoto_4blob' => '',
-                'PRPhoto_5blob' => '',
+                'latitude' => 35.258945,
+                'longitude' => 136.242275,
             ],
         ]);
     }
