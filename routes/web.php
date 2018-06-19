@@ -19,7 +19,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 // 現在地検索
 Route::get('/search', 'MapViewController@search');
 // ナビゲーション
-Route::get('/navigation', 'MapViewController@navigation');
+Route::get('/navigation', 'GetDataController@getNavigationData');
 // カードリスト表示
 Route::get('/data', 'GetDataController@refinePrefectures');
 
