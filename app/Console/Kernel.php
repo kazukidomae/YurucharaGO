@@ -16,7 +16,8 @@ class Kernel extends ConsoleKernel
         //
         Commands\Cardprefecture::class,
         Commands\Carddetail::class,
-        Commands\Obtaincardlist::class
+        Commands\Obtaincardlist::class,
+        Commands\Obtaintrophyslist::class
     ];
 
     /**
