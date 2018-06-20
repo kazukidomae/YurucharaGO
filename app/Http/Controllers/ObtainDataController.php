@@ -7,7 +7,7 @@ use App\Models\Obtaincard;
 
 class ObtainDataController extends Controller
 {
-    //
+    // カード入手
     public function cardGet(Request $request)
     {
         $md = new Obtaincard();

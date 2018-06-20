@@ -4,6 +4,7 @@ var map;
 var mapLatLng;
 // マーカー
 var marker = [];
+// カードデータ
 var cardData;
 
 function initMap()
@@ -14,7 +15,7 @@ function initMap()
     navigator.geolocation.getCurrentPosition(
         // 取得成功した場合
         function(position) {
-            // 現在地
+            // 現在地取得
             mapLatLng = new google.maps.LatLng(parseFloat(position.coords.latitude), parseFloat(position.coords.longitude));
             var mapOptions = {
                 // 中央位置
@@ -26,6 +27,7 @@ function initMap()
             };
             // Map生成
             map = new google.maps.Map(mapArea, mapOptions);
+            // マーカー生成
             initMarker();
         },
         // 取得失敗した場合
@@ -56,8 +58,7 @@ function initMarker(){
         position: mapLatLng,
         map: map
     });
-
-    // Marker
+    // カード枚数分マーカー
     for (var item in cardData.data) {
         var markerPosition = {lat: cardData.data[item].latitude, lng: cardData.data[item].longitude};
         marker[markerCount] = new google.maps.Marker({
@@ -69,7 +70,7 @@ function initMarker(){
             },
             optimized: false
         });
-
+        // マーカーイベント付与
         markerEvent(markerCount);
         markerCount = ++markerCount;
     }
