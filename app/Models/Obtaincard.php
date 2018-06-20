@@ -9,9 +9,11 @@ use Illuminate\Support\Facades\Auth;
 class Obtaincard extends Model
 {
     public $timestamps = false;
-    public function userCardList(){
+    public function userCardList($userID){
         $data = DB::table('obtaincards')
-            ->where('obtaincards.userid',Auth::user()->id)
+            ->join('cards', 'obtaincards.CardID', '=', 'cards.CardID')
+            ->where('obtaincards.UserID',$userID)
+
             ->get();
         return $data;
     }

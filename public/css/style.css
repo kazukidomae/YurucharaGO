@@ -174,4 +174,113 @@ body {
   padding: 10%;
   background-color: #a00; }
 
+  /* trophy.html */
+  .rate {
+    background-color: #aaa;
+    margin: 15px 2px 0px 150px; }
+    .rate--param {
+      color: #fff;
+      display: inline-block;
+      text-align: right;
+      margin: 8px 0px 8px 5px;
+      font-size: 32px;
+      font-weight: lighter; }
+    .rate--comp {
+      color: #fff;
+      display: inline-block;
+      text-align: right;
+      margin: 3px 3px; }
+
+  article {
+    overflow: hidden; }
+
+  .trophy {
+    float: left;
+    width: 90px;
+    margin: 10px 11px 0px 17px; }
+    .trophy__img {
+      width: 90px; }
+    .trophy__name {
+      font-size: 13px;
+      text-align: center;
+      line-height: 3px; }
+
+  /* login.html & registration.html & infochange.html */
+  .title {
+    text-align: center;
+    padding: 20px;
+    font-size: 32px; }
+
+  .form {
+    margin: auto;
+    padding: 10px;
+    margin: 50% 50px; }
+    .form__enclosure {
+      text-align: center;
+      margin: 0px auto; }
+    .form__text {
+      padding: 15px;
+      outline: none;
+      display: block;
+      margin: 0px 0px 10px 0px;
+      border-radius: 4px; }
+    .form__checkbox{
+      margin: 16px 0;
+      font-size: 0.8rem;
+      line-height: 1.0rem;
+      text-align: center;
+    }
+    .form__link{
+      display: block;
+      margin: 20px;
+      font-size: 0.8rem;
+      line-height: 1.0rem;
+      text-align: center;
+    }
+    .form__button {
+      width: 150px;
+      height: 50px;
+      position: relative;
+      display: inline-block;
+      padding: 0.25em 0.5em;
+      margin: 3px;
+      text-decoration: none;
+      color: #fff;
+      background: #00bfff;
+      border-bottom: solid 2px #008b8b;
+      border-radius: 4px;
+      box-shadow: inset 0 2px 0 rgba(255, 255, 255, 0.2), 0 2px 2px rgba(0, 0, 0, 0.19);
+      font-weight: bold;
+      font-size: 90%; }
+      .form__button:active {
+        border-bottom: solid 2px #f0f8ff;
+        box-shadow: 0 0 2px rgba(0, 0, 0, 0.3); }
+
+  /* unsubscribe.html */
+  .discription {
+    text-align: center;
+    font-size: 16px; }
+
+  /* unsubscribecheck.html */
+  .cent {
+    text-align: center; }
+    .cent__gotop {
+      width: 150px;
+      height: 50px;
+      position: relative;
+      display: inline-block;
+      padding: 0.25em 0.5em;
+      margin: 3px;
+      text-decoration: none;
+      color: #fff;
+      background: #00bfff;
+      border-bottom: solid 2px #008b8b;
+      border-radius: 4px;
+      box-shadow: inset 0 2px 0 rgba(255, 255, 255, 0.2), 0 2px 2px rgba(0, 0, 0, 0.19);
+      font-weight: 500;
+      font-size: 90%; }
+      .cent__gotop:active {
+        border-bottom: solid 2px #f0f8ff;
+        box-shadow: 0 0 2px rgba(0, 0, 0, 0.3); }
+
 /*# sourceMappingURL=style.css.map */
