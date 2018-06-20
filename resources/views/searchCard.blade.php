@@ -32,6 +32,11 @@
                     <!-- グーグルマップのAPIの読み込み -->
                     <script src="https://maps.googleapis.com/maps/api/js?v=3&libraries=geometry&key=AIzaSyAG3Rgb56sGXTKKIABifXlwM_YHrc3z_5M&callback=initMap"></script>
 
+                    <p>緯度:</p>
+                    <p id="ido">あいう</p>
+                    <p>経度:</p>
+                    <p id="keido"></p>
+
                     <script type="text/javascript">
 
                         // phpからのゆるキャラの受信データを、配列に追加する。
@@ -56,8 +61,12 @@
 
                     </script>
 
+
+
+                    <p><button type="button" id="but" onclick="pageReload();">更新</button></p>
+
                     <form id="mainform" action="" method="post">        
-                        <p><input type="button" id="but" value="更新" onclick="pageReload();"></p>
+                        
                     </form>
 
                     <!-- グーグルマップの表示領域。 -->
@@ -68,4 +77,12 @@
         </div>
     </div>
 </div>
+<script type="text/javascript">
+
+$(function(){
+  getOnlyIdoKeido(testResults);
+                            
+});
+                    
+</script>
 @endsection

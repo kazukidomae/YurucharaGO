@@ -27,12 +27,13 @@ var takaoLatLng;
 // 高尾山のマーカーオブジェクト。
 var takaoMarker;
 
+// 現在地の緯度経度情報を格納するオブジェクト。
+var llobj;
+
 // グローバル変数　ここまで
 
 function getIdoKeido()
 {
-  // 現在地の緯度経度情報を格納するオブジェクト。
-  var llobj;
 
 	// 現在地を取得
     navigator.geolocation.getCurrentPosition(
@@ -58,6 +59,8 @@ function getIdoKeido()
 
           });
 
+          /*
+
           // 現在地から半径1kmで円を描画する。
           hereCircle = new google.maps.Circle({
             radius:1000,
@@ -76,6 +79,8 @@ function getIdoKeido()
 
           // ゆるキャラの取得。
           showYuruchara(llobj);
+
+          */
 
 
         },
@@ -124,9 +129,6 @@ function initMap()
 $(document).ready(function(){
   initMap();
 
-  // takaoLatLng = new google.maps.LatLng(parseFloat(35.631196), parseFloat(139.256493));
-  // takaoLatLng = new google.maps.LatLng(parseFloat(35.688790), parseFloat(139.781267));
-
   // 現在地の緯度経度取得処理を実行する。
   getIdoKeido();
 });
@@ -173,4 +175,44 @@ function pageReload()
 {
   window.location.reload(true);
 }
+
+function getOnlyIdoKeido(callback)
+{
+
+  var testIK = new Array(2);
+  var test;
+  navigator.geolocation.getCurrentPosition(
+      // 取得成功した場合
+        function(position) {
+          callback({"lat":position.coords.latitude, "lng":position.coords.longitude});
+        },
+        // 取得失敗した場合
+        function(error) {
+          switch(error.code) {
+            case 1: //PERMISSION_DENIED
+              alert("位置情報の利用が許可されていません");
+              break;
+            case 2: //POSITION_UNAVAILABLE
+              alert("現在位置が取得できませんでした");
+              break;
+            case 3: //TIMEOUT
+              alert("タイムアウトになりました");
+              break;
+            default:
+              alert("その他のエラー(エラーコード:"+error.code+")");
+              break;
+          }
+        }
+    );
+
+    // window.alert("test:" + test);
+
+}
+
+function testResults(geoCodeResults)
+{
+  $('#ido').text("" + geoCodeResults["lat"] + "");
+  $('#keido').text("" + geoCodeResults["lng"] + "");
+}
+
 
