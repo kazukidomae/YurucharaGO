@@ -29,3 +29,6 @@ Route::get('/cardDetail', 'GetDataController@getDetail');   //カード詳細
 Route::get('/trophylist', 'PagesController@trophylist');   //トロフィー一覧
 Route::get('/trophydetail', 'PagesController@trophydetail');   //トロフィー詳細
 Route::get('/configuration', 'PagesController@configuration');   //設定
+
+
+Route::get('/range', 'GetDataController@getRangeData');
