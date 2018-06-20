@@ -20,6 +20,7 @@ class DatabaseSeeder extends Seeder
             TrophysTableSeeder::class,
             UsersTableSeeder::class,
             ObtainTrophysTableSeeder::class,
+            ObtaincardTableSeeder::class,
         ]);
     }
 }

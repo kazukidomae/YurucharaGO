@@ -9,11 +9,11 @@ class Obitaintrophy extends Model
 {
     public $timestamps = false;
     
-    public function userTrophyList(){
+    public function userTrophyList($userID){
         $data = DB::table('obtaintrophys')
-            ->where('obtaintrophys.userid',Auth::id())
+            ->join('trophys', 'obtaintrophys.TrophyID', '=', 'trophys.TrophyID')
+            ->where('obtaintrophys.UserID',$userID)
             ->get();
-        
         return $data;
     }
 }
