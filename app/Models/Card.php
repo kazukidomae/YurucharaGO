@@ -37,10 +37,10 @@ class Card extends Model
         return $data;
     }
     // 範囲検索
-    public function range($lat,$lng){
+    public function rangeData($lat,$lng){
         $data = DB::table('cards')
             ->whereBetween('latitude', [$lat-0.0089831601679492, $lat+0.0089831601679492])
-            ->whereBetween('latitude', [$lng-0.0089831601679492, $lng+0.0089831601679492])
+            ->whereBetween('longitude', [$lng-0.0089831601679492, $lng+0.0089831601679492])
             ->get();
         return $data;
     }

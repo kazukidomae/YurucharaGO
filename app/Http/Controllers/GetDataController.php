@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Card;
+use Log;
 
 class GetDataController extends Controller
 {
@@ -35,5 +36,16 @@ class GetDataController extends Controller
         $data = $md->navigationData($request->input('CardID'));
         // ビューを返す
         return view('characterNavigation', ['data' => $data]);
+    }
+    // 範囲検索
+    public function getRangeData(Request $request)
+    {
+        // モデルのインスタンス化
+        $md = new Card();
+        // データ取得
+        $data = $md->rangeData($request->input('lat'),$request->input('lng'));
+        //Log::debug($data);
+        return response()->json(['data'=>$data]);
+        //return view('searchCard',['data' => $data]);
     }
 }
