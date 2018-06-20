@@ -1,14 +1,11 @@
 @extends('layouts.app')
 
 @section('content')
-    {{ $param = $data[0]->latitude}}
-    {{ $param2 = $data[0]->longitude}}
-    {{ $name = $data[0]->CardName }}
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
-                    <div class="card-header">Dashboard</div>
+                    <div class="card-header"></div>
 
                     <div class="card-body">
 
@@ -21,12 +18,11 @@
                         <script src="https://maps.googleapis.com/maps/api/js?v=3&libraries=geometry&key=AIzaSyAG3Rgb56sGXTKKIABifXlwM_YHrc3z_5M&callback=initMap"></script>
 
                         <script type="text/javascript">
-                            ido = <?php echo json_encode($param); ?>;
-                            keido = <?php echo json_encode($param2); ?>;
-                            yurucharaName = <?php echo json_encode($name); ?>;
+                            ido = <?php echo json_encode($data[0]->latitude); ?>;
+                            keido = <?php echo json_encode($data[0]->longitude); ?>;
+                            yurucharaName = <?php echo json_encode($data[0]->CardName); ?>;
                         </script>
- 
-                        <h1>テスト</h1>
+
                         <form id="mainform" action="" method="post">
                             <p><input type="button" id="but" value="更新" onclick="pageReload();"></p>
                         </form>
