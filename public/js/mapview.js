@@ -4,7 +4,7 @@ var map;
 var mapLatLng;
 // マーカー
 var marker = [];
-var cardData = [];
+var cardData;
 
 function initMap()
 {
@@ -90,40 +90,20 @@ function markerEvent(markerCount){
     // マウスクリック
     marker[markerCount].addListener('click', function(){
         $.ajax({
-            url:'/YurucharaGO/public/range',
+            url:'/YurucharaGO/public/getcard',
             type:'GET',
             data: {
-                'lat': geoCodeResults["lat"],
-                'lng': geoCodeResults["lng"],
+                'cardID': cardData.data[markerCount].CardID,
             },
             dataType:'json',
             timeout:1000,
         }).done(function(data1,textStatus,jqXHR) {
-            cardData = data1;
-            initMap();
+            console.log("カード入手");
         }).fail(function(jqXHR, textStatus, errorThrown ) {
 
         }).always(function(){
 
         });
-        // // POSTデータを送信
-        // var form = document.createElement('form');
-        // document.body.appendChild(form);
-        // var input = document.createElement('input');
-        // input.setAttribute('type','hidden');
-        //
-        // input.setAttribute('name', 'searchConditions[0]');
-        // input.setAttribute('value' , 'screenName');
-        // form.appendChild(input);
-        // input = input.cloneNode(false);
-        //
-        // input.setAttribute('name', 'searchConditions[1]');
-        // input.setAttribute('value' , document.getElementById('screen_name').innerHTML);
-        // form.appendChild(input);
-        //
-        // form.setAttribute('action', './php/Controller.php');
-        // form.setAttribute('method' , 'post');
-        // form.submit();
     });
 }
 

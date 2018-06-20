@@ -22,6 +22,10 @@ Route::get('/search', 'MapViewController@search');
 Route::get('/navigation', 'GetDataController@getNavigationData');
 // カードリスト表示
 Route::get('/data', 'GetDataController@refinePrefectures');
+// 範囲検索(非同期)
+Route::get('/range', 'GetDataController@getRangeData');
+// カード追加
+Route::get('/getcard', 'ObtainDataController@cardGet');
 
 Route::get('/cardlist', 'PagesController@cardlist');   //検索カード一覧
 Route::get('/obtaincardlist', 'PagesController@obtaincardlist');   //入手カード一覧
@@ -31,4 +35,4 @@ Route::get('/trophydetail', 'PagesController@trophydetail');   //トロフィー
 Route::get('/configuration', 'PagesController@configuration');   //設定
 
 
-Route::get('/range', 'GetDataController@getRangeData');
+
