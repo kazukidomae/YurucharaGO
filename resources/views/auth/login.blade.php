@@ -2,6 +2,7 @@
 
 @section('content')
 <div class="form">
+  <div class="title">{{ __('Login') }}</div>
   <form method="POST" action="{{ route('login') }}">
     @csrf
 
