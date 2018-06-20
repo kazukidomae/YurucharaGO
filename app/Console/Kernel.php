@@ -15,7 +15,8 @@ class Kernel extends ConsoleKernel
     protected $commands = [
         //
         Commands\Cardprefecture::class,
-        Commands\Carddetail::class
+        Commands\Carddetail::class,
+        Commands\Obtaincardlist::class
     ];
 
     /**

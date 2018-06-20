@@ -8,11 +8,11 @@ use Illuminate\Support\Facades\DB;
 class Obtaincard extends Model
 {
     public $timestamps = false;
-    public function userCardList(){
+    public function userCardList($userID){
         $data = DB::table('obtaincards')
-            ->where('obtaincards.userid',Auth::id())
+            ->join('cards', 'obtaincards.CardID', '=', 'cards.CardID')
+            ->where('obtaincards.UserID',$userID)
             ->get();
-        
         return $data;
     }
 }
