@@ -69,14 +69,16 @@ body {
 /* カード一覧 */
 .card {
   position: relative;
-  float: left;
-  width: 30%;
-  height: auto;
-  margin: 10px 6px; }
+  width: 100%; }
   .card__link{
-    width: 100%;
-    height: 100%;
+  width: 100%;
+  height: 100%;
   }
+  .card--list {
+    width: 30%;
+    float: left;
+    height: auto;
+    margin: 10px 6px; }
   .card__img {
     width: 100%;
     height: auto; }
@@ -85,10 +87,24 @@ body {
     top: 9px;
     left: 11.49px;
     width: 24%; }
+    .card__mark--detail {
+      top: 33px;
+      left: 36px;
+      width: 22%; }
   .card__chara {
     position: absolute;
     top: 26px;
     width: 100%; }
+  .card__name {
+    position: absolute;
+    top: 290px;
+    width: 85.6%;
+    margin-left: 17px;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.8);
+    font-size: 1.4rem;
+    line-height: 2rem;
+    text-align: center; }
 
 .textbox {
   position: absolute;
@@ -106,6 +122,31 @@ body {
     font-weight: bolder;
     font-size: 1.0rem;
     text-align: center; }
+
+.info {
+  position: absolute;
+  top: 326px;
+  box-sizing: border-box;
+  overflow: scroll;
+  width: 91%;
+  height: 302px;
+  margin: 17px;
+  padding: 10px;
+  background-color: rgba(255, 255, 255, 0.8); }
+  .info__map {
+    margin: 10px 0;
+    font-size: 1.2rem;
+    line-height: 1.6rem; }
+  .info__text {
+    font-size: 1.2rem;
+    line-height: 1.6rem; }
+    .info__text p {
+      margin-bottom: 10px; }
+  .info__images img {
+    float: left;
+    width: 140px;
+    margin: 10px;
+    background-color: #fff; }
 
 /* カード一覧終わり */
 /* トップページ */
