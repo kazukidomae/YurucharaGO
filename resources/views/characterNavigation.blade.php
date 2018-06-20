@@ -18,9 +18,10 @@
                         <script src="https://maps.googleapis.com/maps/api/js?v=3&libraries=geometry&key=AIzaSyAG3Rgb56sGXTKKIABifXlwM_YHrc3z_5M&callback=initMap"></script>
 
                         <script type="text/javascript">
-                            ido = <?php echo json_encode($data[0]->latitude); ?>;
-                            keido = <?php echo json_encode($data[0]->longitude); ?>;
-                            yurucharaName = <?php echo json_encode($data[0]->CardName); ?>;
+                            lat = @json($data[0]->latitude);
+                            lng = @json($data[0]->longitude);
+                            CharacterName = @json($data[0]->CardName);
+                            CharacterIllustration = @json($data[0]->CardIllustration);
                         </script>
 
                         <form id="mainform" action="" method="post">
