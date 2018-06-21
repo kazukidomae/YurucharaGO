@@ -2,7 +2,6 @@
 /* 共通部分ここから */
 body {
   height: 100%;
-  height: 100%;
   font-size: 10px;
   line-height: 10px; }
 
@@ -19,8 +18,8 @@ body {
   .header__logo {
     display: block;
     float: left;
-    margin-top: 5px;
-    padding: 10px;
+    width: 180px;
+    padding: 2px;
     margin-left: 24%;
     font-size: 1.4rem;
     line-height: 1.4rem; }
@@ -191,8 +190,10 @@ body {
       text-align: right;
       margin: 3px 3px; }
 
-  article {
-    overflow: hidden; }
+  .inner {
+    height: 100%;
+    margin: 10px;
+   }
 
   .trophy {
     float: left;
@@ -201,9 +202,9 @@ body {
     .trophy__img {
       width: 90px; }
     .trophy__name {
-      font-size: 13px;
+      font-size: 0.8rem;
       text-align: center;
-      line-height: 3px; }
+      line-height: 1.4rem; }
 
   /* login.html & registration.html & infochange.html */
   .title {
@@ -214,7 +215,7 @@ body {
   .form {
     margin: auto;
     padding: 10px;
-    margin: 50% 50px; }
+    margin: 42% 44px; }
     .form__enclosure {
       text-align: center;
       margin: 0px auto; }

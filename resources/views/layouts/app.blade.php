@@ -24,9 +24,9 @@
 <body>
     <div id="app">
       <header class="header">
-        <h1 class="header__logo">
+        <h1>
           <a href="{{ url('/') }}">
-            {{ config('app.name', 'YurucharaGO') }}
+            <img src="{{ asset('images/logo.png') }}" class="header__logo">
           </a>
         </h1>
         <!-- Authentication Links -->
