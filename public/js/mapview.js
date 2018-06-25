@@ -29,6 +29,8 @@ function initMap()
             map = new google.maps.Map(mapArea, mapOptions);
             // マーカー生成
             initMarker();
+            // 現在地から半径1kmで円を描画。
+            initCircle(mapLatLng);
         },
         // 取得失敗した場合
         function(error) {
@@ -48,6 +50,28 @@ function initMap()
           }
         }
     );
+}
+
+// 円生成
+// 引数:latlng　生成したい円の中心座標(google.maps.LatLng)
+function initCircle(latlng)
+{
+	// 円描画
+	var circle = new google.maps.Circle({
+		map:map,
+		center:latlng,
+		radius:1000,
+		clickable:false,
+		draggable:false,
+		editable:false,
+		fillColor:"#caffff",
+		fillOpacity:0.4,
+		strokeColor:"#0028a0",
+		strokeOpacity:0.8,
+		strokeWeight:3
+
+	});
+
 }
 
 // Marker生成
@@ -155,6 +179,14 @@ function positionProcessing(geoCodeResults)
 
     });
 }
+
+// ページ更新処理
+function pageReload()
+{
+	window.location.reload(true);
+}
+
+
 $(document).ready(function(){
 
 });
