@@ -17,12 +17,16 @@ class CreateCardsTable extends Migration
             $table->increments('CardID');
             $table->string('CardName',20);
             $table->integer('PrefecturesID')->unsigned();
-            $table->binary('CardIllustration');
+//            $table->binary('CardIllustration');
+            $table->string('CardIllustration',100);
             $table->text('Introduction');
             $table->string('CardColor',7);
-            $table->binary('PRPhoto_1blob')->nullable();
-            $table->binary('PRPhoto_2blob')->nullable();
-            $table->binary('PRPhoto_3blob')->nullable();
+//            $table->binary('PRPhoto_1blob')->nullable();
+//            $table->binary('PRPhoto_2blob')->nullable();
+//            $table->binary('PRPhoto_3blob')->nullable();
+            $table->string('PRPhoto_1blob',100)->nullable();
+            $table->string('PRPhoto_2blob',100)->nullable();
+            $table->string('PRPhoto_3blob',100)->nullable();
             $table->double('latitude');
             $table->double('longitude');
 
