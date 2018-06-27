@@ -12,7 +12,7 @@
                     <!-- スタイルシートのインポート -->
                     <link href="{{ asset('/css/map.css') }}" rel="stylesheet" type="text/css">
                     <!-- グーグルマップのAPIの読み込み -->
-                    <script src="https://maps.googleapis.com/maps/api/js?v=3&libraries=geometry&key=AIzaSyAG3Rgb56sGXTKKIABifXlwM_YHrc3z_5M&callback=initMap"></script>
+                    <script src="https://maps.googleapis.com/maps/api/js?v=3&libraries=geometry&key=AIzaSyAG3Rgb56sGXTKKIABifXlwM_YHrc3z_5M&callback=initMap&language=en"></script>
 
                     <!-- 現在地非同期処理 -->
                     <script type="text/javascript">
