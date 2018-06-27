@@ -17,7 +17,8 @@ class CreatePrefecturesTable extends Migration
             $table->increments('PrefecturesID');
             $table->integer('RegionID')->unsigned();
             $table->string('PrefecturesName',20)->unique();
-            $table->binary('PrefecturesIcon');
+            //$table->binary('PrefecturesIcon');
+            $table->string('PrefecturesIcon',100)->nullable();
 
             $table->foreign('RegionID')->references('RegionID')->on('regions');
         });
