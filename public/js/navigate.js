@@ -9,6 +9,13 @@ var lng = 0;
 // キャラクター名
 var CharacterName = "";
 var CharacterIllustration;
+
+// ルートの距離を格納する変数。
+var routeDistance;
+// ルートの時間を格納する変数。
+var routeTime;
+
+
 function initMap()
 {
     // Map描画要素
@@ -87,6 +94,16 @@ function createRoute(llStart,llFinish)
         // OKの場合ルート描画
         if (status == google.maps.DirectionsStatus.OK) {
             r.setDirections(result);
+
+            // ルートの距離(km単位)、時間情報(時間と分)をセット。
+            routeDistance = Math.floor(result.routes[0].legs[0].distance.value / 10.0) / 100.0;
+            routeDistance = routeDistance + "km";
+            routeTime = getHM( result.routes[0].legs[0].duration.value );
+
+            $('#routeDistance').text( routeDistance );
+            $('#routeTime').text( routeTime );
+
+
         }
     });
 }
@@ -94,4 +111,26 @@ function createRoute(llStart,llFinish)
 $(document).ready(function(){
   initMap();
 });
+
+// 渡された秒数から時間・分の文字列を返す関数。
+function getHM( seconds )
+{
+
+    // 戻り値を返す変数。
+    var ret = "";
+
+    // 時間を求める。
+    var hour = Math.floor( seconds / 3600.0 )
+    // 分を求める。
+    var minute = Math.floor( (seconds - (hour * 3600.0)) / 60.0 );
+
+    if(hour >= 1)
+    {
+        ret = ret + hour + "時間";
+    }
+    ret = ret + minute + "分";
+
+    return ret;
+
+}
 
