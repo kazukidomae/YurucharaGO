@@ -49,7 +49,11 @@ function initMap()
                 position:new google.maps.LatLng(lat,lng),
                 map:map,
                 draggable:false,
-                icon:"./testimg/ticon.png"
+                icon:
+                {
+                    url:CharacterIllustration,
+                    scaledSize:new google.maps.Size(100, 100) //画像のサイズ
+                }
             });
             // ルート探索
             createRoute(mapLatLng, charaMarker.getPosition());

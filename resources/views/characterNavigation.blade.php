@@ -15,7 +15,7 @@
                         <!-- スタイルシートのインポート -->
                         <link href="{{ asset('/css/map.css') }}" rel="stylesheet" type="text/css">
                         <!-- グーグルマップのAPIの読み込み -->
-                        <script src="https://maps.googleapis.com/maps/api/js?v=3&libraries=geometry&key=AIzaSyAG3Rgb56sGXTKKIABifXlwM_YHrc3z_5M&callback=initMap"></script>
+                        <script src="https://maps.googleapis.com/maps/api/js?v=3&libraries=geometry&key=AIzaSyAG3Rgb56sGXTKKIABifXlwM_YHrc3z_5M&callback=initMap&language=en"></script>
 
                         <script type="text/javascript">
                             lat = @json($data[0]->latitude);
@@ -30,6 +30,8 @@
 
                         <!-- グーグルマップの表示領域。 -->
                         <div id="map"></div>
+
+                        
 
                         <!-- ルートの距離と時間を表示。 -->
                         <p>ルートの総距離:</p>
