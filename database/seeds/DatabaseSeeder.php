@@ -15,11 +15,11 @@ class DatabaseSeeder extends Seeder
         $this->call([
             RegionsTableSeeder::class,
             PrefecturesTableSeeder::class,
+            AttributesTableSeeder::class,
             CardsTableSeeder::class,
+            PRsTableSeeder::class,
             EventsTableSeeder::class,
-            TrophysTableSeeder::class,
             UsersTableSeeder::class,
-            ObtainTrophysTableSeeder::class,
             ObtaincardTableSeeder::class,
         ]);
     }
