@@ -32,12 +32,12 @@ class CardsTableSeeder extends Seeder
                 'CardColor' => '#ffffff',
                 'CardDescription' =>'武蔵の国・国分寺跡から発掘された“あぶみ瓦”がモチーフの、丸いグレーの顔からにょきっと出た足がチャームポイントの妖精。',
                 'AttributeID' => 3,
-      
                 
+            ],      
             [
                 'CardName' => '人之助',
                 'CardIllustrationPath' =>'testimg/test_card_materials/illustration/ninnosuke.png',
-                'CardColor' 
+                'CardColor' => '#000000',
                 'CardDescription' =>'下町キング人之助！日本橋人形町のヤンチャ坊主です。ピンクの肉球を触ると、子宝・恋愛運アップ、黄色の肉球を触ると、金運アップ。',
                 'AttributeID' => 3,
             ],
@@ -46,14 +46,14 @@ class CardsTableSeeder extends Seeder
                 'CardIllustrationPath' => 'testimg/test_card_materials/illustration/kokoru.png',
                 'CardColor' => '#000000',
                 'CardDescription' => '狸に憧れるイルカで、頭にホタテをのせている。性別、年齢は不明。おっちょこちょいで、やさしく、ちょっぴり甘えん坊な性格。貝殻集めが趣味。',
-                'AttributeID' => 5,
+                'AttributeID' => 1,
             ],
             [
                 'CardName' => 'あたまがふくしまちゃん',
                 'CardIllustrationPath' => 'testimg/test_card_materials/illustration/hukusimachan.png',
                 'CardColor' => '#ff0000',
                 'CardDescription' => '福島が大好きで仕方ない5歳の女の子。',
-                'AttributeID' => 5,
+                'AttributeID' => 1,
             ],
             [
                 'CardName' => 'ずーしーほっきー',
@@ -95,7 +95,7 @@ class CardsTableSeeder extends Seeder
                 'CardIllustrationPath' =>'testimg/test_card_materials/illustration/tokushi.png',
                 'CardColor' => '#0000ff',
                 'CardDescription' =>'徳島市の「トク」に、徳島市の「市」、英語で海の「sea」などにつながる「シィ」を組み合わせて「トクシィ」。「トクシマシティ」の略にもなっていて、「妖精 = ピクシィ」ともつながっている。',
-                'AttributeID' => 5,
+                'AttributeID' => 1,
             ],
             
         ]);
