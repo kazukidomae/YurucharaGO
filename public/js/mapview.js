@@ -89,7 +89,7 @@ function initMarker(){
             position: markerPosition,
             map: map,
             icon: {
-                url: cardData.data[item].CardIllustration,
+                url: cardData.data[item].CardIllustrationPath,
                 scaledSize: new google.maps.Size(45, 45)
             },
             optimized: false
@@ -173,6 +173,7 @@ function positionProcessing(geoCodeResults)
     }).done(function(data1,textStatus,jqXHR) {
         cardData = data1;
         initMap();
+        console.log(cardData);
     }).fail(function(jqXHR, textStatus, errorThrown ) {
 
     }).always(function(){
