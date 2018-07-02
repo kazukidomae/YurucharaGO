@@ -15,6 +15,25 @@ var routeDistance;
 // ルートの時間を格納する変数。
 var routeTime;
 
+// 徒歩ルートの距離を格納する変数
+var routeWalkDistance;
+// 徒歩ルートの時間を格納する変数
+var routeWalkTime;
+// 自動車ルートの距離を格納する変数
+var routeCarDistance;
+// 自動車ルートの時間を格納する変数
+var routeCarTime;
+
+// 吹き出し(インフォウィンドウ)内部の情報を格納する変数。
+var iw;
+// 現在吹き出しを表示中か記録するフラグ。表示中ならtrue、まだ表示していなければfalse。
+var iwnow = false;
+
+// 現在地のマーカー。
+var hereMarker;
+// ゆるキャラのマーカー。
+var charaMarker;
+
 
 function initMap()
 {
@@ -55,8 +74,12 @@ function initMap()
                     scaledSize:new google.maps.Size(100, 100) //画像のサイズ
                 }
             });
+
             // ルート探索
-            createRoute(mapLatLng, charaMarker.getPosition());
+            createRoute(mapLatLng, charaMarker.getPosition(),"徒歩",addIconClickEvent);
+            // createRoute(mapLatLng, charaMarker.getPosition(),"自動車",addIconClickEvent);
+
+            // マーカーをクリックした
         },
         // 取得失敗した場合
         function(error) {
@@ -78,21 +101,60 @@ function initMap()
     );
 }
 
-function createRoute(llStart,llFinish)
+// ルート探索を行う関数。
+// 引数:
+// llStart 出発地の緯度経度。
+// llFinish 目的地の緯度経度。
+// travel: 移動手段。　"徒歩":徒歩で移動　"自動車":自動車で移動。
+// callback: ルート探索が完了した後に実行するコールバック関数。
+function createRoute(llStart,llFinish,travel,callback)
 {
+
+    var routeOptions;
+    var r;
+
     // ルート検索の条件を指定。
-    var routeOptions =
+    if(travel == "徒歩")
     {
-        origin: llStart, // 出発地
-        destination: llFinish, // 目的地
-        travelMode: google.maps.DirectionsTravelMode.WALKING //交通手段は徒歩。
-    };
+        routeOptions =
+        {
+            origin: llStart, // 出発地
+            destination: llFinish, // 目的地
+            travelMode: google.maps.DirectionsTravelMode.WALKING //交通手段は徒歩。
+        };
+        r = new google.maps.DirectionsRenderer({ // ルート描画
+            map:map,
+            suppressMarkers: true,
+            polylineOptions: {
+                strokeColor: '#43a5fe',
+                opacity:0.7,
+                strokeWeight:5
+            }
+
+        });
+    }
+    else if(travel == "自動車")
+    {
+        routeOptions =
+        {
+            origin: llStart, // 出発地
+            destination: llFinish, // 目的地
+            travelMode: google.maps.DirectionsTravelMode.DRIVING //交通手段は徒歩。
+        };
+        r = new google.maps.DirectionsRenderer({ // ルート描画
+            map:map,
+            suppressMarkers: true,
+            polylineOptions: {
+                strokeColor: '#ff227a',
+                opacity:0.7,
+                strokeWeight:5
+            }
+
+        });
+    }
 
     var d = new google.maps.DirectionsService(); // ルート検索
-    var r = new google.maps.DirectionsRenderer({ // ルート描画
-        map:map,
-        suppressMarkers: true //デフォルトのマーカー削除。
-    });
+    
     // ルート検索
     d.route(routeOptions, function(result, status){
         // OKの場合ルート描画
@@ -104,13 +166,69 @@ function createRoute(llStart,llFinish)
             routeDistance = routeDistance + "km";
             routeTime = getHM( result.routes[0].legs[0].duration.value );
 
-            $('#routeDistance').text( routeDistance );
-            $('#routeTime').text( routeTime );
+            if( travel == "徒歩" )
+            {
+                routeWalkDistance = routeDistance;
+                routeWalkTime = routeTime;
+            }
+            else if( travel == "自動車" )
+            {
+                routeCarDistance = routeDistance;
+                routeCarTime = routeTime;
+            }
 
+            // コールバック関数を実行する。
+            callback(travel);
 
         }
     });
 }
+
+// ルート探索処理が終わった後に呼び出される関数。自動車ルート探索終了後、ゆるキャラアイコンにクリックイベントを追加する。
+function addIconClickEvent(travel)
+{
+    // 変数宣言　ここから
+    // 吹き出しのHTMLデータを格納する変数。
+    var naviHTML = '';
+    // 変数宣言　ここまで
+
+    // 自動車ルートの探索が終了した場合
+    if(travel == "自動車")
+    {
+        // 自動車・徒歩ルートの情報から、吹き出しHTMLを生成。
+        naviHTML += '<table><tr><td colspan="2"></td><th>距離</th><th>所要時間</th></tr>';
+        // 徒歩ルート
+        naviHTML += '<tr><td><div class="walkLine"></div></td><td><img src="./testimg/walkicon.png" alt="walk" width="48" height="48"></td>';
+        naviHTML += '<td>' + routeWalkDistance + '</td><td>' + routeWalkTime + '</td></tr>';
+        // 自動車ルート
+        naviHTML += '<tr><td><div class="carLine"></div></td><td><img src="./testimg/caricon.png" alt="car" width="48" height="48"></td>';
+        naviHTML += '<td>' + routeCarDistance + '</td><td>' + routeCarTime + '</td></tr>';
+        naviHTML += '</table>';
+
+        // マーカーをクリックした際のイベント付加。
+        charaMarker.addListener('click', function(e){
+
+            // 吹き出しの作成
+            iw = new google.maps.InfoWindow({
+                position:e.latLng,
+                content:naviHTML
+            });
+
+            iw.open(map);
+
+            
+        });
+    }
+    // 徒歩ルートの探索が終了した場合
+    else if(travel == "徒歩")
+    {
+        // 自動車ルートの探索を開始する。
+        createRoute(mapLatLng, charaMarker.getPosition(),"自動車",addIconClickEvent);
+    }
+
+}
+
+
 // ドキュメントの読み込みが完全に完了したら、initMap関数を実行する。
 $(document).ready(function(){
   initMap();
