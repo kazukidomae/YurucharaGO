@@ -5,21 +5,21 @@ namespace App\Console\Commands;
 use Illuminate\Console\Command;
 use App\Models\Obtaincard;
 
-class Obtaincardfilter_Prefectures extends Command
+class Obtaincardfilter_Attribute extends Command
 {
     /**
      * The name and signature of the console command.
      *
      * @var string
      */
-    protected $signature = 'obtaincardfilter:Prefectures {PrefecturesID}';
+    protected $signature = 'obtaincardfilter:Attribute {AttributeID}';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = '取得カード都道府県絞り込み';
+    protected $description = '取得カード・属性絞り込み';
 
     /**
      * Create a new command instance.
@@ -38,11 +38,10 @@ class Obtaincardfilter_Prefectures extends Command
      */
     public function handle()
     {
-        //obitaincardsデータベースの指定されたユーザのデータを取得
-        $obitaincard = new Obtaincard();
-        $PrefecturesID = $this->argument("PrefecturesID");
-        $data = $obitaincard->obtaincardsFilter($PrefecturesID);
-        // echo $PrefecturesID;
+        //obtaincardsデータベース指定されたユーザの情報を取得
+        $obtaincard = new Obtaincard();
+        $AttributeID = $this->argument("AttributeID");
+        $data = $obtaincard->attributeFilter($attributeID);
         echo $data;
     }
 }
