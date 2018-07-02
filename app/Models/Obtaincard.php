@@ -55,7 +55,7 @@ class Obtaincard extends Model
             ->join('prefectures','prs.PrefecturesID','=','prefectures.PrefecturesID')
             ->join('regions','prefectures.RegionID','=','regions.RegionID')
             ->where('obtaincards.UserID',1)
-            ->where('regions.RegionID',$attributeID)
+            ->where('regions.RegionID',$regionID)
             ->groupBy('cards.CardID')
             ->get();
         return $data;
