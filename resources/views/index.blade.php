@@ -7,9 +7,9 @@
                 <div class="card">
                     <div class="card-header">都道府県一覧</div>
                     <div class="card-body">
-                        <a href="{{ action('GetDataController@refinePrefectures') }}?Prefectures=Shiga">滋賀</a>
-                        <a href="{{ action('GetDataController@refinePrefectures') }}?Prefectures=Kumamoto">熊本</a>
-                        <a href="{{ action('GetDataController@refinePrefectures') }}?Prefectures=Tokyo">東京</a>
+                        <a href="{{ action('GetDataController@refinePrefectures') }}?Prefectures=25">滋賀</a>
+                        <a href="{{ action('GetDataController@refinePrefectures') }}?Prefectures=43">熊本</a>
+                        <a href="{{ action('GetDataController@refinePrefectures') }}?Prefectures=13">東京</a>
                         <ul>
                         </ul>
                     </div>

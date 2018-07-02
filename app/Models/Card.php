@@ -14,8 +14,11 @@ class Card extends Model
     public function prefecturesCardList($prefectures)
     {
         $data = DB::table('cards')
-            ->join('prefectures', 'cards.PrefecturesID', '=', 'prefectures.PrefecturesID')
-            ->where('prefectures.PrefecturesName',$prefectures)
+            ->join('attributes','cards.AttributeID','=','attributes.AttributeID')
+            ->join('prs', 'cards.CardID', '=', 'prs.CardID')
+            ->join('prefectures','prs.PrefecturesID','=','prefectures.PrefecturesID')
+            ->where('prs.PrefecturesID',$prefectures)
+            ->groupBy('cards.CardID')
             ->get();
         return $data;
     }
@@ -23,8 +26,10 @@ class Card extends Model
     // カード詳細
     public function cardDetail($cardID){
         $data = DB::table('cards')
-            ->join('prefectures', 'cards.PrefecturesID', '=', 'prefectures.PrefecturesID')
-            ->join('regions','prefectures.RegionID', '=','regions.RegionID')
+            ->join('prs', 'cards.CardID', '=', 'prs.CardID')
+            ->join('events','cards.CardID', '=','events.CardID')
+            ->join('attributes','cards.AttributeID','=','attributes.AttributeID')
+            ->join('prefectures','prs.PrefecturesID','=','prefectures.PrefecturesID')
             ->where('cards.CardID',$cardID)
             ->get();
         return $data;
@@ -32,6 +37,7 @@ class Card extends Model
     // ナビゲーションデータ
     public function navigationData($cardID){
         $data = DB::table('cards')
+            ->join('prs', 'cards.CardID', '=', 'prs.CardID')
             ->where('cards.CardID',$cardID)
             ->get();
         return $data;
@@ -39,6 +45,7 @@ class Card extends Model
     // 範囲検索
     public function rangeData($lat,$lng){
         $data = DB::table('cards')
+            ->join('prs', 'cards.CardID', '=', 'prs.CardID')
             ->whereBetween('latitude', [$lat-0.0089831601679492, $lat+0.0089831601679492])
             ->whereBetween('longitude', [$lng-0.0089831601679492, $lng+0.0089831601679492])
             ->get();

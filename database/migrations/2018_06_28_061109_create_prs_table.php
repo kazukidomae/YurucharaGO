@@ -20,9 +20,9 @@ class CreatePrsTable extends Migration
             $table->string('PRName',100);
             $table->string('PRPhotoPath',100);
             $table->text('PRDescription');
-            $table->float('latitude');
-            $table->float('longitude');
-            
+            $table->double('latitude');
+            $table->double('longitude');
+
             $table->foreign('CardID')->references('CardID')->on('cards');
             $table->foreign('PrefecturesID')->references('PrefecturesID')->on('prefectures');
         });

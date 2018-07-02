@@ -21,7 +21,7 @@
                             lat = @json($data[0]->latitude);
                             lng = @json($data[0]->longitude);
                             CharacterName = @json($data[0]->CardName);
-                            CharacterIllustration = @json($data[0]->CardIllustration);
+                            CharacterIllustration = @json($data[0]->CardIllustrationPath);
                         </script>
 
                         <form id="mainform" action="" method="post">
@@ -31,7 +31,7 @@
                         <!-- グーグルマップの表示領域。 -->
                         <div id="map"></div>
 
-                        
+
 
                         <!-- ルートの距離と時間を表示。 -->
                         <p>ルートの総距離:</p>
