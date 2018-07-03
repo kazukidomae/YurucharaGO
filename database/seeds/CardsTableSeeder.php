@@ -21,7 +21,6 @@ class CardsTableSeeder extends Seeder
             [
                 'CardName' => 'ひこにゃん',
                 'CardIllustrationPath' => 'testimg/test_card_materials/illustration/hikonyan.png',
-                'CardColor' => '#ff0000',
                 'CardDescription' => '彦根藩二代当主である井伊直孝公をお寺の門前で手招きして雷雨から救ったと伝えられる"招き猫”と、井伊軍団のシンボルとも言える赤備えの兜を合体させて生まれたキャラクター。',
                 'AttributeID' => 2,
             ],
