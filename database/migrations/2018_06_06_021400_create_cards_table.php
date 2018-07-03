@@ -18,7 +18,6 @@ class CreateCardsTable extends Migration
             $table->string('CardName',20);
             $table->string('CardIllustrationPath',100);
             //$table->string('CardColor',7);
-            $table->string('CardDescription');
             $table->integer('AttributeID')->unsigned();
         });
         //DB::statement('alter table cards add location geometry' );
