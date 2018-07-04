@@ -57,7 +57,7 @@
             <li class="menu__item"><a href="{{ action('PagesController@index') }}" class="menu__btn"><img src="{{ asset('images/map.png') }}"></a></li>
             <li class="menu__item"><a href="{{ action('MapViewController@search') }}" class="menu__btn"><img src="{{ asset('images/search.png') }}"></a></li>
             <li class="menu__item"><a href="{{ action('CollectionController@cardGet') }}" class="menu__btn"><img src="{{ asset('images/torophy.png') }}"></a></li>
-            <li class="menu__item"><a href="{{ action('PagesController@trophylist') }}" class="menu__btn"><img src="{{ asset('images/torophy.png') }}"></a></li>
+            <li class="menu__item"><a href="{{ action('ObtainDataController@trophyGet') }}" class="menu__btn"><img src="{{ asset('images/torophy.png') }}"></a></li>
             <li class="menu__item"><a href="{{ action('PagesController@configuration') }}" class="menu__btn"><img src="{{ asset('images/setting.png') }}"></a></li>
           </ul>
         </nav>

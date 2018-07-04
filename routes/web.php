@@ -28,12 +28,16 @@ Route::get('/range', 'GetDataController@getRangeData');
 Route::get('/getcard', 'ObtainDataController@cardGet');
 //入手カード一覧
 Route::get('/obtaincardlist', 'CollectionController@cardGet')->middleware('auth');
+//入手トロフィー
+Route::get('/trophylist', 'ObtainDataController@trophyGet')->middleware('auth');
+
+
 
 Route::get('/cardlist', 'PagesController@cardlist');   //検索カード一覧
 Route::get('/cardDetail', 'GetDataController@getDetail');   //カード詳細
-Route::get('/trophylist', 'PagesController@trophylist')->middleware('auth');;   //トロフィー一覧
-Route::get('/trophydetail', 'PagesController@trophydetail')->middleware('auth');;   //トロフィー詳細
-Route::get('/configuration', 'PagesController@configuration')->middleware('auth');;   //設定
+   //トロフィー一覧
+Route::get('/trophydetail', 'PagesController@trophydetail')->middleware('auth');   //トロフィー詳細
+Route::get('/configuration', 'PagesController@configuration')->middleware('auth');   //設定
 
 
 
