@@ -15,7 +15,7 @@ class Obitaintrophy extends Model
             ->join('cards','obtaincards.CardID','=','cards.CardID')
             ->join('prefectures','cards.PrefecturesID','=','prefectures.PrefecturesID')
             ->join('regions','prefectures.RegionID','=','regions.RegionID')
-            ->select(DB::raw('regions.RegionName,count(regions.RegionID) as RegionCard'))
+            ->select(DB::raw('regions.RegionName,count(regions.RegionID) as RegionCount'))
             ->where('UserID',1)
             ->get()->keyBy('RegionName');
         return $data;
@@ -25,7 +25,7 @@ class Obitaintrophy extends Model
         $data = DB::table('cards')
             ->join('prefectures','cards.PrefecturesID','=','prefectures.PrefecturesID')
             ->join('regions','prefectures.RegionID','=','regions.RegionID')
-            ->select(DB::raw('regions.RegionName,count(regions.RegionID) as RegionCard'))
+            ->select(DB::raw('regions.RegionName,count(regions.RegionID) as RegionCount'))
             ->groupBy('regions.RegionID')
             ->get()->keyBy('RegionName');
         return $data;
@@ -35,7 +35,7 @@ class Obitaintrophy extends Model
         $data = DB::table('obtaincards')
             ->join('cards','obtaincards.CardID','=','cards.CardID')
             ->join('attributes','cards.AttributeID','=','attributes.AttributeID')
-            ->select(DB::raw('attributes.AttributeName,count(cards.AttributeID) as AttributeCard'))
+            ->select(DB::raw('attributes.AttributeName,count(cards.AttributeID) as AttributeCount'))
             ->where('UserID',1)
             ->groupBy('cards.AttributeID')
             ->get()->keyBy('AttributeName');
@@ -45,7 +45,7 @@ class Obitaintrophy extends Model
     public function attributeCardMaster(){
         $data = DB::table('cards')
             ->join('attributes','cards.AttributeID','=','attributes.AttributeID')
-            ->select(DB::raw('attributes.AttributeName,count(cards.AttributeID) as AttributeCard'))
+            ->select(DB::raw('attributes.AttributeName,count(cards.AttributeID) as AttributeCount'))
             ->groupBy('cards.AttributeID')
             ->get()->keyBy('AttributeName');
         return $data;
