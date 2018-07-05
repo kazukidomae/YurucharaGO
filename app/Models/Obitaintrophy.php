@@ -13,20 +13,17 @@ class Obitaintrophy extends Model
     public function regionCardObtain(){
         $data = DB::table('obtaincards')
             ->join('cards','obtaincards.CardID','=','cards.CardID')
-            ->join('prs', 'cards.CardID', '=', 'prs.CardID')
-            ->join('prefectures','prs.PrefecturesID','=','prefectures.PrefecturesID')
+            ->join('prefectures','cards.PrefecturesID','=','prefectures.PrefecturesID')
             ->join('regions','prefectures.RegionID','=','regions.RegionID')
             ->select(DB::raw('regions.RegionName,count(regions.RegionID) as RegionCard'))
             ->where('UserID',1)
-            ->groupBy('regions.RegionID')
             ->get()->keyBy('RegionName');
         return $data;
     }
     // 地方カード総数(マスター)
     public function regionCardMaster(){
         $data = DB::table('cards')
-            ->join('prs', 'cards.CardID', '=', 'prs.CardID')
-            ->join('prefectures','prs.PrefecturesID','=','prefectures.PrefecturesID')
+            ->join('prefectures','cards.PrefecturesID','=','prefectures.PrefecturesID')
             ->join('regions','prefectures.RegionID','=','regions.RegionID')
             ->select(DB::raw('regions.RegionName,count(regions.RegionID) as RegionCard'))
             ->groupBy('regions.RegionID')
