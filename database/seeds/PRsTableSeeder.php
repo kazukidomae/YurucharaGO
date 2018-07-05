@@ -14,7 +14,6 @@ class PRsTableSeeder extends Seeder
         DB::table('prs')->insert([
             [
                 'CardID' => 1,
-                'PrefecturesID' => 43,
                 'PRName' => '熊本城1',
                 'PRPhotoPath' => 'testimg/test_card_materials/PRPhoto/kumamotojyo1.png',
                 'PRDescription' => '熊本城の説明1',
@@ -23,7 +22,6 @@ class PRsTableSeeder extends Seeder
             ],
             [
                 'CardID' => 1,
-                'PrefecturesID' => 43,
                 'PRName' => '熊本城2',
                 'PRPhotoPath' => 'testimg/test_card_materials/PRPhoto/kumamotojyo2.png',
                 'PRDescription' => '熊本城の説明2',
@@ -32,7 +30,6 @@ class PRsTableSeeder extends Seeder
             ],
             [
                 'CardID' => 1,
-                'PrefecturesID' => 43,
                 'PRName' => '熊本城3',
                 'PRPhotoPath' => 'testimg/test_card_materials/PRPhoto/kumamotojyo3.png',
                 'PRDescription' => '熊本城の説明3',
@@ -41,7 +38,6 @@ class PRsTableSeeder extends Seeder
             ],
             [
                 'CardID' => 2,
-                'PrefecturesID' => 25,
                 'PRName' => '彦根城1',
                 'PRPhotoPath' => 'testimg/test_card_materials/PRPhoto/hikonejyo1.png',
                 'PRDescription' => '彦根城の説明1',
@@ -50,7 +46,6 @@ class PRsTableSeeder extends Seeder
             ],
             [
                 'CardID' => 2,
-                'PrefecturesID' => 25,
                 'PRName' => '彦根城2',
                 'PRPhotoPath' => 'testimg/test_card_materials/PRPhoto/hikonejyo2.png',
                 'PRDescription' => '彦根城の説明2',
@@ -59,7 +54,6 @@ class PRsTableSeeder extends Seeder
             ],
             [
                 'CardID' => 2,
-                'PrefecturesID' => 25,
                 'PRName' => '彦根城3',
                 'PRPhotoPath' => 'testimg/test_card_materials/PRPhoto/hikonejyo3.png',
                 'PRDescription' => '彦根城の説明3',
@@ -68,7 +62,6 @@ class PRsTableSeeder extends Seeder
             ],
             [
                 'CardID' => 3,
-                'PrefecturesID' => 13,
                 'PRName' => '国分寺駅1',
                 'PRPhotoPath' => 'testimg/test_card_materials/PRPhoto/kokubunji1.png',
                 'PRDescription' => '国分寺駅の説明1',
@@ -77,7 +70,6 @@ class PRsTableSeeder extends Seeder
             ],
             [
                 'CardID' => 3,
-                'PrefecturesID' => 13,
                 'PRName' => '国分寺駅2',
                 'PRPhotoPath' => 'testimg/test_card_materials/PRPhoto/kokubunji2.png',
                 'PRDescription' => '国分寺駅の説明2',
@@ -86,7 +78,6 @@ class PRsTableSeeder extends Seeder
             ],
             [
                 'CardID' => 3,
-                'PrefecturesID' => 13,
                 'PRName' => '国分寺駅3',
                 'PRPhotoPath' => 'testimg/test_card_materials/PRPhoto/kokubunji3.png',
                 'PRDescription' => '国分寺駅の説明3',
@@ -95,7 +86,6 @@ class PRsTableSeeder extends Seeder
             ],
             [
                 'CardID' => 4,
-                'PrefecturesID' => 13,
                 'PRName' => '人形町1',
                 'PRPhotoPath' => 'testimg/test_card_materials/PRPhoto/ningyotyo1.png',
                 'PRDescription' => '人形町の説明1',
@@ -104,7 +94,6 @@ class PRsTableSeeder extends Seeder
             ],
             [
                 'CardID' => 4,
-                'PrefecturesID' => 13,
                 'PRName' => '人形町2',
                 'PRPhotoPath' => 'testimg/test_card_materials/PRPhoto/ningyotyo2.png',
                 'PRDescription' => '人形町の説明2',
@@ -113,7 +102,6 @@ class PRsTableSeeder extends Seeder
             ],
             [
                 'CardID' => 4,
-                'PrefecturesID' => 13,
                 'PRName' => '人形町3',
                 'PRPhotoPath' => 'testimg/test_card_materials/PRPhoto/ningyotyo3.png',
                 'PRDescription' => '人形町の説明3',
@@ -122,7 +110,6 @@ class PRsTableSeeder extends Seeder
             ],
                         [
                 'CardID' => 5,
-                'PrefecturesID' => 2,
                 'PRName' => '青森 浅虫水族館1',
                 'PRPhotoPath' => 'testimg/test_card_materials/PRPhoto/asamusisuizokukan1.png',
                 'PRDescription' => '青森 浅虫水族館2',
@@ -131,7 +118,6 @@ class PRsTableSeeder extends Seeder
             ],
             [
                 'CardID' => 5,
-                'PrefecturesID' => 2,
                 'PRName' => '青森 浅虫水族館2',
                 'PRPhotoPath' => 'testimg/test_card_materials/PRPhoto/asamusisuizokukan2.png',
                 'PRDescription' => '青森 浅虫水族館2',
@@ -140,16 +126,14 @@ class PRsTableSeeder extends Seeder
             ],
             [
                 'CardID' => 5,
-                'PrefecturesID' => 2,
                 'PRName' => '青森 浅虫水族館3',
                 'PRPhotoPath' => 'testimg/test_card_materials/PRPhoto/asamusisuizokukan3.png',
                 'PRDescription' => '青森 浅虫水族館の説明3',
                 'latitude' => 35.691743,
                 'longitude' => 139.693619,
             ],
-                        [
+            [
                 'CardID' => 6,
-                'PrefecturesID' => 7,
                 'PRName' => '福島県1',
                 'PRPhotoPath' => 'testimg/test_card_materials/PRPhoto/hukushima1.png',
                 'PRDescription' => '福島県の説明1',
@@ -158,7 +142,6 @@ class PRsTableSeeder extends Seeder
             ],
             [
                 'CardID' => 6,
-                'PrefecturesID' => 7,
                 'PRName' => '福島県2',
                 'PRPhotoPath' => 'testimg/test_card_materials/PRPhoto/hukushima2.png',
                 'PRDescription' => '福島県の説明2',
@@ -167,7 +150,6 @@ class PRsTableSeeder extends Seeder
             ],
             [
                 'CardID' => 6,
-                'PrefecturesID' => 7,
                 'PRName' => '福島県3',
                 'PRPhotoPath' => 'testimg/test_card_materials/PRPhoto/hukushima3.png',
                 'PRDescription' => '福島県の説明3',
@@ -176,7 +158,6 @@ class PRsTableSeeder extends Seeder
             ],
                         [
                 'CardID' => 7,
-                'PrefecturesID' => 1,
                 'PRName' => '北海道新幹線新函館北斗駅1',
                 'PRPhotoPath' => 'testimg/test_card_materials/PRPhoto/shinhakodatehokutoeki1.png',
                 'PRDescription' => '北海道新幹線新函館北斗駅1',
@@ -185,7 +166,6 @@ class PRsTableSeeder extends Seeder
             ],
             [
                 'CardID' => 7,
-                'PrefecturesID' => 1,
                 'PRName' => '北海道新幹線新函館北斗駅2',
                 'PRPhotoPath' => 'testimg/test_card_materials/PRPhoto/shinhakodatehokutoeki2.png',
                 'PRDescription' => '北海道新幹線新函館北斗駅2',
@@ -194,7 +174,6 @@ class PRsTableSeeder extends Seeder
             ],
             [
                 'CardID' => 7,
-                'PrefecturesID' => 1,
                 'PRName' => '北海道新幹線新函館北斗駅3',
                 'PRPhotoPath' => 'testimg/test_card_materials/PRPhoto/shinhakodatehokutoeki3.png',
                 'PRDescription' => '北海道新幹線新函館北斗駅3',
@@ -203,7 +182,6 @@ class PRsTableSeeder extends Seeder
             ],
                         [
                 'CardID' => 8,
-                'PrefecturesID' => 38,
                 'PRName' => 'バリィさん1',
                 'PRPhotoPath' => 'testimg/test_card_materials/PRPhoto/baliysan1.png',
                 'PRDescription' => 'バリィさんの説明1',
@@ -212,7 +190,6 @@ class PRsTableSeeder extends Seeder
             ],
             [
                 'CardID' => 8,
-                'PrefecturesID' => 38,
                 'PRName' => 'バリィさん2',
                 'PRPhotoPath' => 'testimg/test_card_materials/PRPhoto/baliysan2.png',
                 'PRDescription' => 'バリィさんの説明2',
@@ -221,7 +198,6 @@ class PRsTableSeeder extends Seeder
             ],
             [
                 'CardID' => 8,
-                'PrefecturesID' => 38,
                 'PRName' => 'バリィさん3',
                 'PRPhotoPath' => 'testimg/test_card_materials/PRPhoto/baliysan3.png',
                 'PRDescription' => 'バリィさんの説明3',
@@ -229,7 +205,6 @@ class PRsTableSeeder extends Seeder
                 'longitude' => 139.693619,
             ],            [
                 'CardID' => 9,
-                'PrefecturesID' => 34,
                 'PRName' => '安芸高田市1',
                 'PRPhotoPath' => 'testimg/test_card_materials/PRPhoto/akitakatashi1.png',
                 'PRDescription' => '安芸高田市の説明1',
@@ -238,7 +213,6 @@ class PRsTableSeeder extends Seeder
             ],
             [
                 'CardID' => 9,
-                'PrefecturesID' => 34,
                 'PRName' => '安芸高田市2',
                 'PRPhotoPath' => 'testimg/test_card_materials/PRPhoto/akitakatashi2.png',
                 'PRDescription' => '安芸高田市の説明2',
@@ -247,7 +221,6 @@ class PRsTableSeeder extends Seeder
             ],
             [
                 'CardID' => 9,
-                'PrefecturesID' => 34,
                 'PRName' => '安芸高田市3',
                 'PRPhotoPath' => 'testimg/test_card_materials/PRPhoto/akitakatashi3.png',
                 'PRDescription' => '安芸高田市の説明3',
@@ -256,7 +229,6 @@ class PRsTableSeeder extends Seeder
             ],
                         [
                 'CardID' => 10,
-                'PrefecturesID' => 9,
                 'PRName' => '栃木市1',
                 'PRPhotoPath' => 'testimg/test_card_materials/PRPhoto/tochigisi1.png',
                 'PRDescription' => '栃木市の説明1',
@@ -265,7 +237,6 @@ class PRsTableSeeder extends Seeder
             ],
             [
                 'CardID' => 10,
-                'PrefecturesID' => 9,
                 'PRName' => '栃木市2',
                 'PRPhotoPath' => 'testimg/test_card_materials/PRPhoto/tochigisi2.png',
                 'PRDescription' => '栃木市の説明2',
@@ -274,7 +245,6 @@ class PRsTableSeeder extends Seeder
             ],
             [
                 'CardID' => 10,
-                'PrefecturesID' => 9,
                 'PRName' => '栃木市3',
                 'PRPhotoPath' => 'testimg/test_card_materials/PRPhoto/tochigisi3.png',
                 'PRDescription' => '栃木市の説明3',
@@ -283,7 +253,6 @@ class PRsTableSeeder extends Seeder
             ],
                        [
                 'CardID' => 11,
-                'PrefecturesID' => 33,
                 'PRName' => '岡山県1',
                 'PRPhotoPath' => 'testimg/test_card_materials/PRPhoto/okayama1.png',
                 'PRDescription' => '岡山県の説明1',
@@ -292,7 +261,6 @@ class PRsTableSeeder extends Seeder
             ],
             [
                 'CardID' => 11,
-                'PrefecturesID' => 33,
                 'PRName' => '岡山県2',
                 'PRPhotoPath' => 'testimg/test_card_materials/PRPhoto/okayama2.png',
                 'PRDescription' => '岡山県の説明2',
@@ -301,7 +269,6 @@ class PRsTableSeeder extends Seeder
             ],
             [
                 'CardID' => 11,
-                'PrefecturesID' => 33,
                 'PRName' => '岡山県3',
                 'PRPhotoPath' => 'testimg/test_card_materials/PRPhoto/okayama3.png',
                 'PRDescription' => '岡山県の説明3',
@@ -310,7 +277,6 @@ class PRsTableSeeder extends Seeder
             ],
             [
                 'CardID' => 12,
-                'PrefecturesID' => 36,
                 'PRName' => '徳島市1',
                 'PRPhotoPath' => 'testimg/test_card_materials/PRPhoto/tokusimasi1.png',
                 'PRDescription' => '徳島市の説明1',
@@ -319,7 +285,6 @@ class PRsTableSeeder extends Seeder
             ],
             [
                 'CardID' => 12,
-                'PrefecturesID' => 36,
                 'PRName' => '徳島市2',
                 'PRPhotoPath' => 'testimg/test_card_materials/PRPhoto/tokusimasi2.png',
                 'PRDescription' => '徳島市の説明2',
@@ -328,7 +293,6 @@ class PRsTableSeeder extends Seeder
             ],
             [
                 'CardID' => 12,
-                'PrefecturesID' => 36,
                 'PRName' => '徳島市3',
                 'PRPhotoPath' => 'testimg/test_card_materials/PRPhoto/tokusimasi3.png',
                 'PRDescription' => '徳島市の説明3',
