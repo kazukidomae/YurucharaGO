@@ -19,7 +19,11 @@ class CreateCardsTable extends Migration
             $table->string('CardIllustrationPath',100);
             $table->text('CardDescription');
             $table->integer('AttributeID')->unsigned();
+            $table->integer('PrefecturesID')->unsigned();
+
+            $table->foreign('PrefecturesID')->references('PrefecturesID')->on('prefectures');
         });
+
         //DB::statement('alter table cards add location geometry' );
     }
 

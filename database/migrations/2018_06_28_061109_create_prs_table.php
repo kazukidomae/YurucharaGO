@@ -16,7 +16,6 @@ class CreatePrsTable extends Migration
         Schema::create('prs', function (Blueprint $table) {
             $table->increments('PRID');
             $table->integer('CardID')->unsigned();
-            $table->integer('PrefecturesID')->unsigned();
             $table->string('PRName',100);
             $table->string('PRPhotoPath',100);
             $table->text('PRDescription');
@@ -24,7 +23,6 @@ class CreatePrsTable extends Migration
             $table->double('longitude');
 
             $table->foreign('CardID')->references('CardID')->on('cards');
-            $table->foreign('PrefecturesID')->references('PrefecturesID')->on('prefectures');
         });
     }
 
