@@ -12,7 +12,7 @@ class Obtaintrophyslist extends Command
      *
      * @var string
      */
-    protected $signature = 'obtaintrophys:list {userID}';
+    protected $signature = 'obtaintrophys:list';
 
     /**
      * The console command description.
@@ -38,10 +38,15 @@ class Obtaintrophyslist extends Command
      */
     public function handle()
     {
-        //obitaintrophysデータベースの指定されたユーザのデータを取得
         $obitaintrophy = new Obitaintrophy();
-        $userID = $this->argument("userID");
-        $data = $obitaintrophy->userTrophyList($userID);
-        echo $data;
+        $data1 = $obitaintrophy->attributeCardMaster();
+        $data2 = $obitaintrophy->attributeCardObtain();
+        $data3 = $obitaintrophy->regionCardMaster();
+        $data4 = $obitaintrophy->regionCardObtain();;
+
+        print_r($data1);
+        print_r($data2);
+        print_r($data3);
+        print_r($data4);
     }
 }

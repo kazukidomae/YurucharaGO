@@ -11,6 +11,42 @@ function initMap()
 {
     // Map描画要素
     var mapArea = document.getElementById('map');
+    // 地図のスタイルに関する配列。
+ //    var styleArray = [
+	    
+ //    	{
+	// 		featureType: 'all',
+	// 		elementType: 'all',
+	//     	stylers: [{
+	//        	 	hue:'#BFFF8A'
+	//     	}, {
+	// 			// 彩度
+	//         	saturation:0
+	//     	}, {
+	// 			// 明度
+	//         	lightness:-20
+	//     	}, {
+	//         	gamma: 1
+	//     	}]
+	// 	},
+	//     {
+	// 		featureType: 'road',
+	// 		elementType: 'all',
+	//     	stylers: [{
+	//        	 	hue:'#3C3C3C'
+	//     	}, {
+	// 			// 彩度
+	//         	saturation:0
+	//     	}, {
+	// 			// 明度
+	//         	lightness:-80
+	//     	}, {
+	//         	gamma: 1
+	//     	}]
+	// 	}
+
+	// ];
+
 	// 現在地を取得
     navigator.geolocation.getCurrentPosition(
         // 取得成功した場合
@@ -21,15 +57,18 @@ function initMap()
                 // 中央位置
                 center: mapLatLng,
                 // ズーム値
-                zoom: 15,
+                zoom: 17.0,
                 // 航空写真無効
-                mapTypeControl: false
+                mapTypeControl: false,
+                // Mapの色変更
+				// styles:styleArray
+
             };
             // Map生成
             map = new google.maps.Map(mapArea, mapOptions);
             // マーカー生成
             initMarker();
-            // 現在地から半径1kmで円を描画。
+            // 現在地から半径100mで円を描画。
             initCircle(mapLatLng);
         },
         // 取得失敗した場合
@@ -52,7 +91,7 @@ function initMap()
     );
 }
 
-// 円生成
+// 100mの半径で円生成
 // 引数:latlng　生成したい円の中心座標(google.maps.LatLng)
 function initCircle(latlng)
 {
@@ -60,7 +99,7 @@ function initCircle(latlng)
 	var circle = new google.maps.Circle({
 		map:map,
 		center:latlng,
-		radius:1000,
+		radius:100,
 		clickable:false,
 		draggable:false,
 		editable:false,
