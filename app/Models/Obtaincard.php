@@ -24,11 +24,9 @@ class Obtaincard extends Model
     public function obtaincardsFilter($prefecturesID){
         $data = DB::table('obtaincards')
             ->join('cards','obtaincards.CardID','=','cards.CardID')
-            ->join('prs','cards.CardID','=','prs.CardID')
-            ->join('prefectures','prs.PrefecturesID','=','prefectures.PrefecturesID')
+            ->join('prefectures','cards.PrefecturesID','=','prefectures.PrefecturesID')
             ->where('obtaincards.UserID',1)
             ->where('prefectures.PrefecturesID',$prefecturesID)
-            ->groupBy('cards.CardID')
             ->get();
         return $data;
     }
@@ -62,3 +60,4 @@ class Obtaincard extends Model
         
     }
 
+}
