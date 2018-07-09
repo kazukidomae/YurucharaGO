@@ -51,4 +51,23 @@ class Card extends Model
             ->get();
         return $data;
     }
+
+    public function obitaincardsfilter(){
+        $data = DB::select(DB::raw("SELECT 
+        cards.CardID,
+        cards.CardName,
+        cards.CardIllustrationPath,
+        cards.CardDescription,
+        cards.AttributeID,
+        cards.PrefecturesID,
+        attributes.AttributeName,
+        attributes.AttributeIconPath,
+        attributes.CardDesignPath,
+        obtaincards.UserID
+        FROM cards 
+        JOIN attributes ON cards.AttributeID = attributes.AttributeID
+        LEFT JOIN (select * from obtaincards where UserID = 1) AS obtaincards ON cards.CardID = obtaincards.CardID
+        "));
+        return $data;
+    }
 }
