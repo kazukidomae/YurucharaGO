@@ -2,10 +2,18 @@
 
 @section('content')
     @foreach($data as $cardData)
+        {{$obtainFlg = false}}
+        @if (isset($cardData->UserID))
+            {{$obtainFlg = true}}
+        @endif
         <div class="card card--list">
-            <a href="{{ action('GetDataController@getDetail') }}?CardID={{$cardData->CardID}}" class="card__link">
-                <img src="{{ asset('images/card_layout.png') }}" class="card__img">
-                <img src="{{$cardData->CardIllustrationPath}}" class="card__chara">
+            <a href="{{ action('GetDataController@getDetail') }}?CardID={{$cardData->CardID}}&Obtain={{$obtainFlg}}" class="card__link">
+                <img src="{{$cardData->CardDesignPath}}" class="card__img">
+                @if (!$obtainFlg)
+                    <img src="{{$cardData->CardIllustrationPath}}" class="card__chara__none">
+                @else
+                    <img src="{{$cardData->CardIllustrationPath}}" class="card__chara">
+                @endif
                 <div class="textbox">
                     <div class="textbox__name">{{$cardData->CardName}}</div>
                 </div>

@@ -14,6 +14,7 @@ class Obtaincard extends Model
     {
         $data = DB::table('obtaincards')
             ->join('cards', 'obtaincards.CardID', '=', 'cards.CardID')
+            ->join('attributes','cards.AttributeID','=','attributes.AttributeID')
             ->where('obtaincards.UserID', Auth::user()->id)
             ->get();
         return $data;
@@ -66,6 +67,4 @@ class Obtaincard extends Model
         return $data;
 
     }
-}
-
 }

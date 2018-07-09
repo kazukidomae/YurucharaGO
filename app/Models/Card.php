@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 
 class Card extends Model
 {
@@ -11,15 +12,25 @@ class Card extends Model
     public $timestamps = false;
 
     // 都道府県ごとのカード一覧
-    public function prefecturesCardList($prefectures)
-    {
-        $data = DB::table('cards')
-            ->join('attributes','cards.AttributeID','=','attributes.AttributeID')
-            ->join('prs', 'cards.CardID', '=', 'prs.CardID')
-            ->join('prefectures','prs.PrefecturesID','=','prefectures.PrefecturesID')
-            ->where('prs.PrefecturesID',$prefectures)
-            ->groupBy('cards.CardID')
-            ->get();
+    public function prefecturesCardList($prefectures){
+        $userID = Auth::user()->id;
+
+        $data = DB::select(DB::raw("SELECT 
+        cards.CardID,
+        cards.CardName,
+        cards.CardIllustrationPath,
+        cards.CardDescription,
+        cards.AttributeID,
+        cards.PrefecturesID,
+        attributes.AttributeName,
+        attributes.AttributeIconPath,
+        attributes.CardDesignPath,
+        obtaincards.UserID
+        FROM cards
+        JOIN attributes ON cards.AttributeID = attributes.AttributeID
+        LEFT JOIN (select * from obtaincards where UserID = {$userID}) AS obtaincards ON cards.CardID = obtaincards.CardID
+        WHERE cards.PrefecturesID = {$prefectures}
+        "));
         return $data;
     }
 
@@ -29,7 +40,6 @@ class Card extends Model
             ->join('prs', 'cards.CardID', '=', 'prs.CardID')
             ->join('events','cards.CardID', '=','events.CardID')
             ->join('attributes','cards.AttributeID','=','attributes.AttributeID')
-            ->join('prefectures','prs.PrefecturesID','=','prefectures.PrefecturesID')
             ->where('cards.CardID',$cardID)
             ->get();
         return $data;
@@ -58,26 +68,6 @@ class Card extends Model
         WHERE prs.latitude BETWEEN {$lat}-0.0089831601679492 AND {$lat}+0.0089831601679492
         AND
         prs.longitude BETWEEN {$lng}-0.0089831601679492 AND {$lng}+0.0089831601679492
-        "));
-        return $data;
-    }
-
-    public function obitaincardsfilter($prefectures = 13){
-        $data = DB::select(DB::raw("SELECT 
-        cards.CardID,
-        cards.CardName,
-        cards.CardIllustrationPath,
-        cards.CardDescription,
-        cards.AttributeID,
-        cards.PrefecturesID,
-        attributes.AttributeName,
-        attributes.AttributeIconPath,
-        attributes.CardDesignPath,
-        obtaincards.UserID
-        FROM cards
-        JOIN attributes ON cards.AttributeID = attributes.AttributeID
-        LEFT JOIN (select * from obtaincards where UserID = 1) AS obtaincards ON cards.CardID = obtaincards.CardID
-        WHERE cards.PrefecturesID = {$prefectures}
         "));
         return $data;
     }

@@ -19,7 +19,8 @@ class GetDataController extends Controller
     {
         $md = new Card();
         $data = $md->cardDetail($request->input('CardID'));
-        return view('cardDetail', ['data' => $data]);
+        $obtain = $request->input('Obtain');
+        return view('cardDetail', ['data' => $data,'obtain' => $obtain]);
     }
     // ナビゲーションへ遷移
     public function getNavigationData(Request $request)
