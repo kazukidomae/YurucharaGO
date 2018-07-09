@@ -44,15 +44,25 @@ class Card extends Model
     }
     // 範囲検索
     public function rangeData($lat,$lng){
-        $data = DB::table('cards')
-            ->join('prs', 'cards.CardID', '=', 'prs.CardID')
-            ->whereBetween('latitude', [$lat-0.0089831601679492, $lat+0.0089831601679492])
-            ->whereBetween('longitude', [$lng-0.0089831601679492, $lng+0.0089831601679492])
-            ->get();
+        $data = DB::select(DB::raw("SELECT 
+        cards.CardID,
+        cards.CardName,
+        cards.CardIllustrationPath,
+        obtaincards.UserID,
+        prs.latitude,
+        prs.longitude
+        FROM cards
+        JOIN prs ON cards.CardID = prs.CardID
+        JOIN attributes ON cards.AttributeID = attributes.AttributeID
+        LEFT JOIN (select * from obtaincards where UserID = 1) AS obtaincards ON cards.CardID = obtaincards.CardID
+        WHERE prs.latitude BETWEEN {$lat}-0.0089831601679492 AND {$lat}+0.0089831601679492
+        AND
+        prs.longitude BETWEEN {$lng}-0.0089831601679492 AND {$lng}+0.0089831601679492
+        "));
         return $data;
     }
 
-    public function obitaincardsfilter(){
+    public function obitaincardsfilter($prefectures = 13){
         $data = DB::select(DB::raw("SELECT 
         cards.CardID,
         cards.CardName,
@@ -64,9 +74,10 @@ class Card extends Model
         attributes.AttributeIconPath,
         attributes.CardDesignPath,
         obtaincards.UserID
-        FROM cards 
+        FROM cards
         JOIN attributes ON cards.AttributeID = attributes.AttributeID
         LEFT JOIN (select * from obtaincards where UserID = 1) AS obtaincards ON cards.CardID = obtaincards.CardID
+        WHERE cards.PrefecturesID = {$prefectures}
         "));
         return $data;
     }
