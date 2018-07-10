@@ -37,52 +37,51 @@
   <section class="trophy">
     <img src="{{ asset('images/trophy_img_blank.jpg') }}" class="trophy__img trophy__img--blank">
     <h2 class="trophy__name">Hokkaido</h2>
-      <p>入手：{{isset($oAttribute["Hokkaido"]->AttributeCount) ? $oAttribute["Hokkaido"]->AttributeCount:0}}</p>
-      <p>マスター：{{isset($mAttribute["Hokkaido"]->AttributeCount) ? $mAttribute["Hokkaido"]->AttributeCount:0}}</p>
+      <p>入手：{{isset($oRegion["Hokkaido"]->RegionCount) ? $oRegion["Hokkaido"]->RegionCount:0}}</p>
+      <p>マスター：{{isset($mRegion["Hokkaido"]->RegionCount) ? $mRegion["Hokkaido"]->RegionCount:0}}</p>
   </section>
   <section class="trophy">
     <img src="{{ asset('images/trophy__img.jpg') }}" class="trophy__img trophy__img--blank">
     <h2 class="trophy__name">Tohoku</h2>
-      <p>入手：{{isset($oAttribute["Tohoku"]->AttributeCount) ? $oAttribute["Tohoku"]->AttributeCount:0}}</p>
-      <p>マスター：{{isset($mAttribute["Tohoku"]->AttributeCount) ? $mAttribute["Tohoku"]->AttributeCount:0}}</p>
+      <p>入手：{{isset($oRegion["Tohoku"]->RegionCount) ? $oRegion["Tohoku"]->RegionCount:0}}</p>
+      <p>マスター：{{isset($mRegion["Tohoku"]->RegionCount) ? $mRegion["Tohoku"]->RegionCount:0}}</p>
   </section>
   <section class="trophy">
     <img src="{{ asset('images/trophy_img_blank.jpg') }}" class="trophy__img trophy__img--blank">
     <h2 class="trophy__name">Kanto</h2>
-      <p>入手：{{isset($oAttribute["Kanto"]->AttributeCount) ? $oAttribute["Kanto"]->AttributeCount:0}}</p>
-      <p>マスター：{{isset($mAttribute["Kanto"]->AttributeCount) ? $mAttribute["Kanto"]->AttributeCount:0}}</p>
+      <p>入手：{{isset($oRegion["Kanto"]->RegionCount) ? $oRegion["Kanto"]->RegionCount:0}}</p>
+      <p>マスター：{{isset($mRegion["Kanto"]->RegionCount) ? $mRegion["Kanto"]->RegionCount:0}}</p>
   </section>
-  <!--３段目-->
   <section class="trophy">
     <img src="{{ asset('images/trophy__img.jpg') }}" class="trophy__img trophy__img--blank">
     <h2 class="trophy__name">Chubu</h2>
-      <p>入手：{{isset($oAttribute["Chubu"]->AttributeCount) ? $oAttribute["Chubu"]->AttributeCount:0}}</p>
-      <p>マスター：{{isset($mAttribute["Chubu"]->AttributeCount) ? $mAttribute["Chubu"]->AttributeCount:0}}</p>
+      <p>入手：{{isset($oRegion["Chubu"]->RegionCount) ? $oRegion["Chubu"]->RegionCount:0}}</p>
+      <p>マスター：{{isset($mRegion["Chubu"]->RegionCount) ? $mRegion["Chubu"]->RegionCount:0}}</p>
   </section>
   <section class="trophy">
     <img src="{{ asset('images/trophy_img_blank.jpg') }}" class="trophy__img trophy__img--blank">
     <h2 class="trophy__name">Kansai</h2>
-      <p>入手：{{isset($oAttribute["Kansai"]->AttributeCount) ? $oAttribute["Kansai"]->AttributeCount:0}}</p>
-      <p>マスター：{{isset($mAttribute["Kansai"]->AttributeCount) ? $mAttribute["Kansai"]->AttributeCount:0}}</p>
+      <p>入手：{{isset($oRegion["Kansai"]->RegionCount) ? $oRegion["Kansai"]->RegionCount:0}}</p>
+      <p>マスター：{{isset($mRegion["Kansai"]->RegionCount) ? $mRegion["Kansai"]->RegionCount:0}}</p>
   </section>
   <section class="trophy">
     <img src="{{ asset('images/trophy_img_blank.jpg') }}" class="trophy__img trophy__img--blank">
     <h2 class="trophy__name">Chugoku</h2>
-      <p>入手：{{isset($oAttribute["Chugoku"]->AttributeCount) ? $oAttribute["Chugoku"]->AttributeCount:0}}</p>
-      <p>マスター：{{isset($mAttribute["Chugoku"]->AttributeCount) ? $mAttribute["Chugoku"]->AttributeCount:0}}</p>
+      <p>入手：{{isset($oRegion["Chugoku"]->RegionCount) ? $oRegion["Chugoku"]->RegionCount:0}}</p>
+      <p>マスター：{{isset($mRegion["Chugoku"]->RegionCount) ? $mRegion["Chugoku"]->RegionCount:0}}</p>
   </section>
   <!--４段目-->
   <section class="trophy">
     <img src="{{ asset('images/trophy_img_blank.jpg') }}" class="trophy__img trophy__img--blank">
     <h2 class="trophy__name">Shikoku</h2>
-      <p>入手：{{isset($oAttribute["Shikoku"]->AttributeCount) ? $oAttribute["Shikoku"]->AttributeCount:0}}</p>
-      <p>マスター：{{isset($mAttribute["Shikoku"]->AttributeCount) ? $mAttribute["Shikoku"]->AttributeCount:0}}</p>
+      <p>入手：{{isset($oRegion["Shikoku"]->RegionCount) ? $oRegion["Shikoku"]->RegionCount:0}}</p>
+      <p>マスター：{{isset($mRegion["Shikoku"]->RegionCount) ? $mRegion["Shikoku"]->RegionCount:0}}</p>
   </section>
   <section class="trophy">
     <img src="{{ asset('images/trophy_img_blank.jpg') }}" class="trophy__img trophy__img--blank">
     <h2 class="trophy__name">Kyushu</h2>
-      <p>入手：{{isset($oAttribute["Kyushu"]->AttributeCount) ? $oAttribute["Kyushu"]->AttributeCount:0}}</p>
-      <p>マスター：{{isset($mAttribute["Kyushu"]->AttributeCount) ? $mAttribute["Kyushu"]->AttributeCount:0}}</p>
+      <p>入手：{{isset($oRegion["Kyushu"]->RegionCount) ? $oRegion["Kyushu"]->RegionCount:0}}</p>
+      <p>マスター：{{isset($mRegion["Kyushu"]->RegionCount) ? $mRegion["Kyushu"]->RegionCount:0}}</p>
   </section>
 </article>
 @endsection
