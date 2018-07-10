@@ -11,7 +11,7 @@
     <title>{{ config('app.name', 'YurucharaGO') }}</title>
 
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
+    <script src="{{ asset('js/app.js') }}"></script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="https://fonts.gstatic.com">
@@ -20,6 +20,9 @@
     <!-- Styles -->
     <link href="{{ asset('css/reset.css') }}" rel="stylesheet">
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
+
+    <script type="text/javascript" src="{{ asset('/js/jquery-3.0.0.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('/js/JapanMap/jquery.japan-map.min.js') }}"></script>
 </head>
 <body>
     <div id="app">
