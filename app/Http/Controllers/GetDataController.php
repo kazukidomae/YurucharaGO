@@ -27,7 +27,8 @@ class GetDataController extends Controller
     {
         $md = new Card();
         $data = $md->navigationData($request->input('CardID'));
-        return view('characterNavigation', ['data' => $data]);
+        $obtain = $request->input('Obtain');
+        return view('characterNavigation', ['data' => $data,'obtain' => $obtain]);
     }
     // 範囲検索
     public function getRangeData(Request $request)

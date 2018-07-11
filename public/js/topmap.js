@@ -11,8 +11,7 @@ $(function(){
     ];
 
     $("#map-container").japanMap({
-        width: 370,
-        height: 500,
+        width: window.parent.screen.width,
         color: "#000000",
         selection: "prefecture",
         areas: areas,
@@ -26,7 +25,7 @@ $(function(){
         areaNameType: "english",
         showsPrefectureName: false,
         prefectureNameType: "english",
-        movesIslands : false,
+        movesIslands : true,
         fontSize : 11,
         onSelect : function(data){
             window.alert(data.code);
