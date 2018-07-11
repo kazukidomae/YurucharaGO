@@ -11,30 +11,33 @@
 |
 */
 
-// トップ
-Route::get('/','PagesController@index');
 // 新規登録・ログイン
 Auth::routes();
-Route::get('/home', 'HomeController@index')->name('home');
+//Route::get('/home', 'HomeController@index')->name('home');
+// トップ
+Route::get('/','PagesController@index')->middleware('auth');
 // 現在地検索
-Route::get('/search', 'MapViewController@search');
-// ナビゲーション
-Route::get('/navigation', 'GetDataController@getNavigationData');
-// カードリスト表示
-Route::get('/data', 'GetDataController@refinePrefectures');
-// 範囲検索(非同期)
-Route::get('/range', 'GetDataController@getRangeData');
-// カード追加
-Route::get('/getcard', 'ObtainDataController@cardGet');
+Route::get('/search', 'MapViewController@search')->middleware('auth');
 //入手カード一覧
 Route::get('/obtaincardlist', 'CollectionController@cardGet')->middleware('auth');
 //入手トロフィー
 Route::get('/trophylist', 'ObtainDataController@trophyGet')->middleware('auth');
+// 設定
+Route::get('/configuration', 'PagesController@configuration')->middleware('auth');
+
+// 都道府県カード一覧
+Route::get('/data', 'GetDataController@refinePrefectures');
 //カード詳細
 Route::get('/cardDetail', 'GetDataController@getDetail');
-   //トロフィー一覧
+// ナビゲーション
+Route::get('/navigation', 'GetDataController@getNavigationData');
+// 範囲検索(非同期)
+Route::get('/range', 'GetDataController@getRangeData');
+// カード入手
+Route::get('/getcard', 'ObtainDataController@cardGet');
+
+//トロフィー詳細
 Route::get('/trophydetail', 'PagesController@trophydetail')->middleware('auth');   //トロフィー詳細
-Route::get('/configuration', 'PagesController@configuration')->middleware('auth');   //設定
 
 
 

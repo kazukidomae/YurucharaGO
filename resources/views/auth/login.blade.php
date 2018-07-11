@@ -27,9 +27,12 @@
 
     <p class="form__enclosure"><button class="form__button" type="submit">{{ __('Login') }}</button></p>
 
-    <a class="form__link" href="{{ route('password.request') }}">
-        {{ __('Forgot Your Password?') }}
-    </a>
+    {{--<a class="form__link" href="{{ route('password.request') }}">--}}
+        {{--{{ __('Forgot Your Password?') }}--}}
+    {{--</a>--}}
+      <a class="form__link" href="{{ route('register') }}">
+          {{ __('Sign Up') }}
+      </a>
 
   </form>
 </div>
