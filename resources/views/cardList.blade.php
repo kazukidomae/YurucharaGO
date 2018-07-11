@@ -2,13 +2,14 @@
 
 @section('content')
     @foreach($data as $cardData)
-        {{$obtainFlg = false}}
+        <?php $obtainFlg = false ?>
         @if (isset($cardData->UserID))
-            {{$obtainFlg = true}}
+            <?php $obtainFlg = true ?>
         @endif
         <div class="card card--list">
             <a href="{{ action('GetDataController@getDetail') }}?CardID={{$cardData->CardID}}&Obtain={{$obtainFlg}}" class="card__link">
                 <img src="{{$cardData->CardDesignPath}}" class="card__img">
+                {{-- シルエット化 --}}
                 @if (!$obtainFlg)
                     <img src="{{$cardData->CardIllustrationPath}}" class="card__chara__none">
                 @else
