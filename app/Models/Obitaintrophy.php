@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 
 class Obitaintrophy extends Model
 {
@@ -16,7 +17,7 @@ class Obitaintrophy extends Model
             ->join('prefectures','cards.PrefecturesID','=','prefectures.PrefecturesID')
             ->join('regions','prefectures.RegionID','=','regions.RegionID')
             ->select(DB::raw('regions.RegionName,count(regions.RegionID) as RegionCount'))
-            ->where('UserID',1)
+            ->where('UserID',Auth::user()->id)
             ->get()->keyBy('RegionName');
         return $data;
     }
@@ -36,7 +37,7 @@ class Obitaintrophy extends Model
             ->join('cards','obtaincards.CardID','=','cards.CardID')
             ->join('attributes','cards.AttributeID','=','attributes.AttributeID')
             ->select(DB::raw('attributes.AttributeName,count(cards.AttributeID) as AttributeCount'))
-            ->where('UserID',1)
+            ->where('UserID',Auth::user()->id)
             ->groupBy('cards.AttributeID')
             ->get()->keyBy('AttributeName');
         return $data;

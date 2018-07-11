@@ -31,7 +31,7 @@ class Obtaincard extends Model
         $data = DB::table('obtaincards')
             ->join('cards','obtaincards.CardID','=','cards.CardID')
             ->join('prefectures','cards.PrefecturesID','=','prefectures.PrefecturesID')
-            ->where('obtaincards.UserID',1)
+            ->where('obtaincards.UserID',Auth::user()->id)
             ->where('prefectures.PrefecturesID',$prefecturesID)
             ->get();
         return $data;
@@ -45,7 +45,7 @@ class Obtaincard extends Model
             ->join('prs', 'cards.CardID', '=', 'prs.CardID')
             ->join('prefectures', 'prs.PrefecturesID', '=', 'prefectures.PrefecturesID')
             ->join('attributes', 'cards.AttributeID', '=', 'attributes.AttributeID')
-            ->where('obtaincards.UserID', 1)
+            ->where('obtaincards.UserID', Auth::user()->id)
             ->where('attributes.AttributeID', $attributeID)
             ->groupBy('cards.CardID')
             ->get();
@@ -60,7 +60,7 @@ class Obtaincard extends Model
             ->join('prs', 'cards.CardID', '=', 'prs.CardID')
             ->join('prefectures', 'prs.PrefecturesID', '=', 'prefectures.PrefecturesID')
             ->join('regions', 'prefectures.RegionID', '=', 'regions.RegionID')
-            ->where('obtaincards.UserID', 1)
+            ->where('obtaincards.UserID', Auth::user()->id)
             ->where('regions.RegionID', $regionID)
             ->groupBy('cards.CardID')
             ->get();
