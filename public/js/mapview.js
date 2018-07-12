@@ -119,6 +119,8 @@ function initMarker(){
     // 現在地にマーカー
     marker[markerCount] = new google.maps.Marker({
         position: mapLatLng,
+        draggable:false,
+        icon:"./testimg/human.png",
         map: map
     });
     // カード枚数分マーカー
@@ -153,21 +155,27 @@ function markerEvent(markerCount){
 
     // マウスクリック
     marker[markerCount].addListener('click', function(){
-        $.ajax({
-            url:'/YurucharaGO/public/getcard',
-            type:'GET',
-            data: {
-                'cardID': cardData.data[markerCount].CardID,
-            },
-            dataType:'json',
-            timeout:1000,
-        }).done(function(data1,textStatus,jqXHR) {
-            console.log("カード入手");
-        }).fail(function(jqXHR, textStatus, errorThrown ) {
+        $('#mainText').text("ゆるキャラを手に入れた！");
+        // $('#modal').leanModal();
+        // $.ajax({
+        //     url:'/YurucharaGO/public/getcard',
+        //     type:'GET',
+        //     data: {
+        //         'cardID': cardData.data[markerCount].CardID,
+        //     },
+        //     dataType:'json',
+        //     timeout:1000,
+        // }).done(function(data1,textStatus,jqXHR) {
+        //     $('#mainText').text("ゆるキャラを手に入れた！");
+        //     $('#modal').modal({
+        //         fadeDuration: 800
+        //     }); 
+        //     // showModal("カードGET","カードを手に入れた！");
+        // }).fail(function(jqXHR, textStatus, errorThrown ) {
 
-        }).always(function(){
+        // }).always(function(){
 
-        });
+        // });
     });
 }
 
@@ -226,7 +234,38 @@ function pageReload()
 	window.location.reload(true);
 }
 
+// モーダルを表示する関数。
+// 引数:
+// titleText:モーダルのタイトル文字を指定してください。
+// mainText:モーダルのメイン文字を指定してください。
+function showModal(titleText,mainText)
+{
+    // $('#modal').iziModal('setTitle', titleText);
+    // $('#mainText').text(mainText);
+    // $('#modal').iziModal('open');
+}
+
+// モーダルを閉じる関数。
+function modalFinish()
+{
+    // $('#modal').modal.close();
+}
+
 
 $(document).ready(function(){
+
+    // モーダルを初期化。
+    // $('#modal').iziModal(
+        // {
+        //     title:'',
+        //     subtitle:'',
+        //     headerColor:'#85d870',
+        //     overlay: true,
+        //     overlayClose: false,
+        //     transitionIn:'fadeInDown',
+        //     transitionOut:'fadeOutDown'
+
+        // }
+    // );
 
 });
