@@ -156,6 +156,8 @@ function markerEvent(markerCount){
     // マウスクリック
     marker[markerCount].addListener('click', function(){
         $('#mainText').text("ゆるキャラを手に入れた！");
+        // モーダルウィンドウを表示。
+        $('#modal').iziModal('open');
         // $('#modal').leanModal();
         // $.ajax({
         //     url:'/YurucharaGO/public/getcard',

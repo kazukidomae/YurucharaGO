@@ -2,7 +2,6 @@
 
 @section('content')
     {{-- 取得フラグ --}}
-    {{$obtain[0]}}
 
     <!-- javascriptのインポート -->
     <script type="text/javascript" id="script" src="{{ asset('/js/navigate.js') }}"></script>
@@ -14,8 +13,18 @@
     <script type="text/javascript">
         lat = @json($data[0]->latitude);
         lng = @json($data[0]->longitude);
+
+        // ゆるキャラの各取得スポットの緯度経度を、phpから取得。
+        @for ($i=0; $i<count($data); $i++)
+            spot_lat.push( parseFloat( @json($data[$i]->latitude) ) );
+            spot_lng.push( parseFloat( @json($data[$i]->longitude) ) );
+            
+        @endfor
+
         CharacterName = @json($data[0]->CardName);
         CharacterIllustration = @json($data[0]->CardIllustrationPath);
+        // カードの取得済み情報を取得。
+        alreadyGet = @json($obtain[0]);
     </script>
 
     <form id="mainform" action="" method="post">
