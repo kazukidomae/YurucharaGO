@@ -13,7 +13,7 @@ $(function(){
     $("#map-container").japanMap({
         width: window.parent.screen.width,
         color: "#000000",
-        selection: "prefecture",
+        selection: "area",
         areas: areas,
         backgroundColor : "#ffffff",
         borderLineColor: "#ffffff",
@@ -28,7 +28,32 @@ $(function(){
         movesIslands : true,
         fontSize : 11,
         onSelect : function(data){
-            window.alert(data.code);
-        }
-    });
+          var data = "#" + data.code;
+          var noTargetData = $(this).siblings("data");
+
+          console.log(noTargetData);
+          $(this).find(".accordion__switch").click(function() {
+              $(this).next(".accordion__container").slideToggle();
+              $(this).toggleClass("open");
+              noTargetData.find(".accordion__container").slideUp();
+              noTargetData.find(".accordion__switch").removeClass("open");
+      });
+    }
+  });
 });
+(function($) {
+// 読み込んだら開始
+$(function() {
+    // アコーディオン
+    var accordion = $(".accordion");
+    accordion.each(function () {
+        var noTargetAccordion = $(this).siblings(accordion);
+        $(this).find(".accordion__switch").click(function() {
+            $(this).next(".accordion__container").slideToggle();
+            $(this).toggleClass("open");
+            noTargetAccordion.find(".accordion__container").slideUp();
+            noTargetAccordion.find(".accordion__switch").removeClass("open");
+        });
+    });
+  });
+})(jQuery);
