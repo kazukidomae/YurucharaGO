@@ -33,6 +33,28 @@ var iwnow = false;
 var hereMarker;
 // ゆるキャラのマーカー。
 var charaMarker;
+// スポットのマーカー一覧リスト。
+var spotMarker = new Array();
+
+// ゆるキャラの取得済み情報を格納する変数。取得済みの場合は1となる。
+var alreadyGet;
+
+// ゆるキャラの各取得スポットの緯度をセットする配列。
+var spot_lat = new Array();
+// ゆるキャラの各取得スポットの経度をセットする配列。
+var spot_lng = new Array();
+
+// 各スポットごとの徒歩ルートの距離を格納する配列
+var spotRouteWalkDistance = new Array();
+// 各スポットごとの徒歩ルートの時間を格納する配列
+var spotRouteWalkTime = new Array();
+// 各スポットごとの自動車ルートの距離を格納する配列
+var spotRouteCarDistance = new Array ();
+// 各スポットごとの自動車ルートの時間を格納する配列
+var spotRouteCarTime = new Array(); 
+
+// 現在のルート探索の進捗状況。ルート探索が完了したスポット数がセットされる。
+var spotCompleted = 0;
 
 
 function initMap()
@@ -64,19 +86,43 @@ function initMap()
 
             });
             // ページ遷移で受信したゆるキャラの緯度経度を基に、マーカーを作成する。
-            charaMarker = new google.maps.Marker({
-                position:new google.maps.LatLng(lat,lng),
-                map:map,
-                draggable:false,
-                icon:
-                {
-                    url:CharacterIllustration,
-                    scaledSize:new google.maps.Size(100, 100) //画像のサイズ
-                }
-            });
+            // ゆるキャラが未取得の場合
+            if(alreadyGet != 1)
+            {
+                // ？マークを表示する。
+                CharacterIllustration = "./testimg/question.png";
+            }
 
-            // ルート探索
-            createRoute(mapLatLng, charaMarker.getPosition(),"徒歩",addIconClickEvent);
+            for(i=0;i<spot_lat.length;i++)
+            {
+                spotMarker.push(
+                    new google.maps.Marker({
+                        position:new google.maps.LatLng(spot_lat[i],spot_lng[i]),
+                        map:map,
+                        draggable:false,
+                        title:"スポット" + i,
+                        icon:
+                        {
+                            url:CharacterIllustration,
+                            scaledSize:new google.maps.Size(100, 100) //画像のサイズ
+                        }
+                    })
+                );
+            }
+
+            // charaMarker = new google.maps.Marker({
+            //     position:new google.maps.LatLng(spot_lat[0],spot_lng[0]),
+            //     map:map,
+            //     draggable:false,
+            //     icon:
+            //     {
+            //         url:CharacterIllustration,
+            //         scaledSize:new google.maps.Size(100, 100) //画像のサイズ
+            //     }
+            // });
+
+            // ルート探索開始
+            createRoute(mapLatLng, spotMarker[0].getPosition(),"徒歩",addIconClickEvent);
             // createRoute(mapLatLng, charaMarker.getPosition(),"自動車",addIconClickEvent);
 
             // マーカーをクリックした
@@ -168,13 +214,17 @@ function createRoute(llStart,llFinish,travel,callback)
 
             if( travel == "徒歩" )
             {
-                routeWalkDistance = routeDistance;
-                routeWalkTime = routeTime;
+                // routeWalkDistance = routeDistance;
+                // routeWalkTime = routeTime;
+                spotRouteWalkDistance.push( routeDistance );
+                spotRouteWalkTime.push( routeTime );
             }
             else if( travel == "自動車" )
             {
-                routeCarDistance = routeDistance;
-                routeCarTime = routeTime;
+                // routeCarDistance = routeDistance;
+                // routeCarTime = routeTime;
+                spotRouteCarDistance.push(routeDistance);
+                spotRouteCarTime.push(routeTime);
             }
 
             // コールバック関数を実行する。
@@ -195,36 +245,61 @@ function addIconClickEvent(travel)
     // 自動車ルートの探索が終了した場合
     if(travel == "自動車")
     {
-        // 自動車・徒歩ルートの情報から、吹き出しHTMLを生成。
-        naviHTML += '<table><tr><td colspan="2"></td><th>距離</th><th>所要時間</th></tr>';
-        // 徒歩ルート
-        naviHTML += '<tr><td><div class="walkLine"></div></td><td><img src="./testimg/walkicon.png" alt="walk" width="48" height="48"></td>';
-        naviHTML += '<td>' + routeWalkDistance + '</td><td>' + routeWalkTime + '</td></tr>';
-        // 自動車ルート
-        naviHTML += '<tr><td><div class="carLine"></div></td><td><img src="./testimg/caricon.png" alt="car" width="48" height="48"></td>';
-        naviHTML += '<td>' + routeCarDistance + '</td><td>' + routeCarTime + '</td></tr>';
-        naviHTML += '</table>';
+        // スポットの完了個数をプラス。
+        spotCompleted++;
+        // 未処理のスポットがあれば、そのスポットの徒歩ルートを探索する。
+        if( spotCompleted < spot_lat.length )
+        {
+            // 次のスポットの徒歩ルート探索を開始する。
+            createRoute(mapLatLng, new google.maps.LatLng(spot_lat[spotCompleted], spot_lng[spotCompleted]),"徒歩",addIconClickEvent );
+        }
+        else
+        {
+            // スポットのルート検索が全て終了したら、全ルートの検索結果を吹き出し上に表示させる。
+            for(i=0;i<spot_lat.length;i++)
+            {
+                naviHTML = '<table><tr><td colspan="2"></td><th>距離</th><th>所要時間</th></tr>';
+                naviHTML +=  '<tr><td colspan="4">スポット' + (i + 1) + ':</td></tr>';
+                // 徒歩ルート
+                naviHTML += '<tr><td><div class="walkLine"></div></td><td><img src="./testimg/walkicon.png" alt="walk" width="48" height="48"></td>';
+                naviHTML += '<td>' + spotRouteWalkDistance[i] + '</td><td>' + spotRouteWalkTime[i] + '</td></tr>';
+                // 自動車ルート
+                naviHTML += '<tr><td><div class="carLine"></div></td><td><img src="./testimg/caricon.png" alt="car" width="48" height="48"></td>';
+                naviHTML += '<td>' + spotRouteCarDistance[i] + '</td><td>' + spotRouteCarTime[i] + '</td></tr>';
+                naviHTML += '</table>';
 
-        // マーカーをクリックした際のイベント付加。
-        charaMarker.addListener('click', function(e){
+                // マーカーをクリックした際のイベント付加。
+                ( function(ini,nh){
+                    spotMarker[ini].addListener('click', function(e){
 
-            // 吹き出しの作成
-            iw = new google.maps.InfoWindow({
-                position:e.latLng,
-                content:naviHTML
-            });
+                        // 吹き出しの作成
+                        iw = new google.maps.InfoWindow({
+                            position:e.latLng,
+                            content:nh
+                        });
 
-            iw.open(map);
+                        iw.open(map);
+                        
+                    });
+                } )(i,naviHTML);
+                
+            }
 
-            
-        });
+        }
+        
     }
     // 徒歩ルートの探索が終了した場合
     else if(travel == "徒歩")
     {
         // 自動車ルートの探索を開始する。
-        createRoute(mapLatLng, charaMarker.getPosition(),"自動車",addIconClickEvent);
+        createRoute(mapLatLng,new google.maps.LatLng(spot_lat[spotCompleted], spot_lng[spotCompleted]),"自動車",addIconClickEvent);
     }
+
+}
+
+// スポットの全てのルート探索結果を、吹き出しに表示させる関数。
+function showAllSpot()
+{
 
 }
 
