@@ -30,8 +30,7 @@ $(function(){
         onSelect : function(data){
           var data = "#" + data.code;
           var noTargetData = $(this).siblings("data");
-
-          console.log(noTargetData);
+          console.log(data);
           $(this).find(".accordion__switch").click(function() {
               $(this).next(".accordion__container").slideToggle();
               $(this).toggleClass("open");
