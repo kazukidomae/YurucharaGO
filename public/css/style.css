@@ -291,15 +291,23 @@ body {
    }
 
   .trophy {
+    position: relative;
     float: left;
     width: 90px;
-    margin: 10px 11px 0px 17px; }
+    margin: 10px 11px 0px 17.34px;}
     .trophy__img {
-      width: 90px; }
+      width: 80px; }
     .trophy__name {
       font-size: 0.8rem;
       text-align: center;
       line-height: 1.4rem; }
+  .test-circle7{
+    position: absolute;
+    top: -33px;
+    left: -33px;
+    width: 140px;
+    height: 140px;
+  }
 
   /* login.html & registration.html & infochange.html */
   .title {
