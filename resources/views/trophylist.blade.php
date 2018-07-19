@@ -120,7 +120,7 @@
     foregroundBorderWidth: 5,
     backgroundBorderWidth: 5,
     percent: 10,
-    replacePercentageByText: '1/100',
+    replacePercentageByText: '10/100',
     textSize: 28,
     textStyle: 'font-size: 12px;',
     textColor: '#666',

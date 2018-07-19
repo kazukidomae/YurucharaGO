@@ -21,16 +21,48 @@
         <div class="info__text">
           <p>{{ $data[0]->CardDescription}}</p>
         </div>
-          {{-- PR説明 --}}
-          @for ($i = 0; $i < count($data); $i++)
-              <p>{{ $data[$i]->PRDescription }}</p>
-          @endfor
           {{-- PR画像 --}}
-        <div class="info__images">
+        <div class="info__images" id="slider">
             @for ($i = 0; $i < count($data); $i++)
+              <div class="pr-img">
                 <img src="{{$data[$i]->PRPhotoPath}}">
+                <p>{{ $data[$i]->PRDescription }}</p>
+              </div>
             @endfor
         </div>
-      </div>
+        <p id="next"><a href="#">次へ</a></p>
+        <p id="prev"><a href="#">戻る</a></p>
     </div>
+    </div>
+    <script>
+      $(function(){
+        var page = 0;
+        var lastPage = parseInt($(".pr-img").length-1);
+        $(".pr-img").css("display","none");
+        $(".pr-img").eq(page).css("display","block");
+
+        function changePage(){
+          $(".pr-img").fadeOut(1000);
+          $(".pr-img").eq(page).fadeIn(1000);
+        }
+        $("#prev a").click(function(){
+          if(page === 0){
+            page = lastPage;
+            changePage();
+          }else{
+            page --;
+            changePage();
+          };
+        });
+          $("#next a").click(function(){
+            if(page === lastPage){
+              page = 0;
+              changePage();
+            }else{
+              page ++;
+              changePage();
+            };
+          });
+        });
+    </script>
 @endsection
