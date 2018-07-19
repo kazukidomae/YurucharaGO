@@ -34,7 +34,7 @@ Route::get('/navigation', 'GetDataController@getNavigationData')->middleware('ge
 // 範囲検索(非同期)
 Route::get('/range', 'GetDataController@getRangeData')->middleware('rangefillter');
 // カード入手
-Route::get('/getcard', 'ObtainDataController@cardGet')->middleware('obtaincard');
+Route::get('/getcard', 'ObtainDataController@cardGet');
 
 //トロフィー詳細
 Route::get('/trophydetail', 'PagesController@trophydetail')->middleware('auth');   //トロフィー詳細
