@@ -1,3 +1,6 @@
+// ユーザー:
+
+
 // Map管理
 var map;
 // 現在位置
@@ -118,8 +121,8 @@ function initMarker(){
     var markerCount = 0
     // 2地点間の直線距離を格納。
     var between = 0;
-
-    var testLatlng  = new google.maps.LatLng(parseFloat(35.691813), parseFloat(139.696584));    
+    // アイコンのファイルパスを格納。
+    var iconPath = ""; 
 
     // 現在地にマーカー
     marker[markerCount] = new google.maps.Marker({
@@ -132,31 +135,26 @@ function initMarker(){
     for (var item in cardData.data) {
         var markerPosition = {lat: cardData.data[item].latitude, lng: cardData.data[item].longitude};
 
-        // テスト用
-        if(markerCount == 0)
+        // ユーザーがそのカードをまだ持っていない場合は、アイコンを「はてなマーク」とする。
+        if( cardData.data[item].UserID == null )
         {
-            marker[markerCount] = new google.maps.Marker({
-            position: testLatlng,
-            map: map,
-            icon: {
-                url: cardData.data[item].CardIllustrationPath,
-                scaledSize: new google.maps.Size(45, 45)
-            },
-            optimized: false
-            });
+            iconPath = "testimg/question.png";
         }
         else
         {
-            marker[markerCount] = new google.maps.Marker({
+            iconPath = cardData.data[item].CardIllustrationPath;
+        }
+
+
+        marker[markerCount] = new google.maps.Marker({
             position: markerPosition,
             map: map,
             icon: {
-                url: cardData.data[item].CardIllustrationPath,
+                url:iconPath,
                 scaledSize: new google.maps.Size(45, 45)
             },
             optimized: false
-            });   
-        }
+        });   
 
         
 
@@ -185,29 +183,29 @@ function markerEvent(markerCount){
 
     // マウスクリック
     marker[markerCount].addListener('click', function(){
-        $('#mainText').text("ゆるキャラを手に入れた！");
-        // モーダルウィンドウを表示。
-        $('#modal').iziModal('open');
         // $('#modal').leanModal();
-        // $.ajax({
-        //     url:'/YurucharaGO/public/getcard',
-        //     type:'GET',
-        //     data: {
-        //         'cardID': cardData.data[markerCount].CardID,
-        //     },
-        //     dataType:'json',
-        //     timeout:1000,
-        // }).done(function(data1,textStatus,jqXHR) {
-        //     $('#mainText').text("ゆるキャラを手に入れた！");
-        //     $('#modal').modal({
-        //         fadeDuration: 800
-        //     }); 
-        //     // showModal("カードGET","カードを手に入れた！");
-        // }).fail(function(jqXHR, textStatus, errorThrown ) {
+        $.ajax({
+            url:'/YurucharaGO/public/getcard',
+            type:'GET',
+            data: {
+                'cardID': cardData.data[markerCount].CardID,
+            },
+            dataType:'json',
+            timeout:1000,
+        }).done(function(data1,textStatus,jqXHR) {
+            // $('#mainText').text("ゆるキャラを手に入れた！");
+            // $('#modal').modal({
+            //     fadeDuration: 800
+            // }); 
+            // showModal("カードGET","カードを手に入れた！");
+            $('#mainText').text("ゆるキャラを手に入れた！");
+            // モーダルウィンドウを表示。
+            $('#modal').iziModal('open');
+        }).fail(function(jqXHR, textStatus, errorThrown ) {
 
-        // }).always(function(){
+        }).always(function(){
 
-        // });
+        });
     });
 }
 
