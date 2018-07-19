@@ -30,6 +30,7 @@ class Card extends Model
         JOIN attributes ON cards.AttributeID = attributes.AttributeID
         LEFT JOIN (select * from obtaincards where UserID = {$userID}) AS obtaincards ON cards.CardID = obtaincards.CardID
         WHERE cards.PrefecturesID = {$prefectures}
+        GROUP BY cards.CardID
         "));
         return $data;
     }
@@ -70,6 +71,7 @@ class Card extends Model
         WHERE prs.latitude BETWEEN {$lat}-0.0089831601679492 AND {$lat}+0.0089831601679492
         AND
         prs.longitude BETWEEN {$lng}-0.0089831601679492 AND {$lng}+0.0089831601679492
+        GROUP BY prs.PRID
         "));
         return $data;
     }

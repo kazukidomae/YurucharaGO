@@ -25,7 +25,7 @@ class RegionsTableSeeder extends Seeder
                 'RegionName' => 'Chubu',
             ],
             [
-                'RegionName' => 'Kansai',
+                'RegionName' => 'Kinki',
             ],
             [
                 'RegionName' => 'Chugoku',
