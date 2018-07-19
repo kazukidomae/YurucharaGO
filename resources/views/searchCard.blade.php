@@ -17,7 +17,7 @@
                     <link href="{{ asset('/css/iziModal.min.css') }}" rel="stylesheet" type="text/css">
 
                     <!-- グーグルマップのAPIの読み込み -->
-                    <script src="https://maps.googleapis.com/maps/api/js?v=3&libraries=geometry&key=AIzaSyAG3Rgb56sGXTKKIABifXlwM_YHrc3z_5M&callback=initMap&language=en"></script>
+                    <script src="https://maps.googleapis.com/maps/api/js?v=3&libraries=geometry&key=AIzaSyAG3Rgb56sGXTKKIABifXlwM_YHrc3z_5M&callback=initMap&language=en&sensor=true"></script>
 
 
                     <p><button type="button" id="but" onclick="pageReload();">更新</button></p>
