@@ -13,7 +13,7 @@ function initMap()
     var mapArea = document.getElementById('map');
     // 地図のスタイルに関する配列。
  //    var styleArray = [
-	    
+
  //    	{
 	// 		featureType: 'all',
 	// 		elementType: 'all',
@@ -119,7 +119,7 @@ function initMarker(){
     // 2地点間の直線距離を格納。
     var between = 0;
 
-    var testLatlng  = new google.maps.LatLng(parseFloat(35.691813), parseFloat(139.696584));    
+    var testLatlng  = new google.maps.LatLng(parseFloat(35.691813), parseFloat(139.696584));
 
     // 現在地にマーカー
     marker[markerCount] = new google.maps.Marker({
@@ -155,10 +155,10 @@ function initMarker(){
                 scaledSize: new google.maps.Size(45, 45)
             },
             optimized: false
-            });   
+            });
         }
 
-        
+
 
         // 半径100m以内のマーカーをクリックした場合のみ、マーカーイベントを付与
         between = google.maps.geometry.spherical.computeDistanceBetween( mapLatLng,marker[markerCount].getPosition() );
@@ -201,7 +201,7 @@ function markerEvent(markerCount){
         //     $('#mainText').text("ゆるキャラを手に入れた！");
         //     $('#modal').modal({
         //         fadeDuration: 800
-        //     }); 
+        //     });
         //     // showModal("カードGET","カードを手に入れた！");
         // }).fail(function(jqXHR, textStatus, errorThrown ) {
 
