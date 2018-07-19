@@ -40,6 +40,14 @@
         <div class="test-circle7">
         </div>
     </section>
+    <section class="trophy">
+        <img src="{{ asset('images/trophy_img_blank.jpg') }}" class="trophy__img trophy__img--blank">
+        <h2 class="trophy__name">Rare</h2>
+        <p>入手：{{isset($oAttribute["Rare"]->AttributeCount) ? $oAttribute["Rare"]->AttributeCount:0}}</p>
+        <p>マスター：{{isset($mAttribute["Rare"]->AttributeCount) ? $mAttribute["Rare"]->AttributeCount:0}}</p>
+        <div class="test-circle7">
+        </div>
+    </section>
 
   <!--地方トロフィー-->
   <section class="trophy">
@@ -76,9 +84,9 @@
   </section>
   <section class="trophy">
     <img src="{{ asset('images/trophy_img_blank.jpg') }}" class="trophy__img trophy__img--blank">
-    <h2 class="trophy__name">Kansai</h2>
-      <p>入手：{{isset($oRegion["Kansai"]->RegionCount) ? $oRegion["Kansai"]->RegionCount:0}}</p>
-      <p>マスター：{{isset($mRegion["Kansai"]->RegionCount) ? $mRegion["Kansai"]->RegionCount:0}}</p>
+    <h2 class="trophy__name">Kinki</h2>
+      <p>入手：{{isset($oRegion["Kinki"]->RegionCount) ? $oRegion["Kinki"]->RegionCount:0}}</p>
+      <p>マスター：{{isset($mRegion["Kinki"]->RegionCount) ? $mRegion["Kinki"]->RegionCount:0}}</p>
       <div class="test-circle7">
       </div>
   </section>
