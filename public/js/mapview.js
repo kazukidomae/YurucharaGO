@@ -116,6 +116,11 @@ function initCircle(latlng)
 // Marker生成
 function initMarker(){
     var markerCount = 0
+    // 2地点間の直線距離を格納。
+    var between = 0;
+
+    var testLatlng  = new google.maps.LatLng(parseFloat(35.691813), parseFloat(139.696584));    
+
     // 現在地にマーカー
     marker[markerCount] = new google.maps.Marker({
         position: mapLatLng,
@@ -126,7 +131,23 @@ function initMarker(){
     // カード枚数分マーカー
     for (var item in cardData.data) {
         var markerPosition = {lat: cardData.data[item].latitude, lng: cardData.data[item].longitude};
-        marker[markerCount] = new google.maps.Marker({
+
+        // テスト用
+        if(markerCount == 0)
+        {
+            marker[markerCount] = new google.maps.Marker({
+            position: testLatlng,
+            map: map,
+            icon: {
+                url: cardData.data[item].CardIllustrationPath,
+                scaledSize: new google.maps.Size(45, 45)
+            },
+            optimized: false
+            });
+        }
+        else
+        {
+            marker[markerCount] = new google.maps.Marker({
             position: markerPosition,
             map: map,
             icon: {
@@ -134,9 +155,18 @@ function initMarker(){
                 scaledSize: new google.maps.Size(45, 45)
             },
             optimized: false
-        });
-        // マーカーイベント付与
-        markerEvent(markerCount);
+            });   
+        }
+
+        
+
+        // 半径100m以内のマーカーをクリックした場合のみ、マーカーイベントを付与
+        between = google.maps.geometry.spherical.computeDistanceBetween( mapLatLng,marker[markerCount].getPosition() );
+        if( between <= 100 )
+        {
+             markerEvent(markerCount);
+        }
+
         markerCount = ++markerCount;
     }
 }
