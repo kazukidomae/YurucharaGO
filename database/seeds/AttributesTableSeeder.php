@@ -15,22 +15,27 @@ class AttributesTableSeeder extends Seeder
             [
                 'AttributeName' => 'Nature',
                 'AttributeIconPath' => '',
-                'CardDesignPath' => 'images/wallpaper.png',
+                'CardDesignPath' => 'NatureCard.png',
             ],
             [
                 'AttributeName' => 'Food',
                 'AttributeIconPath' => '',
-                'CardDesignPath' => 'images/wallpaper.png',
+                'CardDesignPath' => 'FoodCard.png',
             ],
             [
                 'AttributeName' => 'Building',
                 'AttributeIconPath' => '',
-                'CardDesignPath' => 'images/wallpaper.png',
+                'CardDesignPath' => 'BuildingCard.png',
             ],
             [
                 'AttributeName' => 'Culture',
                 'AttributeIconPath' => '',
-                'CardDesignPath' => 'images/wallpaper.png',
+                'CardDesignPath' => 'CultureCard.png',
+            ],
+            [
+                'AttributeName' => 'Rare',
+                'AttributeIconPath' => '',
+                'CardDesignPath' => 'RareCard.png',
             ],
         ]);
     }

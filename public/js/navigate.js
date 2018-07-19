@@ -51,7 +51,7 @@ var spotRouteWalkTime = new Array();
 // 各スポットごとの自動車ルートの距離を格納する配列
 var spotRouteCarDistance = new Array ();
 // 各スポットごとの自動車ルートの時間を格納する配列
-var spotRouteCarTime = new Array(); 
+var spotRouteCarTime = new Array();
 
 // 現在のルート探索の進捗状況。ルート探索が完了したスポット数がセットされる。
 var spotCompleted = 0;
@@ -90,7 +90,7 @@ function initMap()
             if(alreadyGet != 1)
             {
                 // ？マークを表示する。
-                CharacterIllustration = "./testimg/question.png";
+                CharacterIllustration = "./images/unknown.png";
             }
 
             for(i=0;i<spot_lat.length;i++)
@@ -200,7 +200,7 @@ function createRoute(llStart,llFinish,travel,callback)
     }
 
     var d = new google.maps.DirectionsService(); // ルート検索
-    
+
     // ルート検索
     d.route(routeOptions, function(result, status){
         // OKの場合ルート描画
@@ -279,14 +279,14 @@ function addIconClickEvent(travel)
                         });
 
                         iw.open(map);
-                        
+
                     });
                 } )(i,naviHTML);
-                
+
             }
 
         }
-        
+
     }
     // 徒歩ルートの探索が終了した場合
     else if(travel == "徒歩")

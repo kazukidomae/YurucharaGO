@@ -6,7 +6,7 @@
         <?php $obtainFlg= true ?>
     @endif
     <div class="card">
-      <img src="{{$data[0]->CardDesignPath}}" class="card__img">
+      <img src="{{'images/CardDesign/'.$data[0]->CardDesignPath}}" class="card__img">
         {{-- シルエット化 --}}
         @if (!$obtainFlg)
             <img src="{{$data[0]->CardIllustrationPath}}" class="card__chara__none">
