@@ -26,15 +26,15 @@ Route::get('/trophylist', 'ObtainDataController@trophyGet')->middleware('auth');
 Route::get('/configuration', 'PagesController@configuration')->middleware('auth');
 
 // 都道府県カード一覧
-Route::get('/data', 'GetDataController@refinePrefectures');
+Route::get('/data', 'GetDataController@refinePrefectures')->middleware('datafillter');
 //カード詳細
-Route::get('/cardDetail', 'GetDataController@getDetail');
+Route::get('/cardDetail', 'GetDataController@getDetail')->middleware('getdatafillter');
 // ナビゲーション
-Route::get('/navigation', 'GetDataController@getNavigationData');
+Route::get('/navigation', 'GetDataController@getNavigationData')->middleware('getdatafillter');
 // 範囲検索(非同期)
-Route::get('/range', 'GetDataController@getRangeData');
+Route::get('/range', 'GetDataController@getRangeData')->middleware('rangefillter');
 // カード入手
-Route::get('/getcard', 'ObtainDataController@cardGet');
+Route::get('/getcard', 'ObtainDataController@cardGet')->middleware('obtaincard');
 
 //トロフィー詳細
 Route::get('/trophydetail', 'PagesController@trophydetail')->middleware('auth');   //トロフィー詳細
