@@ -16,7 +16,7 @@ function initMap()
     var mapArea = document.getElementById('map');
     // 地図のスタイルに関する配列。
  //    var styleArray = [
-	    
+
  //    	{
 	// 		featureType: 'all',
 	// 		elementType: 'all',
@@ -121,6 +121,7 @@ function initMarker(){
     var markerCount = 0
     // 2地点間の直線距離を格納。
     var between = 0;
+
     // アイコンのファイルパスを格納。
     var iconPath = ""; 
 
@@ -155,9 +156,6 @@ function initMarker(){
             },
             optimized: false
         });   
-
-        
-
         // 半径100m以内のマーカーをクリックした場合のみ、マーカーイベントを付与
         between = google.maps.geometry.spherical.computeDistanceBetween( mapLatLng,marker[markerCount].getPosition() );
         if( between <= 100 )
@@ -206,6 +204,7 @@ function markerEvent(markerCount){
         }).always(function(){
 
         });
+
     });
 }
 
