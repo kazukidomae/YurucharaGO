@@ -139,7 +139,7 @@ function initMarker(){
         // ユーザーがそのカードをまだ持っていない場合は、アイコンを「はてなマーク」とする。
         if( cardData.data[item].UserID == null )
         {
-            iconPath = "testimg/question.png";
+            iconPath = "images/unknown.png";
         }
         else
         {

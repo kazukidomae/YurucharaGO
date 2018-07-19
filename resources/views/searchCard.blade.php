@@ -35,6 +35,10 @@
                         	$('#modal').iziModal({
                         		title:'カードGET'
                         	});
+                            // モーダルウィンドウが閉じられた際のイベントを追加。
+                            // $(document).on('closed','#modal',function(e){
+                                  
+                            // });
 
                             getPosition(positionProcessing);
                         });
