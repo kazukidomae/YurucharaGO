@@ -1,7 +1,3 @@
-// var test_get = ;
-// var test_master = ;
-
-
 $(document).ready(function() {
     $(".circle").circliful({
         animation: 1,
