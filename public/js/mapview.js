@@ -76,20 +76,22 @@ function initMap()
         },
         // 取得失敗した場合
         function(error) {
-          switch(error.code) {
-            case 1: //PERMISSION_DENIED
-              alert("位置情報の利用が許可されていません");
-              break;
-            case 2: //POSITION_UNAVAILABLE
-              alert("現在位置が取得できませんでした");
-              break;
-            case 3: //TIMEOUT
-              alert("タイムアウトになりました");
-              break;
-            default:
-              alert("その他のエラー(エラーコード:"+error.code+")");
-              break;
-          }
+
+            window.alert(error);
+          // switch(error.code) {
+          //   case 1: //PERMISSION_DENIED
+          //     alert("位置情報の利用が許可されていません");
+          //     break;
+          //   case 2: //POSITION_UNAVAILABLE
+          //     alert("現在位置が取得できませんでした");
+          //     break;
+          //   case 3: //TIMEOUT
+          //     alert("タイムアウトになりました");
+          //     break;
+          //   default:
+          //     alert("その他のエラー(エラーコード:"+error.code+")");
+          //     break;
+          // }
         }
     );
 }
@@ -123,7 +125,7 @@ function initMarker(){
     var between = 0;
 
     // アイコンのファイルパスを格納。
-    var iconPath = ""; 
+    var iconPath = "";
 
     // 現在地にマーカー
     marker[markerCount] = new google.maps.Marker({
@@ -155,7 +157,7 @@ function initMarker(){
                 scaledSize: new google.maps.Size(45, 45)
             },
             optimized: false
-        });   
+        });
         // 半径100m以内のマーカーをクリックした場合のみ、マーカーイベントを付与
         between = google.maps.geometry.spherical.computeDistanceBetween( mapLatLng,marker[markerCount].getPosition() );
         if( between <= 100 )
@@ -194,7 +196,7 @@ function markerEvent(markerCount){
             // $('#mainText').text("ゆるキャラを手に入れた！");
             // $('#modal').modal({
             //     fadeDuration: 800
-            // }); 
+            // });
             // showModal("カードGET","カードを手に入れた！");
             $('#mainText').text("ゆるキャラを手に入れた！");
             // モーダルウィンドウを表示。
