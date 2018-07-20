@@ -185,7 +185,7 @@ function markerEvent(markerCount){
     marker[markerCount].addListener('click', function(){
         // $('#modal').leanModal();
         $.ajax({
-            url:'https://www.yurucharago.work/getcard',
+            url:'/getcard',
             type:'GET',
             data: {
                 'cardID': cardData.data[markerCount].CardID,
