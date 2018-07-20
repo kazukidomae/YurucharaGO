@@ -156,9 +156,9 @@ function initMarker(){
             },
             optimized: false
         });   
-        // 半径100m以内のマーカーをクリックした場合のみ、マーカーイベントを付与
+        // 半径100m以内のマーカーで、なおかつ未取得カードのマーカーをクリックした場合のみ、マーカーイベントを付与
         between = google.maps.geometry.spherical.computeDistanceBetween( mapLatLng,marker[markerCount].getPosition() );
-        if( between <= 100 )
+        if( between <= 100 && cardData.data[item].UserID == null)
         {
              markerEvent(markerCount);
         }
@@ -213,6 +213,10 @@ function getPosition(callback)
   navigator.geolocation.getCurrentPosition(
       // 取得成功した場合
         function(position) {
+            // モーダルウィンドウが閉じられた際のイベントを追加。
+            $(document).on('closed','#modal',function(e){
+                positionProcessing({"lat":position.coords.latitude, "lng":position.coords.longitude});
+            });
           callback({"lat":position.coords.latitude, "lng":position.coords.longitude});
         },
         // 取得失敗した場合
