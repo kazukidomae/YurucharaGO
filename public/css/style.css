@@ -144,14 +144,26 @@ body {
   box-sizing: border-box;
   overflow: scroll;
   width: 91%;
-  height: 302px;
+  height: 300px;
   margin: 17px;
   padding: 10px;
   background-color: rgba(255, 255, 255, 0.8); }
-  .info__map {
-    margin: 10px 0;
-    font-size: 1.2rem;
-    line-height: 1.6rem; }
+  .info__name{
+    position: absolute;
+    top: 290px;
+    width: 85.6%;
+    margin-left: 17px;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.8);
+    font-size: 1.4rem;
+    line-height: 2rem;
+    text-align: left; }
+  .info__map img{
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    width: 14%;
+    margin: 10px 0; }
   .info__text {
     font-size: 1.2rem;
     line-height: 1.6rem; }
@@ -178,12 +190,33 @@ body {
 }
 #slider p{
   position: absolute;
+  top: 350px;
   order: 1;
+  width: 94%;
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 4px;
+  background-color: #aaa;
+  font-size: 1.0rem;
+  line-height: 1.2rem;
+}
+/* beforeで三角を表現 */
+#slider p::before{
+  content: '';
+  position: absolute;
+  left: 43%;
+  top: -12px;
+  display: block;
+  width: 0;
+  height: 0;
+  border-right: 15px solid transparent;
+  border-bottom: 15px solid #aaa;
+  border-left: 15px solid transparent;
 }
 #prev{
-}
+  left: -7px;}
 #next{
-}
+  right: -7px;}
 .btn{
   display: flex;
   justify-content: center;
@@ -191,7 +224,8 @@ body {
   height: auto;
 }
 .slider-btn{
-  position: relative;
+  position: absolute;
+  top: 130px;
   box-sizing: border-box;
   width: 60px;
   height: 60px;

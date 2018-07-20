@@ -13,11 +13,15 @@
         @else
             <img src="{{$data[0]->CardIllustrationPath}}" class="card__chara">
         @endif
-      <div class="card__name"><h2>{{$data[0]->CardName}}</h2></div>
-      <div class="info">
+      <div class="info__name">
+        <h2>{{$data[0]->CardName}}</h2>
         <div class="info__map">
-          <p>生息地：<a href="{{ action('GetDataController@getNavigationData') }}?CardID={{$data[0]->CardID}}&Obtain={{$obtainFlg}}">kumamoto</a></p>
+          <a href="{{ action('GetDataController@getNavigationData') }}?CardID={{$data[0]->CardID}}&Obtain={{$obtainFlg}}">
+            <img src="{{ asset('images/musimegane1.png') }}">
+          </a>
         </div>
+      </div>
+      <div class="info">
         <div class="info__text">
           <p>{{ $data[0]->CardDescription}}</p>
         </div>
