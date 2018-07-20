@@ -23,13 +23,15 @@
         </div>
           {{-- PR画像 --}}
         <div class="info__images" id="slider">
-            @for ($i = 0; $i < count($data); $i++)
-                <img src="{{$data[$i]->PRPhotoPath}}">
-                <p>{{ $data[$i]->PRDescription }}</p>
-            @endfor
+          @for ($i = 0; $i < count($data); $i++)
+            <img src="{{$data[$i]->PRPhotoPath}}">
+              <p>{{ $data[$i]->PRDescription }}</p>
+          @endfor
+          <div class="btn">
+            <a href="#" id="prev" class="slider-btn">＜</a>
+            <a href="#" id="next" class="slider-btn">＞</a>
+          </div>
         </div>
-        <a href="#" id="next" class="slider-btn">＞</a>
-        <a href="#" id="prev" class="slider-btn">＜</a>
     </div>
     </div>
     <script>

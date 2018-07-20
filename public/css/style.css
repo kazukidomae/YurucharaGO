@@ -140,7 +140,7 @@ body {
 
 .info {
   position: absolute;
-  top: 326px;
+  top: 340px;
   box-sizing: border-box;
   overflow: scroll;
   width: 91%;
@@ -158,37 +158,44 @@ body {
     .info__text p {
       margin-bottom: 10px; }
   .info__images img {
-    float: left;
     width: 100%;
     margin: 10px 0;
     background-color: #fff; }
-  .info__images p{
-    position: relative;
-  }
 /* カード一覧終わり */
 /* スライダー */
 #slider {
   position: relative;
+  display: flex;
+}
+#slider::after{
+  clear: both;
 }
 #slider img{
   position: absolute;
   top: 0;
   left: 0;
+  order: 2;
+}
+#slider p{
+  position: absolute;
+  order: 1;
 }
 #prev{
-
 }
 #next{
 }
+.btn{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+}
 .slider-btn{
   position: relative;
-  top: 30px;
-  display: block;
   box-sizing: border-box;
   width: 60px;
   height: 60px;
   padding: 25px 18px;
-  margin: -8px;
   text-decoration: none;
   font-size: 1.6rem;
   color: #fff;
