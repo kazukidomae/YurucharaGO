@@ -77,7 +77,7 @@ function initMap()
         // 取得失敗した場合
         function(error) {
 
-            window.alert(error);
+            console.log(error);
           // switch(error.code) {
           //   case 1: //PERMISSION_DENIED
           //     alert("位置情報の利用が許可されていません");
