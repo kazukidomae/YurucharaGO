@@ -21,7 +21,7 @@
     <link href="{{ asset('css/reset.css') }}" rel="stylesheet">
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
 
-    <script type="text/javascript" src="{{ asset('/js/jquery-3.0.0.min.js') }}"></script>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-3.0.0.min.js"></script>
     <script type="text/javascript" src="{{ asset('/js/JapanMap/jquery.japan-map.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('/js/jquery.circliful.min.js') }}"></script>
 </head>
