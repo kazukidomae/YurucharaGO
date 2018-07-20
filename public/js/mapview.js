@@ -240,7 +240,8 @@ function getPosition(callback)
 function positionProcessing(geoCodeResults)
 {
     $.ajax({
-        url:'/YurucharaGO/public/range',
+        // url:'/YurucharaGO/public/range',
+        url:'/range',
         type:'GET',
         data: {
             'lat': geoCodeResults["lat"],
