@@ -58,10 +58,10 @@
       <footer class="footer">
         <nav class="menu">
           <ul class="menu__list">
-            <li class="menu__item"><a href="{{ action('PagesController@index') }}" class="menu__btn"><img src="{{ asset('images/map1.png') }}"></a></li>
-            <li class="menu__item"><a href="{{ action('MapViewController@search') }}" class="menu__btn"><img src="{{ asset('images/musimegane1.png') }}"></a></li>
-            <li class="menu__item"><a href="{{ action('CollectionController@cardGet') }}" class="menu__btn"><img src="{{ asset('images/card3.png') }}"></a></li>
-            <li class="menu__item"><a href="{{ action('ObtainDataController@trophyGet') }}" class="menu__btn"><img src="{{ asset('images/toro1.png') }}"></a></li>
+            <li class="menu__item"><a href="{{ action('PagesController@index') }}" class="menu__btn"><img src="{{ asset('images/map.png') }}"></a></li>
+            <li class="menu__item"><a href="{{ action('MapViewController@search') }}" class="menu__btn"><img src="{{ asset('images/musimegane.png') }}"></a></li>
+            <li class="menu__item"><a href="{{ action('CollectionController@cardGet') }}" class="menu__btn"><img src="{{ asset('images/card.png') }}"></a></li>
+            <li class="menu__item"><a href="{{ action('ObtainDataController@trophyGet') }}" class="menu__btn"><img src="{{ asset('images/toro.png') }}"></a></li>
             <li class="menu__item"><a href="{{ action('PagesController@configuration') }}" class="menu__btn"><img src="{{ asset('images/haguruma.png') }}"></a></li>
           </ul>
         </nav>
