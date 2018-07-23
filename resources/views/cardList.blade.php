@@ -11,7 +11,7 @@
                 <img src="{{'images/CardDesign/'.$cardData->CardDesignPath}}" class="card__img">
                 {{-- シルエット化 --}}
                 @if (!$obtainFlg)
-                    <img src="{{$cardData->CardIllustrationPath}}" class="card__chara__none">
+                    <img src="{{$cardData->CardIllustrationPath}}" class="card__chara-none">
                 @else
                     <img src="{{$cardData->CardIllustrationPath}}" class="card__chara">
                 @endif
