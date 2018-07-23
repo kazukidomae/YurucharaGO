@@ -1,4 +1,20 @@
 @charset "UTF-8";
+
+/* モーダル内のカード画像。 */
+.modalCard
+{
+	width:150px;
+	height:150px;
+	margin:0 0 0 50px;
+}
+
+/* モーダル内テキスト */
+#mainText
+{
+	font-size:16px;
+	line-height:1.2em;
+}
+
 #map
 {
 	width:100%;
