@@ -7,17 +7,17 @@
     @endif
     <div class="card">
       <img src="{{'images/CardDesign/'.$data[0]->CardDesignPath}}" class="card__img">
-         シルエット化
+         <!-- シルエット化 -->
         @if (!$obtainFlg)
-            <img src="{{$data[0]->CardIllustrationPath}}" class="card__chara__none">
+            <img src="{{$data[0]->CardIllustrationPath}}" class="card__chara-none card__chara-none--detail">
         @else
-            <img src="{{$data[0]->CardIllustrationPath}}" class="card__chara">
+            <img src="{{$data[0]->CardIllustrationPath}}" class="card__chara card__chara--detail">
         @endif
       <div class="info__name">
         <h2>{{$data[0]->CardName}}</h2>
         <div class="info__map">
           <a href="{{ action('GetDataController@getNavigationData') }}?CardID={{$data[0]->CardID}}&Obtain={{$obtainFlg}}">
-            <img src="{{ asset('images/musimegane1.png') }}">
+            <img src="{{ asset('images/musimegane.png') }}">
           </a>
         </div>
       </div>
@@ -25,7 +25,7 @@
         <div class="info__text">
           <p>{{ $data[0]->CardDescription}}</p>
         </div>
-           PR画像
+           <!-- PR画像 -->
         <div class="info__images" id="slider">
           @for ($i = 0; $i < count($data); $i++)
             <img src="{{$data[$i]->PRPhotoPath}}">
