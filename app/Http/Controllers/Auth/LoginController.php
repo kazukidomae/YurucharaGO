@@ -19,13 +19,13 @@ class LoginController extends Controller
     */
 
     use AuthenticatesUsers;
-    
+
     /**
      * Login後の処理
      * トロフィー関連の機能
      *
      */
-    
+
         protected function authenticated(\Illuminate\Http\Request $request, $user)
     {
         //
@@ -36,7 +36,7 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/';
 
     /**
      * Create a new controller instance.
