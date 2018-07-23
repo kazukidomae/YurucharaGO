@@ -16,11 +16,11 @@ class DatabaseSeeder extends Seeder
             RegionsTableSeeder::class,
             PrefecturesTableSeeder::class,
             AttributesTableSeeder::class,
-            //CardsTableSeeder::class,
-            // PRsTableSeeder::class,
+            CardsTableSeeder::class,
+            PRsTableSeeder::class,
             //EventsTableSeeder::class,
             UsersTableSeeder::class,
-            //ObtaincardTableSeeder::class,
+            ObtaincardTableSeeder::class,
         ]);
     }
 }
