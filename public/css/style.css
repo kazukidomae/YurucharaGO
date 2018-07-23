@@ -366,10 +366,30 @@ body {
     margin: 10px;
    }
 
+  .type::after{
+    content: "";
+    margin: 100px;
+  }
+  .type__title{
+    clear: both;
+    display: flex;
+    margin: 20px auto;
+	  align-items: center;
+    font-size: 1.2rem;}
+  .type__title::after, .type__title::before{
+    content: "";
+	  flex-grow: 1;
+	  height: 1px;
+	  background: #444;
+	  display: block;}
+  .type__title::after{
+    margin-left: .4em;}
+  .type__title::before{
+    margin-right: .4em;}
   .trophy {
     position: relative;
     float: left;
-    width: 90px;
+    width: 25%;
     margin: 10px 11px 0px 17.34px;}
     .trophy__img {
       width: 80px; }
