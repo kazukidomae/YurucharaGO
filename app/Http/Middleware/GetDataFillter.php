@@ -15,10 +15,10 @@ class GetDataFillter
      */
     public function handle($request, Closure $next)
     {
-        if(empty($request->filled('CardID'))||empty($request->filled('Obtain'))){
+        if(empty($request->filled('CardID'))){
             return redirect('/');
         }
-        
+
         return $next($request);
     }
 }
