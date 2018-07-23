@@ -77,7 +77,6 @@ body {
       height: auto;
       padding: 0 1.4%;
     }
-
 /* 共通部分終わり */
 /* カード一覧 */
 .card {
@@ -95,24 +94,18 @@ body {
   .card__img {
     width: 100%;
     height: auto; }
-  .card__mark {
-    position: absolute;
-    top: 9px;
-    left: 11.49px;
-    width: 24%; }
-    .card__mark--detail {
-      top: 33px;
-      left: 36px;
-      width: 22%; }
   .card__chara {
     position: absolute;
     top: 26px;
     width: 100%; }
-  .card__chara__none{
+  .card__chara-none{
       position: absolute;
       top: 26px;
       width: 100%;
       filter: brightness(0%);}
+  .card__chara--detail{
+    left: 0;
+  }
   .card__name {
     position: absolute;
     top: 290px;
@@ -143,11 +136,11 @@ body {
 
 .info {
   position: absolute;
-  top: 340px;
+  top: 330px;
   box-sizing: border-box;
   overflow: scroll;
   width: 91%;
-  height: 300px;
+  height: 44%;
   margin: 17px;
   padding: 10px;
   background-color: rgba(255, 255, 255, 0.8); }
