@@ -168,7 +168,7 @@ function initMarker(){
             }
             else
             {
-                markerEvent(markerCount,cardData.data[item].CardIllustrationPath,2);   
+                markerEvent(markerCount,cardData.data[item].CardIllustrationPath,2);
             }
         }
 
@@ -196,8 +196,8 @@ function markerEvent(markerCount,path,mode){
         marker[markerCount].addListener('click', function(){
             // $('#modal').leanModal();
             $.ajax({
-                url:'/getcard/range',
-                // url:'/getcard',
+                // url:'/YurucharaGO/public/getcard',
+                 url:'/getcard',
                 type:'GET',
                 data: {
                     'cardID': cardData.data[markerCount].CardID,
@@ -237,10 +237,10 @@ function markerEvent(markerCount,path,mode){
             $('#modal').iziModal('setHeaderColor','#fe1d3f');
             $('#modal').iziModal('setTitle','Already got');
             $('#modal').iziModal('open');
-           
+
         });
     }
-    
+
 }
 
 function getPosition(callback)
@@ -251,7 +251,7 @@ function getPosition(callback)
             // モーダルウィンドウが閉じられた際のイベントを追加。
             $(document).on('closed','#modal',function(e){
                 // 現在地の緯度・経度を基にゆるキャラカードを再検索。
-                positionProcessing({ "lat":position.coords.latitude, "lng":position.coords.longitude });                    
+                positionProcessing({ "lat":position.coords.latitude, "lng":position.coords.longitude });
             });
           callback({"lat":position.coords.latitude, "lng":position.coords.longitude});
         },
@@ -278,8 +278,8 @@ function getPosition(callback)
 function positionProcessing(geoCodeResults)
 {
     $.ajax({
-        url:'/YurucharaGO/public/range',
-        //url:'/range',
+        // url:'/YurucharaGO/public/range',
+        url:'/range',
         type:'GET',
         data: {
             'lat': geoCodeResults["lat"],
