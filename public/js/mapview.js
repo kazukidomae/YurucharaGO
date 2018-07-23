@@ -158,11 +158,18 @@ function initMarker(){
             },
             optimized: false
         });
-        // 半径100m以内のマーカーをクリックした場合のみ、マーカーイベントを付与
+        // 半径100m以内のマーカーで、かつ未取得のカードをクリックした場合のみ、マーカーイベントを付与
         between = google.maps.geometry.spherical.computeDistanceBetween( mapLatLng,marker[markerCount].getPosition() );
         if( between <= 100 )
         {
-             markerEvent(markerCount);
+            if(cardData.data[item].UserID == null)
+            {
+                markerEvent(markerCount,cardData.data[item].CardIllustrationPath,1);
+            }
+            else
+            {
+                markerEvent(markerCount,cardData.data[item].CardIllustrationPath,2);   
+            }
         }
 
         markerCount = ++markerCount;
@@ -170,7 +177,9 @@ function initMarker(){
 }
 
 // マーカーイベント
-function markerEvent(markerCount){
+// 引数:
+// mode:モーダルウィンドウの表示モード。　1:ゆるキャラ取得用緑メッセージ　2:ゆるキャラ所持用赤メッセージ
+function markerEvent(markerCount,path,mode){
 
     // // マウスオーバー
     // marker[markerCount].addListener('mouseover',function(){
@@ -182,32 +191,56 @@ function markerEvent(markerCount){
     // });
 
     // マウスクリック
-    marker[markerCount].addListener('click', function(){
-        // $('#modal').leanModal();
-        $.ajax({
-            url:'/getcard',
-            type:'GET',
-            data: {
-                'cardID': cardData.data[markerCount].CardID,
-            },
-            dataType:'json',
-            timeout:1000,
-        }).done(function(data1,textStatus,jqXHR) {
-            // $('#mainText').text("ゆるキャラを手に入れた！");
-            // $('#modal').modal({
-            //     fadeDuration: 800
-            // });
-            // showModal("カードGET","カードを手に入れた！");
-            $('#mainText').text("ゆるキャラを手に入れた！");
-            // モーダルウィンドウを表示。
-            $('#modal').iziModal('open');
-        }).fail(function(jqXHR, textStatus, errorThrown ) {
+    if(mode == 1)
+    {
+        marker[markerCount].addListener('click', function(){
+            // $('#modal').leanModal();
+            $.ajax({
+                url:'/getcard/range',
+                // url:'/getcard',
+                type:'GET',
+                data: {
+                    'cardID': cardData.data[markerCount].CardID,
+                },
+                dataType:'json',
+                timeout:1000,
+            }).done(function(data1,textStatus,jqXHR) {
+                // $('#mainText').text("ゆるキャラを手に入れた！");
+                // $('#modal').modal({
+                //     fadeDuration: 800
+                // });
+                // showModal("カードGET","カードを手に入れた！");
+                // モーダルウィンドウ内画像をゆるキャラの画像へ変更。
+                $('#modalCard').attr('src',path);
+                $('#modalCard').show();
+                $('#mainText').text("You got a Yuruchara!");
 
-        }).always(function(){
+                // モーダルウィンドウを表示。
+                $('#modal').iziModal('setHeaderColor','#68f776');
+                $('#modal').iziModal('setTitle','GET');
+                $('#modal').iziModal('open');
+            }).fail(function(jqXHR, textStatus, errorThrown ) {
+
+            }).always(function(){
+
+            });
 
         });
+    }
+    else
+    {
+        marker[markerCount].addListener('click', function(){
+            $('#modalCard').hide();
+            $('#mainText').text("You already have the Yuruchara.");
 
-    });
+            // モーダルウィンドウを表示。
+            $('#modal').iziModal('setHeaderColor','#fe1d3f');
+            $('#modal').iziModal('setTitle','Already got');
+            $('#modal').iziModal('open');
+           
+        });
+    }
+    
 }
 
 function getPosition(callback)
@@ -215,6 +248,11 @@ function getPosition(callback)
   navigator.geolocation.getCurrentPosition(
       // 取得成功した場合
         function(position) {
+            // モーダルウィンドウが閉じられた際のイベントを追加。
+            $(document).on('closed','#modal',function(e){
+                // 現在地の緯度・経度を基にゆるキャラカードを再検索。
+                positionProcessing({ "lat":position.coords.latitude, "lng":position.coords.longitude });                    
+            });
           callback({"lat":position.coords.latitude, "lng":position.coords.longitude});
         },
         // 取得失敗した場合

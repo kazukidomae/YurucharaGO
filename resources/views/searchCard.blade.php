@@ -25,6 +25,8 @@
 
                     <!-- モーダル用表示領域。 -->
                     <div id="modal" class="modal">
+                        <!-- カードの画像 -->
+                        <img src="./testimg/card.png" id="modalCard" class="modalCard" alt="カードイラスト" width="150" height="150">
                         <p id="mainText"></p>
                     </div>
 
@@ -33,12 +35,12 @@
                         $(function(){    
                         	// モーダルウィドウを初期化する。
                         	$('#modal').iziModal({
-                        		title:'カードGET'
+                                background:'#fef5c5',
+                                padding:24,
+                                transitionIn:'fadeInDown',
+                                transitionOut:'fadeOutDown',
+                                width:'80%'
                         	});
-                            // モーダルウィンドウが閉じられた際のイベントを追加。
-                            // $(document).on('closed','#modal',function(e){
-                                  
-                            // });
 
                             getPosition(positionProcessing);
                         });
