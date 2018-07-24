@@ -401,13 +401,13 @@ body {
   /* login.html & registration.html & infochange.html */
   .title {
     text-align: center;
-    padding: 20px;
+    margin: 20px 0;
     font-size: 32px; }
 
   .form {
     margin: auto;
     padding: 10px;
-    margin: 42% 12%; }
+    margin: 20% 10%; }
     .form__enclosure {
       text-align: center;
       margin: 0px auto; }
