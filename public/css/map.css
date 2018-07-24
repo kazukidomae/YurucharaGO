@@ -9,7 +9,7 @@
 }
 .update_btn img{
 	position: fixed;
-	bottom: 80px;
+	bottom: 100px;
 	left: 2%;
 	width: 60px;
 }
@@ -23,7 +23,7 @@
 #map
 {
 	width:100%;
-	height:700px;
+	height:calc(100vh - 136px);
 	margin:0 auto;
 }
 #modal
