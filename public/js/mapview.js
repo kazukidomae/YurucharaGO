@@ -131,7 +131,7 @@ function initMarker(){
     marker[markerCount] = new google.maps.Marker({
         position: mapLatLng,
         draggable:false,
-        icon:"./testimg/human.png",
+        icon:"./images/human.png",
         map: map
     });
     // カード枚数分マーカー
@@ -141,11 +141,11 @@ function initMarker(){
         // ユーザーがそのカードをまだ持っていない場合は、アイコンを「はてなマーク」とする。
         if( cardData.data[item].UserID == null )
         {
-            iconPath = "images/unknown.png";
+            iconPath = "./images/unknown.png";
         }
         else
         {
-            iconPath = cardData.data[item].CardIllustrationPath;
+            iconPath = './images/CharacterImage/'+cardData.data[item].CardIllustrationPath;
         }
 
 
@@ -197,7 +197,7 @@ function markerEvent(markerCount,path,mode){
             // $('#modal').leanModal();
             $.ajax({
                 // url:'/YurucharaGO/public/getcard',
-                 url:'/getcard',
+                url:'/getcard',
                 type:'GET',
                 data: {
                     'cardID': cardData.data[markerCount].CardID,

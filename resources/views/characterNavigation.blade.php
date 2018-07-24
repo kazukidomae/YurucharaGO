@@ -18,11 +18,11 @@
         @for ($i=0; $i<count($data); $i++)
             spot_lat.push( parseFloat( @json($data[$i]->latitude) ) );
             spot_lng.push( parseFloat( @json($data[$i]->longitude) ) );
-            
+
         @endfor
 
         CharacterName = @json($data[0]->CardName);
-        CharacterIllustration = @json($data[0]->CardIllustrationPath);
+        CharacterIllustration = @json('images/CharacterImage/'.$data[0]->CardIllustrationPath);
         // カードの取得済み情報を取得。
         alreadyGet = @json($obtain[0]);
     </script>

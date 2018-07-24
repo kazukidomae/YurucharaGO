@@ -12,7 +12,7 @@
         -->
             {{--<a href="{{ action('GetDataController@getDetail') }}?CardID={{$cardData->CardID}}" class="card__link">--}}
                 <img src="{{'images/CardDesign/'.$cardData->CardDesignPath}}" class="card__img">
-                <img src="{{$cardData->CardIllustrationPath}}" class="card__chara">
+                <img src="{{'images/CharacterImage/'.$cardData->CardIllustrationPath}}" class="card__chara">
                 <div class="textbox">
                     <div class="textbox__name">{{$cardData->CardName}}</div>
                 </div>

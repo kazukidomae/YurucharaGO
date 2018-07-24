@@ -9,9 +9,9 @@
       <img src="{{'images/CardDesign/'.$data[0]->CardDesignPath}}" class="card__img">
          <!-- シルエット化 -->
         @if (!$obtainFlg)
-            <img src="{{$data[0]->CardIllustrationPath}}" class="card__chara-none card__chara-none--detail">
+            <img src="{{'images/CharacterImage/'.$data[0]->CardIllustrationPath}}" class="card__chara-none card__chara-none--detail">
         @else
-            <img src="{{$data[0]->CardIllustrationPath}}" class="card__chara card__chara--detail">
+            <img src="{{'images/CharacterImage/'.$data[0]->CardIllustrationPath}}" class="card__chara card__chara--detail">
         @endif
       <div class="info__name">
         <h2>{{$data[0]->CardName}}</h2>
@@ -28,8 +28,8 @@
            <!-- PR画像 -->
         <div class="info__images" id="slider">
           @for ($i = 0; $i < count($data); $i++)
-            <img src="{{$data[$i]->PRPhotoPath}}">
-              <p>{{ $data[$i]->PRDescription }}</p>
+            <img src="{{'images/PRImage/'.$data[$i]->PRPhotoPath}}">
+              <p>{{$data[$i]->PRDescription }}</p>
           @endfor
           <div class="btn">
             <a href="#" id="prev" class="slider-btn">＜</a>

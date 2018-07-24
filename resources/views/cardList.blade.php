@@ -11,9 +11,9 @@
                 <img src="{{'images/CardDesign/'.$cardData->CardDesignPath}}" class="card__img">
                 {{-- シルエット化 --}}
                 @if (!$obtainFlg)
-                    <img src="{{$cardData->CardIllustrationPath}}" class="card__chara-none">
+                    <img src="{{'images/CharacterImage/'.$cardData->CardIllustrationPath}}" class="card__chara-none">
                 @else
-                    <img src="{{$cardData->CardIllustrationPath}}" class="card__chara">
+                    <img src="{{'images/CharacterImage/'.$cardData->CardIllustrationPath}}" class="card__chara">
                 @endif
                 <div class="textbox">
                     <div class="textbox__name">{{$cardData->CardName}}</div>
