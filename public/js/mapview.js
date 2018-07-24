@@ -196,8 +196,8 @@ function markerEvent(markerCount,path,mode){
         marker[markerCount].addListener('click', function(){
             // $('#modal').leanModal();
             $.ajax({
-                // url:'/YurucharaGO/public/getcard',
-                url:'/getcard',
+                url:'/YurucharaGO/public/getcard',
+                // url:'/getcard',
                 type:'GET',
                 data: {
                     'cardID': cardData.data[markerCount].CardID,
@@ -278,8 +278,8 @@ function getPosition(callback)
 function positionProcessing(geoCodeResults)
 {
     $.ajax({
-        // url:'/YurucharaGO/public/range',
-        url:'/range',
+        url:'/YurucharaGO/public/range',
+        // url:'/range',
         type:'GET',
         data: {
             'lat': geoCodeResults["lat"],
