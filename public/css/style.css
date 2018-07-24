@@ -102,6 +102,7 @@ body {
     width: 100%; }
   .card__chara-none{
       position: absolute;
+      left: 0;
       top: 26px;
       width: 100%;
       filter: brightness(0%);}
