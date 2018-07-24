@@ -9,7 +9,7 @@
       <img src="{{'images/CardDesign/'.$data[0]->CardDesignPath}}" class="card__img">
          <!-- シルエット化 -->
         @if (!$obtainFlg)
-            <img src="{{'images/CardDesign/'.$data[0]->CardIllustrationPath}}" class="card__chara-none card__chara-none--detail">
+            <img src="{{'images/CharacterImage/'.$data[0]->CardIllustrationPath}}" class="card__chara-none card__chara-none--detail">
         @else
             <img src="{{'images/CharacterImage/'.$data[0]->CardIllustrationPath}}" class="card__chara card__chara--detail">
         @endif
