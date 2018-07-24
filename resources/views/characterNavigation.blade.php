@@ -27,10 +27,11 @@
         alreadyGet = @json($obtain[0]);
     </script>
 
-    <form id="mainform" action="" method="post">
-        <p><input type="button" id="but" value="更新" onclick="pageReload();"></p>
-    </form>
+    {{--<form id="mainform" action="" method="post">--}}
+        {{--<p><input type="button" id="but" value="更新" onclick="pageReload();"></p>--}}
+    {{--</form>--}}
 
     <!-- グーグルマップの表示領域。 -->
     <div id="map"></div>
+    <div id="but" class="update_btn" onclick="pageReload();"><img src="{{ asset('/images/update.png') }}"></div>
 @endsection
