@@ -12,7 +12,7 @@ th
 #map
 {
 	width:100%;
-	height:600px;
+	height:700px;
 	margin:0 auto;
 }
 .walkLine
@@ -32,4 +32,10 @@ th
 	margin-top:8px;
 	margin-bottom:8px;
 	background-color:#ff227a;
+}
+.update_btn img{
+    position: fixed;
+    bottom: 80px;
+    left: 2%;
+    width: 60px;
 }
