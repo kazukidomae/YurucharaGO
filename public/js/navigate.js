@@ -82,7 +82,7 @@ function initMap()
                 position:mapLatLng,
                 map:map,
                 draggable:false,
-                icon:"./testimg/human.png"
+                icon:"./images/human.png"
 
             });
             // ページ遷移で受信したゆるキャラの緯度経度を基に、マーカーを作成する。
@@ -261,10 +261,10 @@ function addIconClickEvent(travel)
                 naviHTML = '<table><tr><td colspan="2"></td><th>距離</th><th>所要時間</th></tr>';
                 naviHTML +=  '<tr><td colspan="4">スポット' + (i + 1) + ':</td></tr>';
                 // 徒歩ルート
-                naviHTML += '<tr><td><div class="walkLine"></div></td><td><img src="./testimg/walkicon.png" alt="walk" width="48" height="48"></td>';
+                naviHTML += '<tr><td><div class="walkLine"></div></td><td><img src="./images/walkicon.png" alt="walk" width="48" height="48"></td>';
                 naviHTML += '<td>' + spotRouteWalkDistance[i] + '</td><td>' + spotRouteWalkTime[i] + '</td></tr>';
                 // 自動車ルート
-                naviHTML += '<tr><td><div class="carLine"></div></td><td><img src="./testimg/caricon.png" alt="car" width="48" height="48"></td>';
+                naviHTML += '<tr><td><div class="carLine"></div></td><td><img src="./images/caricon.png" alt="car" width="48" height="48"></td>';
                 naviHTML += '<td>' + spotRouteCarDistance[i] + '</td><td>' + spotRouteCarTime[i] + '</td></tr>';
                 naviHTML += '</table>';
 

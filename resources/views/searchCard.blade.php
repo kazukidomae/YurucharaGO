@@ -9,7 +9,7 @@
                     <script type="text/javascript" src="{{ asset('/js/mapview.js') }}"></script>
 
                     <!-- モーダル用javascriptのインポート -->
-					<script type="text/javascript" src="{{ asset('/js/iziModal.min.js') }}"></script>                    
+					<script type="text/javascript" src="{{ asset('/js/iziModal.min.js') }}"></script>
 
                     <!-- スタイルシートのインポート -->
                     <link href="{{ asset('/css/map.css') }}" rel="stylesheet" type="text/css">
@@ -26,13 +26,13 @@
                     <!-- モーダル用表示領域。 -->
                     <div id="modal" class="modal">
                         <!-- カードの画像 -->
-                        <img src="./testimg/card.png" id="modalCard" class="modalCard" alt="カードイラスト" width="150" height="150">
+                        <img src="images/card.png" id="modalCard" class="modalCard" alt="カードイラスト" width="150" height="150">
                         <p id="mainText"></p>
                     </div>
 
                     <!-- 現在地非同期処理 -->
                     <script type="text/javascript">
-                        $(function(){    
+                        $(function(){
                         	// モーダルウィドウを初期化する。
                         	$('#modal').iziModal({
                                 background:'#fef5c5',
