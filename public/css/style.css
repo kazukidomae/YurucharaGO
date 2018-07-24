@@ -262,7 +262,7 @@ body {
   background-color: #7cdc92;
 }
 .accordion__switch--kinki{
-  background-color: #ffe966;
+  background-color: #fbe562;
 }
 .accordion__switch--chugoku{
   background-color: #ffcc66;
@@ -290,7 +290,7 @@ body {
   background-color: rgba(124,220,146,0.8);
 }
 .accordion__container--kinki{
-  background-color: rgba(255,233,102,0.8);
+  background-color: rgba(244,222,91);
 }
 .accordion__container--chugoku{
   background-color: rgba(255,204,102,0.8);
@@ -317,7 +317,7 @@ body {
   background-color: rgba(124,220,146,0.6);
 }
 .accordion__container--kinki a:nth-child(2n){
-  background-color: rgba(255,233,102,0.6);
+  background-color: rgba(251,229,98);
 }
 .accordion__container--chugoku a:nth-child(2n){
   background-color: rgba(255,204,102,0.6);
