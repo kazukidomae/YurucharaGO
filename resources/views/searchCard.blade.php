@@ -19,9 +19,9 @@
                     <script src="https://maps.googleapis.com/maps/api/js?v=3&libraries=geometry&key=AIzaSyAG3Rgb56sGXTKKIABifXlwM_YHrc3z_5M&callback=initMap&language=en"></script>
 
 
-                    <p><button type="button" id="but" onclick="pageReload();">更新</button></p>
                     <!-- グーグルマップの表示領域。 -->
                     <div id="map"></div>
+                    <p><button type="button" id="but" class="update_btn" onclick="pageReload();"><img src="{{ asset('/images/update.png') }}"></button></p>
 
                     <!-- モーダル用表示領域。 -->
                     <div id="modal" class="modal">

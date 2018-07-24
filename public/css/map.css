@@ -7,7 +7,12 @@
 	height:150px;
 	margin:0 0 0 50px;
 }
-
+.update_btn img{
+	position: fixed;
+	bottom: 80px;
+	right: 2%;
+	width: 100px;
+}
 /* モーダル内テキスト */
 #mainText
 {
@@ -32,7 +37,7 @@
 	margin:auto;
 	width:320px;
 	height:70px;*/
-	
+
 
 
 }
@@ -54,7 +59,7 @@
 }
 
 /* モーダル用 */
-#lean_overlay 
+#lean_overlay
 {
     position: fixed;
     z-index:100;
