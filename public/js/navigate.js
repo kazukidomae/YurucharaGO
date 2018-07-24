@@ -100,7 +100,7 @@ function initMap()
                         position:new google.maps.LatLng(spot_lat[i],spot_lng[i]),
                         map:map,
                         draggable:false,
-                        title:"スポット" + i,
+                        title:"Spot" + i,
                         icon:
                         {
                             url:CharacterIllustration,
@@ -258,8 +258,8 @@ function addIconClickEvent(travel)
             // スポットのルート検索が全て終了したら、全ルートの検索結果を吹き出し上に表示させる。
             for(i=0;i<spot_lat.length;i++)
             {
-                naviHTML = '<table><tr><td colspan="2"></td><th>距離</th><th>所要時間</th></tr>';
-                naviHTML +=  '<tr><td colspan="4">スポット' + (i + 1) + ':</td></tr>';
+                naviHTML = '<table><tr><td colspan="2"></td><th>Distance</th><th>Time</th></tr>';
+                naviHTML +=  '<tr><td colspan="4">Spot' + (i + 1) + ':</td></tr>';
                 // 徒歩ルート
                 naviHTML += '<tr><td><div class="walkLine"></div></td><td><img src="./images/walkicon.png" alt="walk" width="48" height="48"></td>';
                 naviHTML += '<td>' + spotRouteWalkDistance[i] + '</td><td>' + spotRouteWalkTime[i] + '</td></tr>';
@@ -323,9 +323,9 @@ function getHM( seconds )
 
     if(hour >= 1)
     {
-        ret = ret + hour + "時間";
+        ret = ret + hour + "hours and ";
     }
-    ret = ret + minute + "分";
+    ret = ret + minute + "minutes";
 
     return ret;
 
