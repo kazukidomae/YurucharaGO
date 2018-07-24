@@ -38,7 +38,6 @@ class Card extends Model
     // カード詳細
     public function cardDetail($cardID){
         $data = DB::table('cards')
-            ->join('prs', 'cards.CardID', '=', 'prs.CardID')
             ->join('attributes','cards.AttributeID','=','attributes.AttributeID')
             ->where('cards.CardID',$cardID)
             ->get();
