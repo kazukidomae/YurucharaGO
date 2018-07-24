@@ -20,7 +20,7 @@ class DatabaseSeeder extends Seeder
             PRsTableSeeder::class,
             //EventsTableSeeder::class,
             UsersTableSeeder::class,
-//            ObtaincardTableSeeder::class,
+           ObtaincardTableSeeder::class,
         ]);
     }
 }
