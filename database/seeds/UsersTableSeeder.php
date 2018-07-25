@@ -22,6 +22,15 @@ class UsersTableSeeder extends Seeder
 
             ],
             [
+                'name' => 'yuruchara',
+                'email' => 'yuruchara@gmail.com',
+                'password' => '$2y$10$mJ7K28/w3PBd8yhnrpgnxeFTTv4gwmz0/UZRLofzLeUdYP/faMptm',
+                'remember_token' => null,
+                'created_at' => '2018-07-25',
+                'updated_at' => '2018-07-25',
+
+            ],
+            [
                 'name' => 'yuruchara1',
                 'email' => 'yuruchara1@gmail.com',
                 'password' => '$2y$10$6t8zR2tXjeOz2PTGbJFBfOWh/DUo6OMkSAM5KkSQOGh7xIxGejeAG',
