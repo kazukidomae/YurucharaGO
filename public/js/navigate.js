@@ -331,3 +331,9 @@ function getHM( seconds )
 
 }
 
+// ページの更新処理
+function pageReload()
+{
+    window.location.reload(true);
+}
+
