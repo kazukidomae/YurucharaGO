@@ -6,7 +6,7 @@ $(document).ready(function() {
         backgroundBorderWidth: 5,
         textSize: 28,
         textStyle: 'font-size: 12px;',
-        textColor: '#666',
+        textColor: '#000',
         progressColor: {20: '#CC9487', 40: '#FA6C00', 60: '#FF6C99'}
     });
 });

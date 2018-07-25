@@ -15,7 +15,7 @@ class PRsTableSeeder extends Seeder
             [
                 'CardID' => 1,
                 'PRName' => 'Lake Mashu',
-                'PRPhotoPath' => 'Hokkaidou/Hokkaidou/mashuko.png',
+                'PRPhotoPath' => 'Hokkaido/Hokkaido/mashuko.png',
                 'PRDescription' => 'It is the second largest lake in the world after Lake Baikal. In 2001 it was selected as a Hokkaido heritage site.',
                 'latitude' => 43.4856,
                 'longitude' => 144.459198,
@@ -706,7 +706,7 @@ class PRsTableSeeder extends Seeder
               'PRPhotoPath' => 'Test/Ebata/ebata1.png',
               'PRDescription' => 'We are carrying out various unique curriculums but the goal that is cited as common is "breeding" professional.',
               'latitude' => 35.6897657,
-              'longitude' => 139.6945417,  
+              'longitude' => 139.6945417,
             ],
             [
                'CardID' => 48,
@@ -714,7 +714,7 @@ class PRsTableSeeder extends Seeder
                'PRPhotoPath' => 'Test/Ebata/ebata2.png',
                'PRDescription' => 'As a vocational school, it is unusual to give priority to technical lectures rather than qualification majors, and we try to train human resources who will become an immediate fighting force.',
                'latitude' => 35.6904628,
-               'longitude' => 139.6932542, 
+               'longitude' => 139.6932542,
             ],
             [
                 'CardID' => 49,
@@ -723,7 +723,7 @@ class PRsTableSeeder extends Seeder
                 'PRDescription' => 'Radio tower at Oshima 1 - chome, Sumida - ku, Tokyo.',
                 'latitude' => 35.6927068,
                 'longitude' => 139.7014212,
-                
+
             ],
             [
                'CardID' => 49,
@@ -731,7 +731,7 @@ class PRsTableSeeder extends Seeder
                'PRPhotoPath' => 'Kanto/Tokyo/puranetarium.png',
                'PRDescription' => 'Konica Minolta Planetarium "Sky" in Tokyo Sky Tree Town.',
                'latitude' => 35.690296,
-               'longitude' => 139.691763, 
+               'longitude' => 139.691763,
             ],
             [
                 'CardID' => 50,
@@ -748,7 +748,47 @@ class PRsTableSeeder extends Seeder
              'PRPhotoPath' => 'Kanto/Tokyo/shinjhukugyoen.png',
              'PRDescription' => 'A part of the land where the residence of the Naito family of Shinshu Takane district in the Edo period had been opened to the public after the war in the Imperial garden completed in 1898.',
              'latitude' => 35.6920244,
-             'longitude' => 35.6920244,   
+             'longitude' => 35.6920244,
+            ],
+            [
+                'CardID' => 51,
+                'PRName' => 'Konoe Yume Ohashi',
+                'PRPhotoPath' => 'Kyushu/Oita/KonoeOhashi.jpg',
+                'PRDescription' => 'Japan is the height as a suspension bridge over which people cross! You can enjoy a spectacular view through the four seasons, but the autumn leaves time season is particularly popular.',
+                'latitude' => 33.1738317,
+                'longitude' => 131.1567419,
+            ],
+            [
+                'CardID' => 51,
+                'PRName' => 'Handakogen',
+                'PRPhotoPath' => 'Kyushu/Oita/Handakogen.jpg',
+                'PRDescription' => 'Plateau located in the southern part of Kokonoe-cho, Kusu-gun, Oita prefecture.',
+                'latitude' => 33.271983,
+                'longitude' => 131.159558,
+            ],
+            [
+                'CardID' => 52,
+                'PRName' => 'Tokyo Gate Bridge',
+                'PRPhotoPath' => 'Kanto/Tokyo/getobridge.png',
+                'PRDescription' => 'From the sidewalk of the bridge, Tokyo Sky Tree, Tokyo Tower, Haneda Airport, Tokyo Disney Resort and Mt. Fuji can be seen on sunny days.',
+                'latitude' => 35.625969,
+                'longitude' => 139.828705,
+            ],
+            [
+                'CardID' => 52,
+                'PRName' => 'Rikugien',
+                'PRPhotoPath' => 'Kanto/Tokyo/rikugien.png',
+                'PRDescription' => 'Tourist attractions in Tokyo with historic landscape and seasonal interwoven nature.',
+                'latitude' => 35.733292,
+                'longitude' => 139.746017,
+            ],
+            [
+                'CardID' => 53,
+                'PRName' => 'GrandPrix',
+                'PRPhotoPath' => 'Test/YurucharaGO/yuruchara.jpg',
+                'PRDescription' => 'Yuruchara GrandPrix',
+                'latitude' => 38.2586,
+                'longitude' => 139.767052,
             ],
         ]);
     }

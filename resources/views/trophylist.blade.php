@@ -20,7 +20,7 @@
                 <img src="{{ asset('images/TrophyImage/RareTrophy.png') }}" class="trophy__img trophy__img--blank">
                 <h2 class="trophy__name">Rare</h2>
                 <div class="circle" data-percent="<?php
-                //            echo (isset($oAttribute["Rare"]->AttributeCount) ? $oAttribute["Rare"]->AttributeCount:0/$mAttribute["Rare"]->AttributeCount)*100;
+                echo ((isset($oAttribute["Rare"]->AttributeCount) ? $oAttribute["Rare"]->AttributeCount:0)/$mAttribute["Rare"]->AttributeCount)*100;
                 ?>">
                 </div>
             </section>
