@@ -13,7 +13,7 @@ class CardsTableSeeder extends Seeder
     {
         DB::table('cards')->insert([
             [
-                'CardName' => 'Meron bear',
+                'CardName' => 'Meronguma',
                 'PrefecturesID' => 1,
                 'CardIllustrationPath' => 'Hokkaido/Hokkaido/meronguma.png',
                 'CardDescription' => 'A fruit animal transformed by devouring Yubari is delicious melon.',
@@ -56,7 +56,7 @@ class CardsTableSeeder extends Seeder
                 'AttributeID' => 2,
             ],
             [
-                'CardName' => 'Atamagahukushima-Chan',
+                'CardName' => 'AtamagahukushimaChan',
                 'PrefecturesID' => 7,
                 'CardIllustrationPath' =>'Tohoku/Hukushima/atamagafukushima.png',
                 'CardDescription' =>'A hobby is a walk, a girl who loves to play with everyone.',
@@ -64,7 +64,7 @@ class CardsTableSeeder extends Seeder
 
             ],
             [
-                'CardName' => 'Kou-Chan',
+                'CardName' => 'KouChan',
                 'PrefecturesID' => 8,
                 'CardIllustrationPath' =>'Kanto/Ibaraki/koutyan.png',
                 'CardDescription' =>'Bright and exciting Noko will make everyone is  heart calm.',
@@ -78,14 +78,14 @@ class CardsTableSeeder extends Seeder
                 'AttributeID' => 1,
             ],
             [
-                'CardName' => 'Gunma-Chan',
+                'CardName' => 'GunmaChan',
                 'PrefecturesID' => 10,
                 'CardIllustrationPath' => 'Kanto/gunma/gunmatyan.png',
                 'CardDescription' => 'World cultural heritage, Tomioka Silk industry and Silk industrial heritage group, and Gunma prefecture advertising department manager.',
                 'AttributeID' => 4,
             ],
             [
-                'CardName' => 'Miina-Chan',
+                'CardName' => 'MiinaChan',
                 'PrefecturesID' => 11,
                 'CardIllustrationPath' =>'Kanto/Saitama/mi-natyan.png',
                 'CardDescription' =>'The mountain of beauty in Minano Town, clear stream, cherry blossoms are included in the hat and it stands as the initial M letter.',
@@ -93,28 +93,28 @@ class CardsTableSeeder extends Seeder
 
             ],
             [
-                'CardName' => 'Chiiba-Kun',
+                'CardName' => 'ChiibaKun',
                 'PrefecturesID' => 12,
                 'CardIllustrationPath' =>'Kanto/Chiba/ti-bakun.png',
                 'CardDescription' =>'The figure is colored red, and when viewed from the side it has the shape of Chiba prefecture.',
                 'AttributeID' => 3,
             ],
             [
-                'CardName' => 'Nishiko-Kun',
+                'CardName' => 'NishikoKun',
                 'PrefecturesID' => 13,
                 'CardIllustrationPath' => 'Kanto/Tokyo/nisikokun.png',
                 'CardDescription' => 'The feet of a charm point that crawls out from a round gray face is a fairy.',
                 'AttributeID' => 3,
             ],
             [
-                'CardName' => 'Ebina-San',
+                'CardName' => 'EbinaSan',
                 'PrefecturesID' => 14,
                 'CardIllustrationPath' => 'Kanto/Kanagawa/ebinasan.png',
                 'CardDescription' => 'Ebina village secretly existed for the purpose of preventing invasion from Sagamihara Town.',
                 'AttributeID' => 1,
             ],
             [
-                'CardName' => 'Reruhi-San',
+                'CardName' => 'ReruhiSan',
                 'PrefecturesID' => 15,
                 'CardIllustrationPath' =>'Chubu/Niigata/reruhisan.png',
                 'CardDescription' =>'Mr. Rehi, the real great man came back to Niigata beyond 100 years.',
@@ -129,21 +129,21 @@ class CardsTableSeeder extends Seeder
                 'AttributeID' => 1,
             ],
             [
-                'CardName' => 'Wakutama-Kun',
+                'CardName' => 'WakutamaKun',
                 'PrefecturesID' => 17,
                 'CardIllustrationPath' => 'Chubu/Ishikawa/wakutamakun.png',
                 'CardDescription' => 'An egg brought on by a white birch who is said to have found Wakura Onsen.',
                 'AttributeID' => 2,
             ],
             [
-                'CardName' => 'Heshiko-Chan',
+                'CardName' => 'HeshikoChan',
                 'PrefecturesID' => 18,
                 'CardIllustrationPath' => 'Chubu/Hukui/hesikotyan.png',
                 'CardDescription' => 'With the head of the mackerel jumped out of the barrel, there is a ribbon on the head.',
                 'AttributeID' => 2,
             ],
             [
-                'CardName' => 'Ryomaru-Takeda',
+                'CardName' => 'TakedaRyomaru',
                 'PrefecturesID' => 19,
                 'CardIllustrationPath' =>'Chubu/Yamanashi/takedaryoumaru.png',
                 'CardDescription' =>'Brave and brain-riddled, gentle to everyone. It is strong against heat and cold in winter.',
@@ -158,14 +158,14 @@ class CardsTableSeeder extends Seeder
                 'AttributeID' => 2,
             ],
             [
-                'CardName' => 'Gunjyo-Rara',
+                'CardName' => 'GunjyoRara',
                 'PrefecturesID' => 21,
                 'CardIllustrationPath' => 'Chubu/Gihu/gunjourara.png',
                 'CardDescription' => 'Summer dance, winter sports, nature rich Gujo top.',
                 'AttributeID' => 3,
             ],
             [
-                'CardName' => 'UnagiDog',
+                'CardName' => 'Unagiinu',
                 'PrefecturesID' => 22,
                 'CardIllustrationPath' => 'Chubu/Shizuoka/unagiimo.png',
                 'CardDescription' => 'Eel has been born from the field and also daily as a king of the kingdom cafe.',
@@ -180,7 +180,7 @@ class CardsTableSeeder extends Seeder
 
             ],
             [
-                'CardName' => 'Mei-Princess',
+                'CardName' => 'Meihime',
                 'PrefecturesID' => 24,
                 'CardIllustrationPath' =>'Kinki/Mie/meihime.png',
                 'CardDescription' =>'As he kept longing for him, his thoughts became the appearance of Princess Princess.',
@@ -194,14 +194,14 @@ class CardsTableSeeder extends Seeder
                 'AttributeID' => 1,
             ],
             [
-                'CardName' => 'Kinukake-San',
+                'CardName' => 'Kinukakesan',
                 'PrefecturesID' => 26,
                 'CardIllustrationPath' => 'Kinki/Kyoto/kinukakesan.png',
                 'CardDescription' => 'Kinkaku-ji, Ryoanji, Ninna-ji Temple, youkai of the way he walked around the three world heritage.',
                 'AttributeID' => 3,
             ],
             [
-                'CardName' => 'Yumemaru-Kun',
+                'CardName' => 'Yumemarukun',
                 'PrefecturesID' => 27,
                 'CardIllustrationPath' =>'Kinki/Osaka/yumemarukun.png',
                 'CardDescription' =>'Mascot character in History · Culture · Commercial town, Osaka city Chuo Ward.',
@@ -267,7 +267,7 @@ class CardsTableSeeder extends Seeder
 
             ],
             [
-                'CardName' => 'Matsushige Assistant manager',
+                'CardName' => 'Matsushigekakarichou',
                 'PrefecturesID' => 36,
                 'CardIllustrationPath' =>'Shikoku/Tokushima/matsushigekakaricho.png',
                 'CardDescription' =>'The moon rabbit is in Matsushige-cho as a matter of concern about Matsushige-cho.',
@@ -288,7 +288,7 @@ class CardsTableSeeder extends Seeder
                 'AttributeID' => 2,
             ],
             [
-                'CardName' => 'Bun-Chan',
+                'CardName' => 'BunChan',
                 'PrefecturesID' => 39,
                 'CardIllustrationPath' =>'Shikoku/Kochi/buntyan.png',
                 'CardDescription' =>'A lovely round form and a smile is a trademark.',
@@ -303,14 +303,14 @@ class CardsTableSeeder extends Seeder
                 'AttributeID' => 1,
             ],
             [
-                'CardName' => 'Koi-Princess',
+                'CardName' => 'Koihime',
                 'PrefecturesID' => 41,
                 'CardIllustrationPath' => 'Kyushu/Saga/kohime.png',
                 'CardDescription' => 'I love playing water at Shimizu waterfall. I have a secret feeling to the princess.',
                 'AttributeID' => 3,
             ],
             [
-                'CardName' => 'Omuran-Chan',
+                'CardName' => 'Omuranchan',
                 'PrefecturesID' => 42,
                 'CardIllustrationPath' => 'Kyushu/Nagasaki/omuranchan.png',
                 'CardDescription' => 'Run cheerfully with roughly mottled roses (run) Cherry fairies.',
@@ -332,7 +332,7 @@ class CardsTableSeeder extends Seeder
                 'AttributeID' => 2,
             ],
             [
-                'CardName' => 'Otsuru-Chan',
+                'CardName' => 'Otsuruchan',
                 'PrefecturesID' => 45,
                 'CardIllustrationPath' => 'Kyushu/Miyazaki/otsuruchan.png',
                 'CardDescription' => 'Shiiba Village Make a rhododendron for hair ornaments, a pretty girl that is cute.',
@@ -346,7 +346,7 @@ class CardsTableSeeder extends Seeder
                 'AttributeID' => 4,
             ],
             [
-                'CardName' => 'Agomago-Chan',
+                'CardName' => 'Agomagocha',
                 'PrefecturesID' => 47,
                 'CardIllustrationPath' =>'Kyushu/Okinawa/agomagochan.png',
                 'CardDescription' =>'I love fruits and I am a little worried about having a long ago.',
@@ -354,24 +354,45 @@ class CardsTableSeeder extends Seeder
 
             ],
             [
-                 'CardName' => 'Kouichi Ebata',
+                 'CardName' => 'Kouichi',
                  'PrefecturesID' => 13,
                  'CardIllustrationPath' => 'Test/Ebata/ebata.png',
                  'CardDescription' => 'While engaged in education in information engineering / information processing field, he also served as an expert in programming technology. IT professionals who have been active in front lines such as contracting individuals to train employees of IT companies.',
-                 'AttributeID' => 5,   
+                 'AttributeID' => 5,
             ],
             [
                  'CardName' => 'Sorakarachan',
                  'PrefecturesID' => 13,
                  'CardIllustrationPath' => 'Kanto/Tokyo/sorakarachan.png',
                  'CardDescription' => 'Tokyo Sky Tree Official Characters "Solakara" "Teppenpen" "Scolburble".',
-                'AttributeID' => 3,   
+                'AttributeID' => 3,
             ],
             [
                 'CardName' => 'Po-po',
                 'PrefecturesID' => 13,
                 'CardIllustrationPath' => 'Kanto/Tokyo/pi-bokun.png',
                 'CardDescription' => 'I took the initials of the police greeting "police", and hoped that it would be a bridge between the Tokyo Metropolitan Police and the Metropolitan Police Department and was named "Peep Kun."',
+                'AttributeID' => 4,
+            ],
+            [
+                'CardName' => 'MiyaChan',
+                'PrefecturesID' => 44,
+                'CardIllustrationPath' => 'Kyushu/Oita/miya.gif',
+                'CardDescription' => 'It is a fairy who lives in Kokonoe-cho, but how this "Miya-chan" It is said that happiness will come when you meet during climbing.',
+                'AttributeID' => 5,
+            ],
+            [
+                'CardName' => 'NishikoKun',
+                'PrefecturesID' => 13,
+                'CardIllustrationPath' => 'Kanto/Tokyo/nisikokun.gif',
+                'CardDescription' => 'The feet of a charm point that crawls out from a round gray face is a fairy.',
+                'AttributeID' => 5,
+            ],
+            [
+                'CardName' => 'Pisuke',
+                'PrefecturesID' => 13,
+                'CardIllustrationPath' => 'Test/YurucharaGO/Pisuke.gif',
+                'CardDescription' => 'Thank you for playing',
                 'AttributeID' => 5,
             ],
         ]);
