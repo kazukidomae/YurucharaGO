@@ -196,7 +196,7 @@ function markerEvent(markerCount,path,mode){
         marker[markerCount].addListener('click', function(){
             // $('#modal').leanModal();
             $.ajax({
-                // url:'/YurucharaGO/public/getcard',
+//                 url:'/YurucharaGO/public/getcard',
                 url:'/getcard',
                 type:'GET',
                 data: {
@@ -211,7 +211,7 @@ function markerEvent(markerCount,path,mode){
                 // });
                 // showModal("カードGET","カードを手に入れた！");
                 // モーダルウィンドウ内画像をゆるキャラの画像へ変更。
-                $('#modalCard').attr('src',path);
+                $('#modalCard').attr('src','./images/CharacterImage/'+path);
                 $('#modalCard').show();
                 $('#mainText').text("You got a Yuruchara!");
 
@@ -278,7 +278,7 @@ function getPosition(callback)
 function positionProcessing(geoCodeResults)
 {
     $.ajax({
-        // url:'/YurucharaGO/public/range',
+//         url:'/YurucharaGO/public/range',
         url:'/range',
         type:'GET',
         data: {

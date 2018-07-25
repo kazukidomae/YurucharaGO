@@ -700,6 +700,56 @@ class PRsTableSeeder extends Seeder
                 'latitude' => 26.144604,
                 'longitude' => 127.744347,
             ],
+            [
+              'CardID' => 48,
+              'PRName' => 'HAL東京',
+              'PRPhotoPath' => 'Test/Ebata/ebata1.png',
+              'PRDescription' => '様々な独自カリキュラムを行っているが共通として挙げられている目標としては「プロ」育成である。',
+              'latitude' => 35.6897657,
+              'longitude' => 139.6945417,  
+            ],
+            [
+               'CardID' => 48,
+               'PRName' => 'HAL東京',
+               'PRPhotoPath' => 'Test/Ebata/ebata2.png',
+               'PRDescription' => '専門学校としては珍しく、資格専攻ではなく技術講義を優先しており、即戦力になる人材育成を心がけている。',
+               'latitude' => 35.6904628,
+               'longitude' => 139.6932542, 
+            ],
+            [
+                'CardID' => 49,
+                'PRName' => 'スカイツリー',
+                'PRPhotoPath' => 'Kanto/Tokyo/sukaitsuri.png',
+                'PRDescription' => '東京都墨田区押上一丁目にある電波塔。',
+                'latitude' => 35.6927068,
+                'longitude' => 139.7014212,
+                
+            ],
+            [
+               'CardID' => 49,
+               'PRName' => 'コニカミノルタプラネタリウム',
+               'PRPhotoPath' => 'Kanto/Tokyo/puranetarium.png',
+               'PRDescription' => 'コニカミノルタプラネタリウム“天空”in東京スカイツリータウン。',
+               'latitude' => 35.690296,
+               'longitude' => 139.691763, 
+            ],
+            [
+                'CardID' => 50,
+                'PRName' => 'サムライ ミュージアム',
+                'PRPhotoPath' => 'Kanto/Tokyo/samuraimuseum.png',
+                'PRDescription' => '鎧兜を身に着けたり殺陣ショーにも参加できる、体験型のサムライ ミュージアム。',
+                'latitude' => 35.6915626,
+                'longitude' => 139.6963599,
+
+            ],
+            [
+             'CardID' => 50,
+             'PRName' => '新宿御苑',
+             'PRPhotoPath' => 'Kanto/Tokyo/shinjhukugyoen.png',
+             'PRDescription' => '江戸時代に信州高遠藩主内藤家の屋敷があった土地の一部が、明治39年に完成した皇室庭園で戦後一般に開放されるようになった。広さ58.3haの敷地内には、日本庭園、フランス式整形庭園、イギリス風景式庭園が巧みにデザインされている。',
+             'latitude' => 35.6920244,
+             'longitude' => 35.6920244,   
+            ],
         ]);
     }
 }
