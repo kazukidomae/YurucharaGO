@@ -79,7 +79,7 @@ class PRsTableSeeder extends Seeder
             [
                 'CardID' => 8,
                 'PRName' => '国営ひたち海浜公園',
-                'PRPhotoPath' => 'Kanto/Ibaraki/hitachikahinpark.png',
+                'PRPhotoPath' => 'Kanto/Ibaraki/hitachikaihinpark.png',
                 'PRDescription' => '茨城県ひたちなか市にある日本の国営公園。開園面積約200haの広い園内は7つのエリアに分かれている。',
                 'latitude' => 36.401508,
                 'longitude' => 140.568161,
@@ -359,7 +359,7 @@ class PRsTableSeeder extends Seeder
            [
                'CardID' => 25,
                'PRName' => '琵琶湖疏水',
-               'PRPhotoPath' => 'Kinki/Mie/biwakososui.png',
+               'PRPhotoPath' => 'Kinki/Shiga/biwakososui.png',
                'PRDescription' => '琵琶湖の湖水を西隣の京都市へ流すため、明治時代に作られた水路である。国の史跡に指定されている。',
                'latitude' => 35.009968,
                'longitude' => 135.857178,
@@ -439,7 +439,7 @@ class PRsTableSeeder extends Seeder
            [
                'CardID' => 29,
                'PRName' => '谷瀬の吊り橋',
-               'PRPhotoPath' => 'Kinki/Nara/tanizenotsuribashii.png',
+               'PRPhotoPath' => 'Kinki/Nara/tanizenotsuribashi.png',
                'PRDescription' => '熊野川（十津川）に架る、長さ297m、川面からの高さ54mの日本有数の長さを誇る鉄線のつり橋。',
                'latitude' => 34.107666,
                'longitude' => 135.755722,
@@ -535,7 +535,7 @@ class PRsTableSeeder extends Seeder
             [
                 'CardID' => 38,
                 'PRName' => '松山城',
-                'PRPhotoPath' => 'Shikoku/Ehime/matuyamajou.png',
+                'PRPhotoPath' => 'Shikoku/Ehime/matuyamajou.jpg',
                 'PRDescription' => '現存十二天守のなかで唯一、親藩・松平家によって建築された広大な城。21棟の国の重要文化財を有し、城郭建築としての見どころが満載です。',
                 'latitude' => 33.845367,
                 'longitude' => 132.764404,
