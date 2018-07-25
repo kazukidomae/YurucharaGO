@@ -7,7 +7,7 @@
       @csrf
 
       <p class="form__enclosure">
-        <input class="form__text form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" type="text" size="40" name="name" placeholder="名前を入力してください" value="{{ old('name') }}" required autofocus>
+        <input class="form__text form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" type="text" size="40" name="name" placeholder="please enter your name" value="{{ old('name') }}" required autofocus>
       </p>
 
         @if ($errors->has('name'))
@@ -17,7 +17,7 @@
           @endif
 
           <p class="form__enclosure">
-  					<input class="form__text form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" type="email" size="40" name="email" placeholder="メールアドレスを入力してください" value="{{ old('email') }}" required>
+  					<input class="form__text form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" type="email" size="40" name="email" placeholder="please enter your e-mail address" value="{{ old('email') }}" required>
   				</p>
 
           @if ($errors->has('email'))
@@ -27,7 +27,7 @@
           @endif
 
           <p class="form__enclosure">
-  					<input id="password" class="form__text form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" type="password" size="40" name="password" placeholder="パスワードを入力してください" required maxlength="10">
+  					<input id="password" class="form__text form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" type="password" size="40" name="password" placeholder="please enter your password" required maxlength="10">
   				</p>
 
               @if ($errors->has('password'))
@@ -37,7 +37,7 @@
               @endif
 
               <p class="form__enclosure">
-      					<input id="password-confirm" class="form__text form-control" type="password" size="40" name="password_confirmation" placeholder="パスワードを入力してください" required maxlength="10">
+      					<input id="password-confirm" class="form__text form-control" type="password" size="40" name="password_confirmation" placeholder="please enter your password" required maxlength="10">
       				</p>
 
               <p class="form__enclosure">
