@@ -79,7 +79,7 @@ class PRsTableSeeder extends Seeder
             [
                 'CardID' => 8,
                 'PRName' => '国営ひたち海浜公園',
-                'PRPhotoPath' => 'Kanto/Ibaraki/hitachikahinpark.png',
+                'PRPhotoPath' => 'Kanto/Ibaraki/hitachikaihinpark.png',
                 'PRDescription' => '茨城県ひたちなか市にある日本の国営公園。開園面積約200haの広い園内は7つのエリアに分かれている。',
                 'latitude' => 36.401508,
                 'longitude' => 140.568161,
@@ -359,7 +359,7 @@ class PRsTableSeeder extends Seeder
            [
                'CardID' => 25,
                'PRName' => '琵琶湖疏水',
-               'PRPhotoPath' => 'Kinki/Mie/biwakososui.png',
+               'PRPhotoPath' => 'Kinki/Shiga/biwakososui.png',
                'PRDescription' => '琵琶湖の湖水を西隣の京都市へ流すため、明治時代に作られた水路である。国の史跡に指定されている。',
                'latitude' => 35.009968,
                'longitude' => 135.857178,
@@ -439,7 +439,7 @@ class PRsTableSeeder extends Seeder
            [
                'CardID' => 29,
                'PRName' => '谷瀬の吊り橋',
-               'PRPhotoPath' => 'Kinki/Nara/tanizenotsuribashii.png',
+               'PRPhotoPath' => 'Kinki/Nara/tanizenotsuribashi.png',
                'PRDescription' => '熊野川（十津川）に架る、長さ297m、川面からの高さ54mの日本有数の長さを誇る鉄線のつり橋。',
                'latitude' => 34.107666,
                'longitude' => 135.755722,
@@ -535,7 +535,7 @@ class PRsTableSeeder extends Seeder
             [
                 'CardID' => 38,
                 'PRName' => '松山城',
-                'PRPhotoPath' => 'Shikoku/Ehime/matuyamajou.png',
+                'PRPhotoPath' => 'Shikoku/Ehime/matuyamajou.jpg',
                 'PRDescription' => '現存十二天守のなかで唯一、親藩・松平家によって建築された広大な城。21棟の国の重要文化財を有し、城郭建築としての見どころが満載です。',
                 'latitude' => 33.845367,
                 'longitude' => 132.764404,
@@ -699,6 +699,56 @@ class PRsTableSeeder extends Seeder
                 'PRDescription' => '数十万年前までは鍾乳洞だった場所が崩れてできた、手つかずの自然が残る亜熱帯の森。',
                 'latitude' => 26.144604,
                 'longitude' => 127.744347,
+            ],
+            [
+              'CardID' => 48,
+              'PRName' => 'HAL東京',
+              'PRPhotoPath' => 'Test/Ebata/ebata1.png',
+              'PRDescription' => '様々な独自カリキュラムを行っているが共通として挙げられている目標としては「プロ」育成である。',
+              'latitude' => 35.6897657,
+              'longitude' => 139.6945417,  
+            ],
+            [
+               'CardID' => 48,
+               'PRName' => 'HAL東京',
+               'PRPhotoPath' => 'Test/Ebata/ebata2.png',
+               'PRDescription' => '専門学校としては珍しく、資格専攻ではなく技術講義を優先しており、即戦力になる人材育成を心がけている。',
+               'latitude' => 35.6904628,
+               'longitude' => 139.6932542, 
+            ],
+            [
+                'CardID' => 49,
+                'PRName' => 'スカイツリー',
+                'PRPhotoPath' => 'Kanto/Tokyo/sukaitsuri.png',
+                'PRDescription' => '東京都墨田区押上一丁目にある電波塔。',
+                'latitude' => 35.6927068,
+                'longitude' => 139.7014212,
+                
+            ],
+            [
+               'CardID' => 49,
+               'PRName' => 'コニカミノルタプラネタリウム',
+               'PRPhotoPath' => 'Kanto/Tokyo/puranetarium.png',
+               'PRDescription' => 'コニカミノルタプラネタリウム“天空”in東京スカイツリータウン。',
+               'latitude' => 35.690296,
+               'longitude' => 139.691763, 
+            ],
+            [
+                'CardID' => 50,
+                'PRName' => 'サムライ ミュージアム',
+                'PRPhotoPath' => 'Kanto/Tokyo/samuraimuseum.png',
+                'PRDescription' => '鎧兜を身に着けたり殺陣ショーにも参加できる、体験型のサムライ ミュージアム。',
+                'latitude' => 35.6915626,
+                'longitude' => 139.6963599,
+
+            ],
+            [
+             'CardID' => 50,
+             'PRName' => '新宿御苑',
+             'PRPhotoPath' => 'Kanto/Tokyo/shinjhukugyoen.png',
+             'PRDescription' => '江戸時代に信州高遠藩主内藤家の屋敷があった土地の一部が、明治39年に完成した皇室庭園で戦後一般に開放されるようになった。広さ58.3haの敷地内には、日本庭園、フランス式整形庭園、イギリス風景式庭園が巧みにデザインされている。',
+             'latitude' => 35.6920244,
+             'longitude' => 35.6920244,   
             ],
         ]);
     }

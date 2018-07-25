@@ -353,6 +353,27 @@ class CardsTableSeeder extends Seeder
                 'AttributeID' => 2,
 
             ],
+            [
+                 'CardName' => '江畑幸一',
+                 'PrefecturesID' => 13,
+                 'CardIllustrationPath' => 'Test/Ebata/ebata.png',
+                 'CardDescription' => '情報工学・情報処理分野の教育に携わりながら、プログラミング技術の専門家としても活躍。IT企業の社員研修を個人で請け負うなど、第一線で活躍を続けてきたIT教育のプロフェッショナル。',
+                 'AttributeID' => 5,   
+            ],
+            [
+                 'CardName' => 'そらからちゃん',
+                 'PrefecturesID' => 13,
+                 'CardIllustrationPath' => 'Kanto/Tokyo/sorakarachan.png',
+                 'CardDescription' => '東京スカイツリー公式キャラクター「ソラカラちゃん」「テッペンペン」「スコブルブル」',
+                'AttributeID' => 3,   
+            ],
+            [
+                'CardName' => 'ぴーぽー君',
+                'PrefecturesID' => 13,
+                'CardIllustrationPath' => 'Kanto/Tokyo/pi-bokun.png',
+                'CardDescription' => '警察けいさつの「ポリス」の頭文字かしらもじをとり、都民とみんと警視庁けいしちょうのかけ橋はしになることを願ねがって「ピーポくん」と名なづけられました。',
+                'AttributeID' => 5,
+            ],
         ]);
     }
 }
