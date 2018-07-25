@@ -94,6 +94,11 @@ class ObtaincardTableSeeder extends Seeder
                 'ObtainDate' => '2018-07-26',
             ],
             [
+                'UserID' => 2,
+                'CardID' => 53,
+                'ObtainDate' => '2018-07-26',
+            ],
+            [
                 'UserID' => 3,
                 'CardID' => 50,
                 'ObtainDate' => '2018-07-26',

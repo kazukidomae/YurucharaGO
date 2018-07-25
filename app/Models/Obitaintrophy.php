@@ -18,6 +18,7 @@ class Obitaintrophy extends Model
             ->join('regions','prefectures.RegionID','=','regions.RegionID')
             ->select(DB::raw('regions.RegionName,count(regions.RegionID) as RegionCount'))
             ->where('UserID',Auth::user()->id)
+            ->groupBy('regions.RegionID')
             ->get()->keyBy('RegionName');
         return $data;
     }
