@@ -58,7 +58,7 @@ class CardsTableSeeder extends Seeder
             [
                 'CardName' => 'AtamagahukushimaChan',
                 'PrefecturesID' => 7,
-                'CardIllustrationPath' =>'Tohoku/Hukushima/atamagafukushima.png',
+                'CardIllustrationPath' =>'Tohoku/Fukushima/atamagafukushima.png',
                 'CardDescription' =>'A hobby is a walk, a girl who loves to play with everyone.',
                 'AttributeID' => 1,
 
@@ -80,7 +80,7 @@ class CardsTableSeeder extends Seeder
             [
                 'CardName' => 'GunmaChan',
                 'PrefecturesID' => 10,
-                'CardIllustrationPath' => 'Kanto/gunma/gunmatyan.png',
+                'CardIllustrationPath' => 'Kanto/Gunma/gunmatyan.png',
                 'CardDescription' => 'World cultural heritage, Tomioka Silk industry and Silk industrial heritage group, and Gunma prefecture advertising department manager.',
                 'AttributeID' => 4,
             ],
@@ -138,7 +138,7 @@ class CardsTableSeeder extends Seeder
             [
                 'CardName' => 'HeshikoChan',
                 'PrefecturesID' => 18,
-                'CardIllustrationPath' => 'Chubu/Hukui/hesikotyan.png',
+                'CardIllustrationPath' => 'Chubu/Fukui/hesikotyan.png',
                 'CardDescription' => 'With the head of the mackerel jumped out of the barrel, there is a ribbon on the head.',
                 'AttributeID' => 2,
             ],
@@ -160,7 +160,7 @@ class CardsTableSeeder extends Seeder
             [
                 'CardName' => 'GunjyoRara',
                 'PrefecturesID' => 21,
-                'CardIllustrationPath' => 'Chubu/Gihu/gunjourara.png',
+                'CardIllustrationPath' => 'Chubu/Gifu/gunjourara.png',
                 'CardDescription' => 'Summer dance, winter sports, nature rich Gujo top.',
                 'AttributeID' => 3,
             ],
@@ -232,7 +232,7 @@ class CardsTableSeeder extends Seeder
             [
                 'CardName' => 'Misasaradon',
                 'PrefecturesID' => 31,
-                'CardIllustrationPath' =>'Chugoku/Tottori/misasaradou.png',
+                'CardIllustrationPath' =>'Chugoku/Tottori/misasaradon.png',
                 'CardDescription' =>'Happy encounters with everyone, hot water of stomach is Pokkapoka, excited every day.',
                 'AttributeID' => 3,
 
@@ -276,7 +276,7 @@ class CardsTableSeeder extends Seeder
             [
                 'CardName' => 'Sanudon',
                 'PrefecturesID' => 37,
-                'CardIllustrationPath' => 'Shikoku/Kagawa/sanudou.png',
+                'CardIllustrationPath' => 'Shikoku/Kagawa/sanudon.png',
                 'CardDescription' => 'She plays a pride bowl pocket on her back, aiming at a udon noodle kamiyama.',
                 'AttributeID' => 2,
             ],
