@@ -705,8 +705,8 @@ class PRsTableSeeder extends Seeder
               'PRName' => 'HAL Tokyo',
               'PRPhotoPath' => 'Test/Ebata/ebata1.png',
               'PRDescription' => 'We are carrying out various unique curriculums but the goal that is cited as common is "breeding" professional.',
-              'latitude' => 35.6897657,
-              'longitude' => 139.6945417,
+              'latitude' => 35.6911227,
+              'longitude' => 139.6959223,
             ],
             [
                'CardID' => 48,
@@ -714,7 +714,7 @@ class PRsTableSeeder extends Seeder
                'PRPhotoPath' => 'Test/Ebata/ebata2.png',
                'PRDescription' => 'As a vocational school, it is unusual to give priority to technical lectures rather than qualification majors, and we try to train human resources who will become an immediate fighting force.',
                'latitude' => 35.6904628,
-               'longitude' => 139.6932542,
+               'longitude' => 139.6961691,
             ],
             [
                 'CardID' => 49,
